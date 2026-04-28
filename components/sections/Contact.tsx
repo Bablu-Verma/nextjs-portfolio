@@ -132,14 +132,7 @@ ${data.message}
                   <FaLinkedin />
                 </motion.a>
 
-                <motion.a
-                  href="https://twitter.com/yourusername"
-                  target="_blank"
-                  whileHover={{ scale: 1.1 }}
-                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary"
-                >
-                  <FaInstagram />
-                </motion.a>
+
               </div>
             </FadeIn>
 

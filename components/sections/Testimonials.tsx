@@ -1,34 +1,16 @@
 'use client';
 
-import { useState } from 'react';
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
 import { testimonials } from '@/lib/data';
-import { FadeIn } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
+
+import 'swiper/css';
 
 export function Testimonials() {
-  const [current, setCurrent] = useState(0);
-
-  const itemsPerView = typeof window !== 'undefined' && window.innerWidth >= 1024 ? 2 : 1;
-
-  const next = () => {
-    setCurrent((prev) =>
-      prev + itemsPerView >= testimonials.length ? 0 : prev + itemsPerView
-    );
-  };
-
-  const prev = () => {
-    setCurrent((prev) =>
-      prev - itemsPerView < 0
-        ? Math.max(testimonials.length - itemsPerView, 0)
-        : prev - itemsPerView
-    );
-  };
-
-  const visibleItems = testimonials.slice(current, current + itemsPerView);
-
   return (
     <Section className="bg-secondary/30 relative overflow-hidden">
       <Container>
@@ -38,12 +20,50 @@ export function Testimonials() {
           description="Feedback from people I've worked with"
         />
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto relative">
 
-          {/* 🧠 CARDS */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {visibleItems.map((item, i) => (
-              <FadeIn key={i}>
+          {/* 🔥 Custom Buttons */}
+          <button className="swiper-prev absolute left-0 top-1/2 -translate-y-1/2 z-10
+            w-12 h-12 rounded-full glass border border-border
+            flex items-center justify-center
+            hover:border-primary hover:text-primary
+            transition-all duration-300 hover:scale-110
+            shadow-lg"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <button className="swiper-next absolute right-0 top-1/2 -translate-y-1/2 z-10
+            w-12 h-12 rounded-full glass border border-border
+            flex items-center justify-center
+            hover:border-primary hover:text-primary
+            transition-all duration-300 hover:scale-110
+            shadow-lg"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          {/* 🔥 Swiper */}
+          <Swiper
+            modules={[Autoplay, Navigation]}
+            spaceBetween={20}
+            slidesPerView={1}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            navigation={{
+              prevEl: '.swiper-prev',
+              nextEl: '.swiper-next',
+            }}
+            breakpoints={{
+              1024: {
+                slidesPerView: 2,
+              },
+            }}
+          >
+            {testimonials.map((item) => (
+              <SwiperSlide key={item.id}>
                 <motion.div
                   className="p-6 md:p-8 rounded-2xl glass h-full"
                   whileHover={{ y: -5 }}
@@ -60,38 +80,17 @@ export function Testimonials() {
                     “{item.content}”
                   </p>
 
-                  {/* 👤 User */}
-                  <div className="flex items-center gap-4">
-
-
-                    <div>
-                      <p className="font-semibold">{item.name}</p>
-                      <p className="text-sm text-muted-foreground">
-                        {item.role} • {item.company}
-                      </p>
-                    </div>
+                  {/* 👤 Info */}
+                  <div>
+                    <p className="font-semibold">{item.name}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {item.role} • {item.company}
+                    </p>
                   </div>
                 </motion.div>
-              </FadeIn>
+              </SwiperSlide>
             ))}
-          </div>
-
-          {/* 🔘 Controls */}
-          <div className="flex items-center justify-center gap-4 mt-8">
-            <button
-              onClick={prev}
-              className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-
-            <button
-              onClick={next}
-              className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+          </Swiper>
 
         </div>
       </Container>

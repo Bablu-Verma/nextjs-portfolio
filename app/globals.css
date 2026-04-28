@@ -256,3 +256,19 @@ body {
     transform: translateX(0);
   }
 }
+
+
+.workflow .custom-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #888;
+  opacity: 0.4;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.workflow .custom-pagination .swiper-pagination-bullet-active {
+  width: 20px;
+  background: #e85d04;
+  opacity: 1;
+}
