@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     title: 'Bablu.dev | Full Stack Developer in Noida',
     description: 'Professional portfolio showcasing my work as a full-stack developer',
     type: 'website',
-    url: 'https://your-domain.com',
+    url: 'https://bablu-verma.vercel.app',
     images: [
       {
-        url: 'https://your-domain.com/bablu.jpg',
+        url: 'https://bablu-verma.vercel.app/bablu.jpg',
         width: 1200,
         height: 630,
         alt: 'Bablu.dev Portfolio Preview',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Bablu.dev | Full Stack Developer in Noida',
     description: 'Professional portfolio showcasing my work as a full-stack developer',
-    images: ['https://your-domain.com/bablu.jpg'],
+    images: ['https://bablu-verma.vercel.app/bablu.jpg'],
   },
 };
 

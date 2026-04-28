@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://your-domain.com/sitemap.xml',
-    host: 'https://your-domain.com',
+    sitemap: 'https://bablu-verma.vercel.app/sitemap.xml',
+    host: 'https://bablu-verma.vercel.app',
   };
 }
