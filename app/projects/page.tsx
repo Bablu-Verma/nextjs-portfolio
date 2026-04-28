@@ -16,7 +16,7 @@ export default function AllProjects() {
 
 
     return (
-        <Section id="projects" className="relative">
+        <Section className="relative">
             <Container>
                 <BackButton />
                 <SectionHeader

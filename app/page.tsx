@@ -15,13 +15,14 @@ import { Testimonials } from '@/components/sections/Testimonials';
 import { FAQ } from '@/components/sections/FAQ';
 import { Contact } from '@/components/sections/Contact';
 import { CTA } from '@/components/sections/CTA';
+import HashScroller from '@/components/ui/HashScroller';
 
 export default function Home() {
 
 
   return (
     <div >
-
+      <HashScroller />
       <main>
         <Hero />
         <Marquee />

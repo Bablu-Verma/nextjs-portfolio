@@ -2,8 +2,8 @@
 
 import { Toaster } from "react-hot-toast";
 import { Cursor } from "./shared/Cursor";
-import { Navbar } from "./sections/Navbar";
-import { Footer } from "./sections/Footer";
+import { Navbar } from "./Navbar";
+import { Footer } from "./Footer";
 import { ScrollToTop } from "./shared/ScrollToTop";
 import { useEffect } from "react";
 import { useThemeStore } from "@/store";

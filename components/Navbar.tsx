@@ -94,17 +94,12 @@ export function Navbar() {
                 </AnimatePresence>
               </Button>
 
-              <Button
-                variant="outline"
-                size="sm"
+              <Link
+                href='/#contact'
                 className="hidden md:flex"
-                onClick={() => {
-                  const contactSection = document.getElementById('contact');
-                  contactSection?.scrollIntoView({ behavior: 'smooth' });
-                }}
               >
                 Let&apos;s Talk
-              </Button>
+              </Link>
 
               <Button
                 variant="ghost"

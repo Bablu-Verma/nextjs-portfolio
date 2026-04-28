@@ -10,7 +10,7 @@ import { BackButton } from '@/components/ui/BackButton';
 
 export default function ExperiencePage() {
     return (
-        <Section id="experience" className="relative">
+        <Section className="relative">
             <Container>
                 <BackButton />
                 <SectionHeader
