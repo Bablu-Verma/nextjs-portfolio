@@ -16,6 +16,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 
+export const dynamic = 'force-dynamic';
+
 export default async function AboutPage() {
   const projects = await getProjects();
 

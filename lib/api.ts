@@ -1,57 +1,68 @@
-import type { Project, Experience, Education, Service, Testimonial, FAQItem, WorkflowStep } from '@/types';
+import type {
+  Project,
+  Experience,
+  Education,
+  Service,
+  Testimonial,
+  FAQItem,
+  WorkflowStep,
+} from '@/types';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || '';
+// Single source of truth
+const BASE_URL =
+  process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 async function fetchData<T>(endpoint: string): Promise<T> {
-  const res = await fetch(`${API_BASE}${endpoint}`, {
+  const res = await fetch(`${BASE_URL}${endpoint}`, {
     next: { revalidate: 3600 },
   });
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch ${endpoint}`);
+    throw new Error(`Failed to fetch ${BASE_URL}${endpoint}`);
   }
 
   return res.json();
 }
 
+// ✅ Use relative endpoints only
 export async function getProjects(): Promise<Project[]> {
-  return fetchData<Project[]>('/api/projects');
+  return fetchData("/api/projects");
 }
 
-export async function getProjectBySlug(slug: string): Promise<Project | undefined> {
+export async function getProjectBySlug(slug: string) {
   const projects = await getProjects();
   return projects.find(p => p.slug === slug);
 }
 
 export async function getExperiences(): Promise<Experience[]> {
-  return fetchData<Experience[]>('/api/experiences');
+  return fetchData("/api/experiences");
 }
 
-export async function getExperienceByCompany(companySlug: string): Promise<Experience | undefined> {
-  const experiences = await getExperiences();
-  return experiences.find(e => e.companySlug === companySlug);
+export async function getExperienceByCompany(companySlug: string) {
+  const data = await getExperiences();
+  return data.find(e => e.companySlug === companySlug);
 }
 
 export async function getEducation(): Promise<Education[]> {
-  return fetchData<Education[]>('/api/education');
+  return fetchData("/api/education");
 }
 
 export async function getServices(): Promise<Service[]> {
-  return fetchData<Service[]>('/api/services');
+  return fetchData("/api/services");
 }
 
 export async function getTestimonials(): Promise<Testimonial[]> {
-  return fetchData<Testimonial[]>('/api/testimonials');
+  return fetchData("/api/testimonials");
 }
 
 export async function getFaqs(): Promise<FAQItem[]> {
-  return fetchData<FAQItem[]>('/api/faqs');
+  return fetchData("/api/faqs");
 }
 
 export async function getWorkflowSteps(): Promise<WorkflowStep[]> {
-  return fetchData<WorkflowStep[]>('/api/workflow');
+  return fetchData("/api/workflow");
 }
 
-export async function getGalleryImages(): Promise<Array<{ src: string; alt: string }>> {
-  return fetchData<Array<{ src: string; alt: string }>>('/api/gallery');
+export async function getGalleryImages() {
+  return fetchData("/api/gallery");
 }
