@@ -18,7 +18,7 @@ export default function AllProjects() {
     return (
         <Section className="relative">
             <Container>
-                <BackButton />
+                {/* <BackButton /> */}
                 <SectionHeader
                     badge="Projects"
                     title="Featured Work"

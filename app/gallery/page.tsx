@@ -14,7 +14,7 @@ export default function GalleryPage() {
     return (
         <Section className="relative overflow-hidden">
             <Container>
-                <BackButton />
+                {/* <BackButton /> */}
                 <SectionHeader
                     badge="Gallery"
                     title="Moments & Memories"
