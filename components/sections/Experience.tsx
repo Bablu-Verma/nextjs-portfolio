@@ -1,13 +1,29 @@
 'use client';
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
-import { experiences } from '@/lib/data';
+import { useExperiences } from '@/lib/hooks/useApi';
 import { FadeIn, StaggerContainer, staggerItem } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
 import { ExperienceCard } from '../ui/ExperienceCard';
 import { ArrowRight } from 'lucide-react';
 
 export function Experience() {
+  const { data: experiences = [], isLoading } = useExperiences();
+
+  if (isLoading) {
+    return (
+      <Section id="experience" className="relative">
+        <Container>
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="h-48 rounded-2xl bg-card/50 animate-pulse" />
+            ))}
+          </div>
+        </Container>
+      </Section>
+    );
+  }
+
   return (
     <Section id="experience" className="relative">
       <Container>

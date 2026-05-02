@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
-import { faqs } from '@/lib/data';
+import { useFaqs } from '@/lib/hooks/useApi';
 import { FadeIn, StaggerContainer, staggerItem } from '@/components/shared/Animations';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
@@ -10,15 +10,26 @@ import { cn } from '@/lib/utils';
 
 export function FAQ() {
   const [openId, setOpenId] = useState<string | null>(null);
+  const { data: faqs = [], isLoading } = useFaqs();
+
+  if (isLoading) {
+    return (
+      <Section className="relative">
+        <Container>
+          <div className="space-y-4">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="h-16 rounded-xl bg-card/50 animate-pulse" />
+            ))}
+          </div>
+        </Container>
+      </Section>
+    );
+  }
 
   return (
     <Section className="relative">
       <Container>
-
-        {/* 🔥 GRID SPLIT */}
         <div className="grid lg:grid-cols-2 gap-12 items-start relative">
-
-          {/* 🧠 LEFT SIDE */}
           <FadeIn>
             <div className="lg:sticky lg:top-24 self-start">
               <SectionHeader
@@ -28,14 +39,12 @@ export function FAQ() {
                 description=""
               />
 
-              {/* Optional Extra Content */}
               <p className="mt-6 text-center md:text-left text-base text-muted-foreground leading-relaxed">
                 I believe in transparency and smooth communication. Here are some common things clients usually ask before starting a project.
               </p>
             </div>
           </FadeIn>
 
-          {/* ❓ RIGHT SIDE */}
           <div className="space-y-4">
             {faqs.map((faq) => (
               <motion.div key={faq.id} variants={staggerItem}>
@@ -47,7 +56,6 @@ export function FAQ() {
                       : 'bg-secondary/30 border-border hover:border-primary/30'
                   )}
                 >
-                  {/* Question */}
                   <button
                     onClick={() =>
                       setOpenId(openId === faq.id ? null : faq.id)
@@ -65,7 +73,6 @@ export function FAQ() {
                     </motion.div>
                   </button>
 
-                  {/* Answer */}
                   <AnimatePresence>
                     {openId === faq.id && (
                       <motion.div
@@ -84,7 +91,6 @@ export function FAQ() {
               </motion.div>
             ))}
           </div>
-
         </div>
       </Container>
     </Section>

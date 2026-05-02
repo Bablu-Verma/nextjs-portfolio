@@ -1,18 +1,30 @@
 'use client';
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
-import { Card } from '@/components/ui/Card';
-import { projects } from '@/lib/data';
-import { FadeIn, StaggerContainer, staggerItem } from '@/components/shared/Animations';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ExternalLink, ArrowRight } from 'lucide-react';
-import { FaGithub } from 'react-icons/fa';
+import { useProjects } from '@/lib/hooks/useApi';
 import { ProjectCard } from '../ui/ProjectCard';
+import { FadeIn } from '@/components/shared/Animations';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 export function Projects() {
+  const { data: projects = [], isLoading } = useProjects();
+
   const featuredProjects = projects.filter((p) => p.featured);
+
+  if (isLoading) {
+    return (
+      <Section id="projects" className="relative">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="h-64 rounded-2xl bg-card/50 animate-pulse" />
+            ))}
+          </div>
+        </Container>
+      </Section>
+    );
+  }
 
   return (
     <Section id="projects" className="relative">

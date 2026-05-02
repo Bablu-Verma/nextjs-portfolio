@@ -1,8 +1,8 @@
 'use client';
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
+import { useServices } from '@/lib/hooks/useApi';
 import { Card } from '@/components/ui/Card';
-import { services } from '@/lib/data';
 import { FadeIn, StaggerContainer, staggerItem } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
 import {
@@ -28,6 +28,22 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export function Services() {
+  const { data: services = [], isLoading } = useServices();
+
+  if (isLoading) {
+    return (
+      <Section id="services" className="relative">
+        <Container>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="h-48 rounded-2xl bg-card/50 animate-pulse" />
+            ))}
+          </div>
+        </Container>
+      </Section>
+    );
+  }
+
   return (
     <Section id="services" className="relative">
       <Container>
@@ -43,26 +59,20 @@ export function Services() {
             return (
               <motion.div key={service.id} variants={staggerItem}>
                 <Card className="relative h-full p-6 group overflow-hidden border border-border hover:border-primary/40 transition duration-300">
-
-                  {/* 🔥 glow effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-br from-primary/10 to-transparent" />
 
-                  {/* icon */}
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition">
                     <Icon className="w-7 h-7 text-primary" />
                   </div>
 
-                  {/* title */}
                   <h3 className="text-xl font-semibold mb-2">
                     {service.title}
                   </h3>
 
-                  {/* description */}
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                     {service.description}
                   </p>
 
-                  {/* tech stack */}
                   <div className="flex flex-wrap gap-2">
                     {service.tech?.map((tech) => (
                       <span
@@ -73,7 +83,6 @@ export function Services() {
                       </span>
                     ))}
                   </div>
-
                 </Card>
               </motion.div>
             );

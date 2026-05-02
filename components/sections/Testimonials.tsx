@@ -1,7 +1,7 @@
 'use client';
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
-import { testimonials } from '@/lib/data';
+import { useTestimonials } from '@/lib/hooks/useApi';
 import { motion } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -11,6 +11,22 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 
 export function Testimonials() {
+  const { data: testimonials = [], isLoading } = useTestimonials();
+
+  if (isLoading) {
+    return (
+      <Section className="bg-secondary/30 relative overflow-hidden">
+        <Container>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[1, 2].map((i) => (
+              <div key={i} className="h-48 rounded-2xl bg-card/50 animate-pulse" />
+            ))}
+          </div>
+        </Container>
+      </Section>
+    );
+  }
+
   return (
     <Section className="bg-secondary/30 relative overflow-hidden">
       <Container>
@@ -21,8 +37,6 @@ export function Testimonials() {
         />
 
         <div className="max-w-6xl mx-auto relative">
-
-          {/* 🔥 Custom Buttons */}
           <button className="swiper-prev absolute left-0 top-1/2 -translate-y-1/2 z-10
             w-12 h-12 rounded-full glass border border-border
             flex items-center justify-center
@@ -43,7 +57,6 @@ export function Testimonials() {
             <ChevronRight className="w-5 h-5" />
           </button>
 
-          {/* 🔥 Swiper */}
           <Swiper
             modules={[Autoplay, Navigation]}
             spaceBetween={20}
@@ -68,19 +81,16 @@ export function Testimonials() {
                   className="p-6 md:p-8 rounded-2xl glass h-full"
                   whileHover={{ y: -5 }}
                 >
-                  {/* ⭐ Stars */}
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                     ))}
                   </div>
 
-                  {/* 💬 Content */}
                   <p className="text-base md:text-lg mb-6 leading-relaxed">
-                    “{item.content}”
+                    "{item.content}"
                   </p>
 
-                  {/* 👤 Info */}
                   <div>
                     <p className="font-semibold">{item.name}</p>
                     <p className="text-sm text-muted-foreground">
@@ -91,7 +101,6 @@ export function Testimonials() {
               </SwiperSlide>
             ))}
           </Swiper>
-
         </div>
       </Container>
     </Section>

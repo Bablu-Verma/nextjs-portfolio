@@ -7,7 +7,7 @@ import { Footer } from "./Footer";
 import { ScrollToTop } from "./shared/ScrollToTop";
 import { useEffect } from "react";
 import { useThemeStore } from "@/store";
-
+import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
 
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
@@ -23,9 +23,7 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
 
 
     return (
-        <>
-
-
+        <ReactQueryProvider>
             <div className={theme}>
                 <Cursor />
                 <Navbar />
@@ -43,9 +41,7 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
                 <Footer />
                 <ScrollToTop />
             </div>
-
-
-        </>
+        </ReactQueryProvider>
     );
 };
 
