@@ -43,7 +43,7 @@ export function Hero() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium">
-                Available for freelance work
+                Scalable systems. Clean UI. Real products.
               </span>
             </div>
           </FadeIn>

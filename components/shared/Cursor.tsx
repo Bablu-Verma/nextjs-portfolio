@@ -3,7 +3,28 @@
 import { useEffect, useState } from 'react';
 import { motion, useSpring } from 'framer-motion';
 
+// Hook for media query (clean + reusable)
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 801px)');
+
+    const handleChange = () => setIsDesktop(mediaQuery.matches);
+
+    handleChange(); // initial check
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  return isDesktop;
+}
+
+// ================= Cursor Ring =================
 export function Cursor() {
+  const isDesktop = useIsDesktop();
+
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -11,6 +32,8 @@ export function Cursor() {
   const cursorY = useSpring(0, { stiffness: 500, damping: 50 });
 
   useEffect(() => {
+    if (!isDesktop) return;
+
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
@@ -19,6 +42,7 @@ export function Cursor() {
 
     const handleMouseEnter = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
+
       if (
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
@@ -41,9 +65,9 @@ export function Cursor() {
       document.removeEventListener('mouseover', handleMouseEnter);
       document.removeEventListener('mouseout', handleMouseLeave);
     };
-  }, [cursorX, cursorY, isVisible]);
+  }, [cursorX, cursorY, isVisible, isDesktop]);
 
-  if (typeof window === 'undefined') return null;
+  if (typeof window === 'undefined' || !isDesktop) return null;
 
   return (
     <motion.div
@@ -65,13 +89,18 @@ export function Cursor() {
   );
 }
 
+// ================= Cursor Dot =================
 export function CursorDot() {
+  const isDesktop = useIsDesktop();
+
   const [isVisible, setIsVisible] = useState(false);
 
   const cursorX = useSpring(0, { stiffness: 500, damping: 50 });
   const cursorY = useSpring(0, { stiffness: 500, damping: 50 });
 
   useEffect(() => {
+    if (!isDesktop) return;
+
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
@@ -79,10 +108,13 @@ export function CursorDot() {
     };
 
     window.addEventListener('mousemove', moveCursor);
-    return () => window.removeEventListener('mousemove', moveCursor);
-  }, [cursorX, cursorY, isVisible]);
 
-  if (typeof window === 'undefined') return null;
+    return () => {
+      window.removeEventListener('mousemove', moveCursor);
+    };
+  }, [cursorX, cursorY, isVisible, isDesktop]);
+
+  if (typeof window === 'undefined' || !isDesktop) return null;
 
   return (
     <motion.div
