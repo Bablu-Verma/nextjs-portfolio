@@ -15,6 +15,7 @@ import { Testimonials } from '@/components/sections/Testimonials';
 import { FAQ } from '@/components/sections/FAQ';
 import { Contact } from '@/components/sections/Contact';
 import { CTA } from '@/components/sections/CTA';
+import { AndroidApp } from '@/components/sections/AndroidApp';
 import HashScroller from '@/components/ui/HashScroller';
 
 export default function Home() {
@@ -35,7 +36,8 @@ export default function Home() {
         <Education />
         <Workflow />
         <Values />
-        <CTA />
+                <CTA />
+        <AndroidApp />
         <Gallery />
         <Testimonials />
         <FAQ />
