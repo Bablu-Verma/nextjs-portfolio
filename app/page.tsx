@@ -36,13 +36,13 @@ export default function Home() {
         <Education />
         <Workflow />
         <Values />
-                <CTA />
-        <AndroidApp />
+        <CTA />
+
         <Gallery />
         <Testimonials />
         <FAQ />
         <Contact />
-
+        <AndroidApp />
       </main>
 
 
