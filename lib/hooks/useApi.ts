@@ -1,5 +1,5 @@
 import { useQuery, useSuspenseQuery } from '@tanstack/react-query';
-import type { Project, Experience, Education, Service, Testimonial, FAQItem, WorkflowStep } from '@/types';
+import type { Project, Experience, Education, Service, Testimonial, FAQItem, WorkflowStep, AboutData } from '@/types';
 
 async function fetchData<T>(endpoint: string): Promise<T> {
   const res = await fetch(endpoint);
@@ -102,6 +102,20 @@ export function useSuspenseWorkflowSteps() {
   return useSuspenseQuery<WorkflowStep[]>({
     queryKey: ['workflow'],
     queryFn: () => fetchData<WorkflowStep[]>('/api/workflow'),
+  });
+}
+
+export function useAbout() {
+  return useQuery<AboutData>({
+    queryKey: ['about'],
+    queryFn: () => fetchData<AboutData>('/api/about'),
+  });
+}
+
+export function useSuspenseAbout() {
+  return useSuspenseQuery<AboutData>({
+    queryKey: ['about'],
+    queryFn: () => fetchData<AboutData>('/api/about'),
   });
 }
 

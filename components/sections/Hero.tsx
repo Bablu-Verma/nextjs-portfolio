@@ -117,7 +117,7 @@ export function Hero() {
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
 
-              <a href="/bablu_verma_site.pdf" download>
+              <a href="/bablu_verma_full_stack_site.pdf" download>
                 <Button variant="outline" size="lg">
                   Download Resume
                 </Button>

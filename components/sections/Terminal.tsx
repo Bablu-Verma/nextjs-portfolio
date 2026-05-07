@@ -11,19 +11,19 @@ const commands = [
     output: `
 Available commands:
 
-• help       → Show all commands
-• about      → About me
-• skills     → Technical skills
-• projects   → Featured work
-• experience → Work experience
-• education  → Education details
-• contact    → Contact info
-• social     → Social links
-• resume     → Download resume
-• date       → Show current date & time
-• whoami     → Show user info
-• clear      → Clear terminal
-  `,
+• help        → Show all commands
+• about       → About me
+• skills      → Technical skills
+• experience  → Work experience
+• education   → Education details
+• services    → Services I provide
+• contact     → Contact information
+• social      → Social profiles
+
+• date        → Show current date & time
+• whoami      → Show user info
+• clear       → Clear terminal
+    `,
   },
 
   {
@@ -31,58 +31,90 @@ Available commands:
     output: `
 Hi, I'm Bablu Verma 👋
 
-A passionate Full-Stack Developer with 4+ years of experience.
-I specialize in building scalable web & mobile applications using modern technologies.
+Full Stack Developer with 4+ years of experience
+building scalable web, backend, and mobile applications.
 
-Focused on performance, clean code, and great user experience.
+Specialized in:
+• React.js / Next.js
+• Node.js / Express.js
+• React Native
+• PostgreSQL / MongoDB
+• Real-time systems & scalable architecture
+
+Focused on performance optimization,
+clean architecture, SEO, DevOps,
+and production-ready engineering.
     `,
   },
 
   {
     cmd: 'skills',
     output: `
-Frontend:
-- React, Next.js, TypeScript, Tailwind CSS
-- React Native, Three.js
+Frontend & Mobile:
+• React.js
+• Next.js
+• TypeScript
+• Tailwind CSS
+• React Native
+• Redux Toolkit
+• React Query
+• Material UI
 
-Backend:
-- Node.js, Express, GraphQL, REST APIs
+Backend & APIs:
+• Node.js
+• Express.js
+• REST APIs
+• GraphQL
+• Socket.io
+• Redis Pub/Sub
+• BullMQ
 
 Database:
-- MongoDB, PostgreSQL, Redis
+• MongoDB
+• PostgreSQL
+• Redis
+• Prisma ORM
+• Mongoose
 
-DevOps:
-- Docker, AWS, Vercel, Firebase
-    `,
-  },
+DevOps & Infrastructure:
+• Docker
+• AWS
+• GitHub Actions
+• Nginx
+• PM2
+• Vercel
+• Firebase
 
-  {
-    cmd: 'projects',
-    output: `
-Featured Projects:
-
-1. E-Commerce Platform
-   → Full-stack app with payments & admin panel
-
-2. SaaS Dashboard
-   → Analytics dashboard with real-time data
-
-3. Portfolio Website
-   → Modern animated portfolio (this one 😉)
-
-Type "open project" (coming soon feature)
+Testing & Tools:
+• Jest
+• Postman
+• Swagger
+• Git & GitHub
     `,
   },
 
   {
     cmd: 'experience',
     output: `
-Experience:
+Work Experience:
 
-• 4+ Years in Full Stack Development
-• Worked with startups & freelance clients
-• Delivered 20+ production applications
-• Strong focus on scalable architecture
+4tuners Technologies
+→ Full Stack Developer
+→ Jul 2025 - Mar 2026
+
+Freekaamaal.com
+→ React.js & React Native Developer
+→ Sep 2022 - May 2025
+
+Qwerty Code
+→ Web Developer
+→ Oct 2021 - Aug 2022
+
+Highlights:
+• 4+ years industry experience
+• Built scalable production systems
+• Worked on high traffic applications
+• Led frontend & backend architecture
     `,
   },
 
@@ -91,40 +123,74 @@ Experience:
     output: `
 Education:
 
-Bachelor's Degree in Computer Science
-Continuous self-learning in modern web technologies
+Amity University
+→ BCA (Cloud & Cyber Security)
+→ 2023 - 2026
+
+GBSS School, Delhi
+→ Senior Secondary (12th)
+
+Additional Learning:
+• Next.js 14 & React Certification
+• Full Stack Development Bootcamp
+• Continuous self-learning & production experience
+    `,
+  },
+
+  {
+    cmd: 'services',
+    output: `
+Services:
+
+• Full Stack Web Development
+• Backend API Development
+• React & Next.js Applications
+• React Native Mobile Apps
+• Real-time Systems
+• Ecommerce Development
+• Performance Optimization
+• SEO Optimization
+• DevOps & Deployment
+• Database Architecture
     `,
   },
 
   {
     cmd: 'contact',
     output: `
-Contact Me:
+Contact Information:
 
-📧 Email: jbabluverma@gmail.com
-🌐 Portfolio: bablu.dev
+📧 Email:
+abc@gmail.com
+
+📍 Location:
+Noida, India
+
+📱 Phone:
++91 00000000
+
+🌐 Available for:
+Remote / Hybrid / Relocation
     `,
   },
 
   {
     cmd: 'social',
     output: `
-Social Links:
+Social Profiles:
 
-GitHub: github.com/bablu-verma
-LinkedIn: linkedin.com/in/babluverma
+GitHub:
+github.com/bablu-verma
+
+LinkedIn:
+linkedin.com/in/babluverma
+
+Portfolio:
+bablu.dev : https://bablu-verma.vercel.app/
     `,
   },
 
-  {
-    cmd: 'resume',
-    output: `
-Download Resume:
 
-Type this in browser:
-→ /Bablu_Verma_Resume.pdf
-    `,
-  },
 ];
 
 

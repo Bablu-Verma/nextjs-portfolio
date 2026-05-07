@@ -6,6 +6,7 @@ import type {
   Testimonial,
   FAQItem,
   WorkflowStep,
+  AboutData,
 } from '@/types';
 
 export const projects: Project[] = [
@@ -190,6 +191,66 @@ export const projects: Project[] = [
     liveUrl: '#',
     featured: false,
   },
+  // ADD THESE NEW PROJECTS INSIDE EXISTING projects ARRAY
+  // Existing projects ko delete mat karna
+
+  {
+    id: '8',
+    slug: 'real-time-chat-system',
+    title: 'Real-time Chat System',
+    description: 'Scalable real-time messaging infrastructure',
+    shortDescription: 'Socket.io chat app with Redis scaling',
+    image: 'https://socket.io/images/logo.svg',
+    tags: ['Node.js', 'Socket.io', 'Redis', 'MongoDB'],
+    overview:
+      'High-performance real-time chat application supporting concurrent users with horizontal scaling and WebSocket authentication.',
+    challenges: [
+      'Handling concurrent socket connections',
+      'Maintaining real-time sync across instances',
+      'Reliable reconnection handling',
+    ],
+    solutions: [
+      'Socket.io Redis adapter for horizontal scaling',
+      'JWT authentication during WebSocket handshake',
+      'Redis Pub/Sub for instant status synchronization',
+    ],
+    results: [
+      'Supported 500+ concurrent users',
+      'Instant real-time message delivery',
+      'Reliable auto reconnection system',
+    ],
+    liveUrl: '#',
+    featured: false,
+  },
+
+  {
+    id: '9',
+    slug: 'freekaamaal-api-backend',
+    title: 'Freekaamaal API',
+    description: 'High traffic deals backend infrastructure',
+    shortDescription: 'Scalable deals API with Redis caching',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTslUBIWXTFgqKVhflb_9hFIU79c7YrSGQ9pg&s',
+    tags: ['Node.js', 'Express.js', 'MongoDB', 'Redis', 'Socket.io'],
+    overview:
+      'Scalable backend infrastructure powering real-time deals and cashback systems with optimized APIs and caching.',
+    challenges: [
+      'Handling high API traffic',
+      'Reducing query latency',
+      'Managing third-party API rate limits',
+    ],
+    solutions: [
+      'Redis caching with TTL invalidation',
+      'MongoDB compound indexing',
+      'Request queue system with retry logic',
+    ],
+    results: [
+      'Handled 20K+ daily API calls',
+      'Reduced query time from 800ms to <80ms',
+      'Maintained 99.5% uptime',
+    ],
+    liveUrl: 'https://freekaamaal.com/',
+    featured: true,
+  },
 ];
 
 export const experiences: Experience[] = [
@@ -202,19 +263,24 @@ export const experiences: Experience[] = [
     endDate: '2026-03',
     current: false,
     description:
-      'Worked on scalable full-stack applications using Next.js and Node.js.',
+      'Led development of scalable full-stack applications using Next.js, Node.js, PostgreSQL, and Redis with focus on performance optimization and offline-first architecture.',
     responsibilities: [
-      'Developed scalable applications',
-      'Built offline POS system',
-      'Implemented SSR/SSG',
-      'Led team of 5 developers',
+      'Architected scalable Node.js/Express backend handling 300+ concurrent requests',
+      'Built offline-first POS system with background sync and conflict resolution',
+      'Led frontend architecture for 3 production Next.js applications',
+      'Implemented 4-tier RBAC system with audit logging',
+      'Integrated Docker-based deployment workflows and CI/CD pipelines',
+      'Mentored junior developers and reviewed production code',
     ],
     achievements: [
-      'Improved performance and maintainability',
-      'Successfully delivered POS system',
+      'Reduced PostgreSQL query latency by 73% (450ms → 120ms)',
+      'Improved LCP by 50% using frontend optimizations',
+      'Reduced bundle size by 32% through code splitting',
+      'Successfully delivered production-grade offline POS system',
     ],
     location: 'Greater Noida, India',
   },
+
   {
     id: '2',
     company: 'Freekaamaal.com',
@@ -224,20 +290,25 @@ export const experiences: Experience[] = [
     endDate: '2025-05',
     current: false,
     description:
-      'Built scalable web and mobile applications with real-time features.',
+      'Built and scaled high-traffic web and mobile applications with real-time systems, SEO optimization, and cross-platform mobile architecture.',
     responsibilities: [
-      'Developed SPA using React & Next.js',
-      'Built mobile apps using React Native',
-      'Integrated Firebase & Google APIs',
-      'Implemented real-time systems',
+      'Built scalable React.js and Next.js applications',
+      'Developed React Native mobile applications using Expo',
+      'Implemented SSR/ISR for SEO optimization',
+      'Integrated Firebase Cloud Messaging and analytics',
+      'Built real-time deal tracking using Socket.io',
+      'Collaborated with backend teams on API architecture',
     ],
     achievements: [
-      '35% increase in engagement',
-      'Delivered high-performance apps',
-      'Employee of the Year',
+      'Achieved 20K+ app downloads with 4.2 rating',
+      'Improved organic traffic by 55% using SSR optimization',
+      'Reduced TTI from 3.2s to 1.8s',
+      'Employee of the Year 2024',
+      'Increased user engagement by 35%',
     ],
     location: 'Noida, India',
   },
+
   {
     id: '3',
     company: 'Qwerty Code',
@@ -247,19 +318,111 @@ export const experiences: Experience[] = [
     endDate: '2022-08',
     current: false,
     description:
-      'Developed REST APIs and backend systems with Node.js.',
+      'Worked on backend systems, REST APIs, authentication infrastructure, and frontend optimization for scalable web applications.',
     responsibilities: [
-      'Built REST APIs',
-      'Implemented authentication',
-      'Optimized database queries',
+      'Built RESTful APIs using Node.js and Express.js',
+      'Implemented JWT authentication and refresh token rotation',
+      'Optimized MongoDB aggregation pipelines',
+      'Built reusable React.js frontend components',
+      'Integrated centralized logging and validation middleware',
+      'Wrote unit and integration tests using Jest',
     ],
     achievements: [
-      'Reduced API latency',
-      'Improved system stability',
+      'Reduced MongoDB query latency by 73%',
+      'Reduced frontend bundle size by 28%',
+      'Improved production stability through middleware standardization',
+      'Reduced production bugs by 35%',
     ],
     location: 'Noida, India',
   },
 ];
+
+export const aboutData: AboutData = {
+
+
+  bio: [
+    "I'm a Full Stack Developer with 4+ years of experience building scalable web applications, backend systems, mobile apps, and real-time infrastructures. My core expertise lies in React.js, Next.js, Node.js, Express.js, React Native, PostgreSQL, and MongoDB.",
+
+    "I specialize in high-performance architectures including SSR/SSG/ISR rendering, real-time communication systems, offline-first applications, caching strategies, and database optimization. I focus on building production-ready applications that are scalable, maintainable, and optimized for performance.",
+
+    "Beyond development, I actively work on system design, DevOps workflows, CI/CD pipelines, Dockerized deployments, and engineering best practices. I enjoy solving complex scalability problems and transforming business requirements into reliable technical solutions.",
+  ],
+
+  skillGroups: [
+    {
+      title: 'Frontend & Mobile',
+      items: [
+        'React.js',
+        'Next.js',
+        'TypeScript',
+        'Tailwind CSS',
+        'React Native',
+        'Expo',
+        'Redux Toolkit',
+        'React Query',
+        'Material UI',
+        'Styled Components',
+      ],
+    },
+
+    {
+      title: 'Backend & APIs',
+      items: [
+        'Node.js',
+        'Express.js',
+        'REST APIs',
+        'GraphQL',
+        'Socket.io',
+        'BullMQ',
+        'Redis Pub/Sub',
+        'JWT Authentication',
+        'RBAC',
+      ],
+    },
+
+    {
+      title: 'Database & Performance',
+      items: [
+        'MongoDB',
+        'PostgreSQL',
+        'Redis',
+        'Prisma ORM',
+        'Mongoose',
+        'Query Optimization',
+        'Caching Strategies',
+        'Indexing',
+      ],
+    },
+
+    {
+      title: 'DevOps & Infrastructure',
+      items: [
+        'Docker',
+        'GitHub Actions',
+        'AWS',
+        'Nginx',
+        'PM2',
+        'Vercel',
+        'Netlify',
+        'Firebase',
+      ],
+    },
+
+    {
+      title: 'Tools & Testing',
+      items: [
+        'Git',
+        'GitHub',
+        'Postman',
+        'Jest',
+        'React Testing Library',
+        'Swagger',
+        'Sentry',
+        'Linux',
+      ],
+    },
+  ],
+};
 
 export const education: Education[] = [
   {
@@ -270,27 +433,51 @@ export const education: Education[] = [
     startDate: '2023',
     endDate: '2026',
     description:
-      'Pursuing a strong foundation in computer applications with a focus on cloud computing and cybersecurity. Gaining hands-on experience in modern web technologies, system architecture, and secure application development through academic and practical projects.',
+      'Pursuing BCA with specialization in Cloud Computing and Cyber Security while simultaneously working full-time in the software industry. Focused on scalable application architecture, backend systems, secure development practices, distributed systems, and modern cloud technologies.',
   },
+
   {
     id: '2',
     institution: 'GBSS School, Delhi',
-    degree: 'Senior Secondary',
+    degree: 'Senior Secondary (12th)',
     field: '',
     startDate: '2020',
     endDate: '2021',
     description:
-      'Completed senior secondary education with a focus on analytical thinking and problem-solving skills. Built a strong academic base that helped transition into the field of computer science and technology.',
+      'Completed senior secondary education with strong analytical and problem-solving foundation that supported transition into software engineering and full stack development.',
   },
+
   {
     id: '3',
-    institution: 'Self Learning & Online Platforms',
-    degree: 'Continuous Learning',
-    field: 'Full Stack Development, System Design, DevOps',
+    institution: 'Self Learning & Industry Experience',
+    degree: 'Continuous Professional Learning',
+    field: 'Full Stack Development, System Design & DevOps',
     startDate: '2021',
     endDate: 'Present',
     description:
-      'Continuously learning and upgrading skills through real-world projects, online courses, and hands-on development. Focused on mastering modern web technologies, building scalable applications, and staying aligned with industry best practices.',
+      'Continuously learning through real-world production projects, system architecture implementation, technical documentation, advanced frontend/backend engineering, DevOps workflows, and scalable infrastructure development.',
+  },
+
+  {
+    id: '4',
+    institution: 'Udemy',
+    degree: 'Next.js 14 & React - The Complete Guide',
+    field: 'Frontend Engineering',
+    startDate: '2023',
+    endDate: '2023',
+    description:
+      'Covered advanced React.js and Next.js concepts including App Router, Server Components, SSR, SSG, ISR, API Routes, authentication systems, and production deployment strategies.',
+  },
+
+  {
+    id: '5',
+    institution: 'Udemy',
+    degree: 'Full Stack Development Bootcamp',
+    field: 'MERN Stack Development',
+    startDate: '2024',
+    endDate: '2024',
+    description:
+      'Comprehensive training covering React.js, Node.js, Express.js, MongoDB, REST APIs, authentication systems, backend architecture, and scalable production deployment workflows.',
   },
 ];
 
@@ -338,7 +525,6 @@ export const services: Service[] = [
     tech: ['Docker', 'AWS', 'Vercel', 'GitHub Actions'],
   },
 ];
-
 
 export const testimonials: Testimonial[] = [
   {
@@ -433,7 +619,6 @@ export const workflowSteps: WorkflowStep[] = [
     number: 4,
   },
 ];
-
 
 export const galleryImages = [
   { src: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&q=80', alt: 'Mobile App' },

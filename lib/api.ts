@@ -6,6 +6,7 @@ import type {
   Testimonial,
   FAQItem,
   WorkflowStep,
+  AboutData,
 } from '@/types';
 
 // Single source of truth
@@ -61,6 +62,10 @@ export async function getFaqs(): Promise<FAQItem[]> {
 
 export async function getWorkflowSteps(): Promise<WorkflowStep[]> {
   return fetchData("/api/workflow");
+}
+
+export async function getAbout(): Promise<AboutData> {
+  return fetchData("/api/about");
 }
 
 export async function getGalleryImages() {

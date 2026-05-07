@@ -87,6 +87,14 @@ export interface SocialLink {
   icon: string;
 }
 
+export interface AboutData {
+  bio: string[];
+  skillGroups: Array<{
+    title: string;
+    items: string[];
+  }>;
+}
+
 export type Theme = 'dark' | 'light';
 
 export interface UIState {

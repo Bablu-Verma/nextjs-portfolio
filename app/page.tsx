@@ -42,7 +42,7 @@ export default function Home() {
         <Testimonials />
         <FAQ />
         <Contact />
-        <AndroidApp />
+        {/* <AndroidApp /> */}
       </main>
 
 
