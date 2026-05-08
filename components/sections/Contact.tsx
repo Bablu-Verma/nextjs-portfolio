@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import toast from 'react-hot-toast';
+import { FaAndroid } from 'react-icons/fa6';
 
 export function Contact() {
   const {
@@ -131,6 +132,7 @@ ${data.message}
                 >
                   <FaLinkedin />
                 </motion.a>
+
 
 
               </div>

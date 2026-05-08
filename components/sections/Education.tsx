@@ -1,13 +1,16 @@
 'use client';
 
+import { useState } from 'react';
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
 import { useEducation } from '@/lib/hooks/useApi';
 import { FadeIn } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
-import { Calendar, BookOpen } from 'lucide-react';
+import { Calendar, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
 
 export function Education() {
   const { data: education = [], isLoading } = useEducation();
+  const [showAll, setShowAll] = useState(false);
+  const displayed = showAll ? education : education.slice(0, 3);
 
   if (isLoading) {
     return (
@@ -47,7 +50,7 @@ export function Education() {
           </div>
 
           <div className="space-y-6">
-            {education.map((edu, index) => (
+            {displayed.map((edu, index) => (
               <FadeIn key={edu.id} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ y: -5 }}
@@ -82,6 +85,20 @@ export function Education() {
                 </motion.div>
               </FadeIn>
             ))}
+            {education.length > 3 && (
+              <div className="flex justify-center pt-2">
+                <button
+                  onClick={() => setShowAll(!showAll)}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border bg-card/60 backdrop-blur-md text-sm font-medium text-muted-foreground hover:text-primary hover:border-primary/40 hover:shadow-[0_4px_15px_rgba(232,93,4,0.1)] transition-all duration-300"
+                >
+                  {showAll ? (
+                    <>Show Less <ChevronUp className="w-4 h-4" /></>
+                  ) : (
+                    <>View All ({education.length}) <ChevronDown className="w-4 h-4" /></>
+                  )}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </Container>
