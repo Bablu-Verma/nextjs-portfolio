@@ -27,7 +27,7 @@ export function AndroidApp() {
 
           <FadeIn delay={0.2} className="relative">
             <Button size="lg" className="group">
-              <a href='https://expo.dev/artifacts/eas/oo9JYpyv5Cf7QHys1xESzQ.apk' className="flex items-center">
+              <a href='https://expo.dev/artifacts/eas/4kWdxxPFb3VkWADLp7ZK8x.apk' className="flex items-center">
                 <Download className="mr-2 w-4 h-4 group-hover:translate-y-1 transition-transform" />
                 Install Now
               </a>
