@@ -251,6 +251,46 @@ export const projects: Project[] = [
     liveUrl: 'https://freekaamaal.com/',
     featured: true,
   },
+  {
+  id: '10',
+  slug: 'cinch-ccm-mobile',
+  title: 'CINCH CCM Mobile',
+  description: 'Appointment & department management mobile application',
+  shortDescription: 'React Native appointment management app',
+  image:
+    'https://play-lh.googleusercontent.com/2lW6iP6N5T8R2M7xwQ7xT4Yj8nM3nQfQmVQ9jR0nK3W5tK8vY7sX9hA1cB2dE3F4=w526-h296-rw',
+  tags: [
+    'React Native',
+    'Android',
+    'Redux',
+    'Firebase',
+    'Push Notifications',
+    'Socket.io',
+  ],
+  overview:
+    'Cross-platform appointment and department management mobile application built using React Native with real-time communication and authentication features.',
+  challenges: [
+    'Managing complex mobile state across screens',
+    'Implementing reliable real-time live chat',
+    'Handling push notifications across devices',
+    'Maintaining smooth mobile performance',
+  ],
+  solutions: [
+    'Used Redux for centralized state management',
+    'Integrated Socket.io for live chat functionality',
+    'Implemented Firebase push notifications',
+    'Added Google Login and mobile number authentication',
+  ],
+  results: [
+    'Smooth real-time communication experience',
+    'Improved appointment management workflow',
+    'Reliable cross-device notification delivery',
+    'Optimized mobile user experience',
+  ],
+  liveUrl:
+    'https://play.google.com/store/apps/details?id=com.cinchoffline.ccm',
+  featured: true,
+},
 ];
 
 export const experiences: Experience[] = [
