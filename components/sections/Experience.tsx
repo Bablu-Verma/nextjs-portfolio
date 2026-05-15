@@ -1,7 +1,7 @@
 'use client';
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
-import { useExperiences } from '@/lib/hooks/useApi';
+import { useExperiences } from '@/hooks/useApi';
 import { FadeIn, StaggerContainer, staggerItem } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
 import { ExperienceCard } from '../ui/ExperienceCard';

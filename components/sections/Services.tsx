@@ -1,7 +1,7 @@
 'use client';
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
-import { useServices } from '@/lib/hooks/useApi';
+import { useServices } from '@/hooks/useApi';
 import { Card } from '@/components/ui/Card';
 import { FadeIn, StaggerContainer, staggerItem } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';

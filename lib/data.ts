@@ -16,7 +16,7 @@ export const projects: Project[] = [
     title: 'Woost.io',
     description: 'Freelancing & collaboration ecosystem',
     shortDescription: 'Real-time freelancing platform (Web + App)',
-    image: 'https://play-lh.googleusercontent.com/Q0ctVoXZLX9_bygKC3g8WHSlqK1pbB0yQkep4NtXbMDGCnxZZxikohw6HfEUs0eaPA=w526-h296-rw',
+    image: '/p/woost.png',
     tags: ['React.js', 'TypeScript', 'Tailwind CSS'],
     overview:
       'Freelancing platform with real-time collaboration features across web and mobile.',
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     title: 'Freekaamaal',
     description: 'Cashback & deals platform',
     shortDescription: 'SEO optimized deals platform',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTslUBIWXTFgqKVhflb_9hFIU79c7YrSGQ9pg&s',
+    image: '/p/freekaamaal.png',
     tags: ['React.js', 'Next.js', 'TypeScript', 'SEO'],
     overview:
       'High traffic cashback platform optimized for SEO and performance.',
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     title: 'Gaurastra',
     description: 'Full-stack e-commerce platform',
     shortDescription: 'E-commerce with PhonePe integration',
-    image: 'https://www.gaurastra.com/static/media/loginbg.40097bd9cadc2f9e5bad.webp',
+    image: '/p/gaurastra.png',
     tags: ['Next.js', 'Node.js', 'MongoDB', 'PhonePe'],
     overview:
       'Modern Ayurvedic e-commerce platform with secure payments.',
@@ -120,7 +120,7 @@ export const projects: Project[] = [
     title: 'POS System',
     description: 'Offline-first billing system',
     shortDescription: 'Retail POS with offline sync',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS34Q1m4GlZxV1WTh8Rrj2RcqA_jqVkZT1jg&s',
+    image: '/p/gaurastra.png',
     tags: ['Node.js', 'MongoDB', 'Socket.io'],
     overview:
       'Retail billing system that works even without internet.',
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     title: 'Strategy Classes',
     description: 'Online exam platform',
     shortDescription: 'High-scale LMS system',
-    image: 'https://strategyclasses.in/static/media/favicon.ee51e7eac7ceaec9d444.png',
+    image: '/p/strategy.png',
     tags: ['Node.js', 'PostgreSQL', 'React.js'],
     overview:
       'Learning management system handling large exam traffic.',
@@ -191,8 +191,7 @@ export const projects: Project[] = [
     liveUrl: '#',
     featured: false,
   },
-  // ADD THESE NEW PROJECTS INSIDE EXISTING projects ARRAY
-  // Existing projects ko delete mat karna
+
 
   {
     id: '8',
@@ -200,7 +199,7 @@ export const projects: Project[] = [
     title: 'Real-time Chat System',
     description: 'Scalable real-time messaging infrastructure',
     shortDescription: 'Socket.io chat app with Redis scaling',
-    image: 'https://socket.io/images/logo.svg',
+    image: '/p/cinch.png',
     tags: ['Node.js', 'Socket.io', 'Redis', 'MongoDB'],
     overview:
       'High-performance real-time chat application supporting concurrent users with horizontal scaling and WebSocket authentication.',
@@ -229,7 +228,7 @@ export const projects: Project[] = [
     title: 'Freekaamaal API',
     description: 'High traffic deals backend infrastructure',
     shortDescription: 'Scalable deals API with Redis caching',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTslUBIWXTFgqKVhflb_9hFIU79c7YrSGQ9pg&s',
+    image: '/p/freekaamaal.png',
     tags: ['Node.js', 'Express.js', 'MongoDB', 'Redis', 'Socket.io'],
     overview:
       'Scalable backend infrastructure powering real-time deals and cashback systems with optimized APIs and caching.',
@@ -258,7 +257,7 @@ export const projects: Project[] = [
   description: 'Appointment & department management mobile application',
   shortDescription: 'React Native appointment management app',
   image:
-    'https://play-lh.googleusercontent.com/2lW6iP6N5T8R2M7xwQ7xT4Yj8nM3nQfQmVQ9jR0nK3W5tK8vY7sX9hA1cB2dE3F4=w526-h296-rw',
+    '/p/cinch.png',
   tags: [
     'React Native',
     'Android',
@@ -661,10 +660,21 @@ export const workflowSteps: WorkflowStep[] = [
 ];
 
 export const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&q=80', alt: 'Mobile App' },
-  { src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=80', alt: 'Team Work' },
-  { src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80', alt: 'Collaboration' },
-  { src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80', alt: 'Development' },
-  { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80', alt: 'Analytics' },
-  { src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=80', alt: 'Office' },
+  { src: '/g/woost1.png', alt: 'Woost.io' },
+  { src: '/g/woost2.png', alt: 'Woost.io' },
+  { src: '/g/woost3.png', alt: 'Woost.io' },
+  { src: '/g/gaur1.png', alt: 'Gaurastra' },
+  { src: '/g/gaur2.png', alt: 'Gaurastra' },
+
+  { src: '/g/cinch1.png', alt: 'CINCH' },
+  { src: '/g/cinch2.png', alt: 'CINCH' },
+  { src: '/g/class1.png', alt: 'Strategy Classes' },
+  { src: '/g/class2.png', alt: 'Strategy Classes' },
+  { src: '/g/fkm1.png', alt: 'Freekaamaal' },
+  { src: '/g/fkm2.png', alt: 'Freekaamaal' },
+ 
+  { src: '/g/portfolio1.png', alt: 'Portfolio' },
+  { src: '/g/portfolio2.png', alt: 'Portfolio' },
+
+
 ];

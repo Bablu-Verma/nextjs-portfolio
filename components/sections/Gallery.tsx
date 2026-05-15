@@ -1,7 +1,7 @@
 'use client';
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
-import { useGalleryImages } from '@/lib/hooks/useApi';
+import { useGalleryImages } from '@/hooks/useApi';
 import { FadeIn } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';

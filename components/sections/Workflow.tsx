@@ -1,7 +1,7 @@
 'use client';
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
-import { useWorkflowSteps } from '@/lib/hooks/useApi';
+import { useWorkflowSteps } from '@/hooks/useApi';
 import { Search, Code, Palette, Rocket } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';

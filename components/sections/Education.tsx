@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
-import { useEducation } from '@/lib/hooks/useApi';
+import { useEducation } from '@/hooks/useApi';
 import { FadeIn } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
 import { Calendar, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';

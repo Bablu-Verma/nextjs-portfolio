@@ -1,7 +1,7 @@
 'use client';
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
-import { useGalleryImages } from '@/lib/hooks/useApi';
+import { useGalleryImages } from '@/hooks/useApi';
 import { GalleryCard } from '@/components/ui/GalleryCard';
 
 export default function GalleryPage() {

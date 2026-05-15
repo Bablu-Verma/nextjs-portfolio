@@ -2,7 +2,7 @@
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
 import { FadeIn } from '@/components/shared/Animations';
-import { useAbout } from '@/lib/hooks/useApi';
+import { useAbout } from '@/hooks/useApi';
 import { Loader2 } from 'lucide-react';
 
 export function About() {

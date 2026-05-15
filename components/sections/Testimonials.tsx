@@ -1,7 +1,7 @@
 'use client';
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
-import { useTestimonials } from '@/lib/hooks/useApi';
+import { useTestimonials } from '@/hooks/useApi';
 import { motion } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -37,7 +37,7 @@ export function Testimonials() {
         />
 
         <div className="max-w-6xl mx-auto relative">
-          <button className="swiper-prev absolute left-0 top-1/2 -translate-y-1/2 z-10
+          <button className="swiper-prev hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-20
             w-12 h-12 rounded-full glass border border-border
             flex items-center justify-center
             hover:border-primary hover:text-primary
@@ -47,7 +47,7 @@ export function Testimonials() {
             <ChevronLeft className="w-5 h-5" />
           </button>
 
-          <button className="swiper-next absolute right-0 top-1/2 -translate-y-1/2 z-10
+          <button className="swiper-next hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-20
             w-12 h-12 rounded-full glass border border-border
             flex items-center justify-center
             hover:border-primary hover:text-primary

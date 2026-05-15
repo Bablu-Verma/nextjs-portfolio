@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
-import { useFaqs } from '@/lib/hooks/useApi';
+import { useFaqs } from '@/hooks/useApi';
 import { FadeIn, StaggerContainer, staggerItem } from '@/components/shared/Animations';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';

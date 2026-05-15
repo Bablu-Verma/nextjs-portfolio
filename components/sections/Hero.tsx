@@ -24,7 +24,7 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative pt-24 min-h-screen flex items-center overflow-hidden"
     >
       {/* 🌈 Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
