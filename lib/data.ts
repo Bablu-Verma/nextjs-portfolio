@@ -9,6 +9,8 @@ import type {
   AboutData,
 } from '@/types';
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+
 export const projects: Project[] = [
   {
     id: '1',
@@ -16,7 +18,7 @@ export const projects: Project[] = [
     title: 'Woost.io',
     description: 'Freelancing & collaboration ecosystem',
     shortDescription: 'Real-time freelancing platform (Web + App)',
-    image: '/p/woost.png',
+    image: `${baseUrl}p/woost.png`,
     tags: ['React.js', 'TypeScript', 'Tailwind CSS'],
     overview:
       'Freelancing platform with real-time collaboration features across web and mobile.',
@@ -42,7 +44,7 @@ export const projects: Project[] = [
     title: 'Freekaamaal',
     description: 'Cashback & deals platform',
     shortDescription: 'SEO optimized deals platform',
-    image: '/p/freekaamaal.png',
+    image: `${baseUrl}p/freekaamaal.png`,
     tags: ['React.js', 'Next.js', 'TypeScript', 'SEO'],
     overview:
       'High traffic cashback platform optimized for SEO and performance.',
@@ -68,7 +70,7 @@ export const projects: Project[] = [
     title: 'BachatJar',
     description: 'Coupon & cashback aggregator',
     shortDescription: 'Fast deals platform with Redis caching',
-    image: 'https://media.licdn.com/dms/image/v2/D560BAQFnL_ppasbG5g/company-logo_200_200/B56Zc6_R_DG0AI-/0/1749041357267/bachat_jar_logo',
+    image: `${baseUrl}p/bachatjar.png`,
     tags: ['Next.js', 'MongoDB', 'Redis', 'SEO'],
     overview:
       'Deals aggregation platform with fast API response using caching.',
@@ -94,7 +96,7 @@ export const projects: Project[] = [
     title: 'Gaurastra',
     description: 'Full-stack e-commerce platform',
     shortDescription: 'E-commerce with PhonePe integration',
-    image: '/p/gaurastra.png',
+    image: `${baseUrl}p/gaurastra.png`,
     tags: ['Next.js', 'Node.js', 'MongoDB', 'PhonePe'],
     overview:
       'Modern Ayurvedic e-commerce platform with secure payments.',
@@ -120,7 +122,7 @@ export const projects: Project[] = [
     title: 'POS System',
     description: 'Offline-first billing system',
     shortDescription: 'Retail POS with offline sync',
-    image: '/p/gaurastra.png',
+    image: `${baseUrl}p/gaurastra.png`,
     tags: ['Node.js', 'MongoDB', 'Socket.io'],
     overview:
       'Retail billing system that works even without internet.',
@@ -146,7 +148,7 @@ export const projects: Project[] = [
     title: 'Strategy Classes',
     description: 'Online exam platform',
     shortDescription: 'High-scale LMS system',
-    image: '/p/strategy.png',
+    image: `${baseUrl}p/strategy.png`,
     tags: ['Node.js', 'PostgreSQL', 'React.js'],
     overview:
       'Learning management system handling large exam traffic.',
@@ -172,7 +174,7 @@ export const projects: Project[] = [
     title: 'Axio',
     description: 'Cross-platform mobile app',
     shortDescription: 'React Native mobile application',
-    image: 'https://your-axio-image-link.com/logo.png',
+    image: `${baseUrl}p/axio.png`,
     tags: ['React Native', 'Node.js', 'MongoDB'],
     overview:
       'Mobile app built for both Android & iOS using React Native.',
@@ -199,7 +201,7 @@ export const projects: Project[] = [
     title: 'Real-time Chat System',
     description: 'Scalable real-time messaging infrastructure',
     shortDescription: 'Socket.io chat app with Redis scaling',
-    image: '/p/cinch.png',
+    image: `${baseUrl}p/cinch.png`,
     tags: ['Node.js', 'Socket.io', 'Redis', 'MongoDB'],
     overview:
       'High-performance real-time chat application supporting concurrent users with horizontal scaling and WebSocket authentication.',
@@ -228,7 +230,7 @@ export const projects: Project[] = [
     title: 'Freekaamaal API',
     description: 'High traffic deals backend infrastructure',
     shortDescription: 'Scalable deals API with Redis caching',
-    image: '/p/freekaamaal.png',
+    image: `${baseUrl}p/freekaamaal.png`,
     tags: ['Node.js', 'Express.js', 'MongoDB', 'Redis', 'Socket.io'],
     overview:
       'Scalable backend infrastructure powering real-time deals and cashback systems with optimized APIs and caching.',
@@ -257,7 +259,7 @@ export const projects: Project[] = [
   description: 'Appointment & department management mobile application',
   shortDescription: 'React Native appointment management app',
   image:
-    '/p/cinch.png',
+    `${baseUrl}p/cinch.png`,
   tags: [
     'React Native',
     'Android',
@@ -660,21 +662,21 @@ export const workflowSteps: WorkflowStep[] = [
 ];
 
 export const galleryImages = [
-  { src: '/g/woost1.png', alt: 'Woost.io' },
-  { src: '/g/woost2.png', alt: 'Woost.io' },
-  { src: '/g/woost3.png', alt: 'Woost.io' },
-  { src: '/g/gaur1.png', alt: 'Gaurastra' },
-  { src: '/g/gaur2.png', alt: 'Gaurastra' },
+  { src: `${baseUrl}g/woost1.png`, alt: 'Woost.io' },
+  { src: `${baseUrl}g/woost2.png`, alt: 'Woost.io' },
+  { src: `${baseUrl}g/woost3.png`, alt: 'Woost.io' },
+  { src: `${baseUrl}g/gaur1.png`, alt: 'Gaurastra' },
+  { src: `${baseUrl}g/gaur2.png`, alt: 'Gaurastra' },
 
-  { src: '/g/cinch1.png', alt: 'CINCH' },
-  { src: '/g/cinch2.png', alt: 'CINCH' },
-  { src: '/g/class1.png', alt: 'Strategy Classes' },
-  { src: '/g/class2.png', alt: 'Strategy Classes' },
-  { src: '/g/fkm1.png', alt: 'Freekaamaal' },
-  { src: '/g/fkm2.png', alt: 'Freekaamaal' },
+  { src: `${baseUrl}g/cinch1.png`, alt: 'CINCH' },
+  { src: `${baseUrl}g/cinch2.png`, alt: 'CINCH' },
+  { src: `${baseUrl}g/class1.png`, alt: 'Strategy Classes' },
+  { src: `${baseUrl}g/class2.png`, alt: 'Strategy Classes' },
+  { src: `${baseUrl}g/fkm1.png`, alt: 'Freekaamaal' },
+  { src: `${baseUrl}g/fkm2.png`, alt: 'Freekaamaal' },
  
-  { src: '/g/portfolio1.png', alt: 'Portfolio' },
-  { src: '/g/portfolio2.png', alt: 'Portfolio' },
+  { src: `${baseUrl}g/portfolio1.png`, alt: 'Portfolio' },
+  { src: `${baseUrl}g/portfolio2.png`, alt: 'Portfolio' },
 
 
 ];
