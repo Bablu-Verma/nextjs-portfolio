@@ -9,7 +9,7 @@ import type {
   AboutData,
 } from '@/types';
 
-const baseUrl = '/'
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://bablu-verma.vercel.app/'
 
 export const projects: Project[] = [
 
