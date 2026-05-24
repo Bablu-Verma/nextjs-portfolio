@@ -9,289 +9,643 @@ import type {
   AboutData,
 } from '@/types';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+const baseUrl = '/'
 
 export const projects: Project[] = [
+
   {
     id: '1',
-    slug: 'woost-platform',
-    title: 'Woost.io',
-    description: 'Freelancing & collaboration ecosystem',
-    shortDescription: 'Real-time freelancing platform (Web + App)',
+    slug: 'woost-web',
+    title: 'Woost.io Web',
+    description: 'Freelancing & collaboration web platform',
+    shortDescription:
+      'Real-time freelancing platform for web users',
     image: `${baseUrl}p/woost.png`,
-    tags: ['React.js', 'TypeScript', 'Tailwind CSS'],
+    tags: [
+      'React.js',
+      'TypeScript',
+      'Redux',
+      'Tailwind CSS',
+      'Socket.io',
+    ],
+
     overview:
-      'Freelancing platform with real-time collaboration features across web and mobile.',
+      'Woost.io is a freelancing and collaboration ecosystem where freelancers and clients can manage projects, communicate in real time, and track work progress. I worked on the frontend architecture, dashboard systems, authentication modules, API integrations, and real-time collaboration features for the web platform.',
+
     challenges: [
-      'Handling real-time multi-user collaboration',
-      'Maintaining sync across platforms',
+      'Handling real-time collaboration between users',
+      'Managing scalable frontend architecture',
+      'Maintaining global application state',
+      'Optimizing dashboard rendering performance',
     ],
+
     solutions: [
-      'Used Socket.io for real-time updates',
-      'Redux for state consistency',
+      'Implemented Socket.io for real-time communication',
+      'Used Redux Toolkit for centralized state management',
+      'Created reusable scalable component architecture',
+      'Applied lazy loading and code splitting',
     ],
+
     results: [
-      '40% faster collaboration',
-      'Scaled to thousands of freelancers',
+      'Improved collaboration speed',
+      'Better frontend scalability',
+      'Optimized performance for large dashboards',
+      'Enhanced real-time user experience',
     ],
+
     liveUrl: 'https://woost.io/',
     featured: true,
   },
 
   {
     id: '2',
-    slug: 'freekaamaal-platform',
-    title: 'Freekaamaal',
-    description: 'Cashback & deals platform',
-    shortDescription: 'SEO optimized deals platform',
-    image: `${baseUrl}p/freekaamaal.png`,
-    tags: ['React.js', 'Next.js', 'TypeScript', 'SEO'],
+    slug: 'woost-mobile-app',
+    title: 'Woost.io Mobile App',
+    description: 'Cross-platform freelancing mobile application',
+    shortDescription:
+      'React Native app with real-time collaboration',
+    image: `${baseUrl}p/woost.png`,
+    tags: [
+      'React Native',
+      'Redux',
+      'Socket.io',
+      'Firebase',
+    ],
+
     overview:
-      'High traffic cashback platform optimized for SEO and performance.',
+      'Cross-platform mobile application for Woost.io built using React Native and Expo. The app enables freelancers and clients to communicate, manage projects, receive notifications, and collaborate in real time.',
+
     challenges: [
-      'Handling heavy traffic during sales',
-      'Maintaining SEO performance',
+      'Managing complex mobile navigation',
+      'Handling real-time socket communication',
+      'Maintaining app performance on low-end devices',
+      'Reliable push notification delivery',
     ],
+
     solutions: [
-      'Used SSR & ISR in Next.js',
-      'Optimized images and code splitting',
+      'Used Expo ecosystem for faster development',
+      'Integrated Socket.io for real-time communication',
+      'Implemented Firebase push notifications',
+      'Optimized rendering and API handling',
     ],
+
     results: [
-      '90+ Lighthouse score',
-      '25% increase in organic traffic',
+      'Smooth cross-platform experience',
+      'Reliable notification delivery',
+      'Improved user engagement',
+      'Stable real-time communication',
     ],
-    liveUrl: 'https://freekaamaal.com/',
+
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.woost&hl=en_IN',
     featured: true,
   },
 
   {
     id: '3',
-    slug: 'bachatjar-platform',
-    title: 'BachatJar',
-    description: 'Coupon & cashback aggregator',
-    shortDescription: 'Fast deals platform with Redis caching',
-    image: `${baseUrl}p/bachatjar.png`,
-    tags: ['Next.js', 'MongoDB', 'Redis', 'SEO'],
-    overview:
-      'Deals aggregation platform with fast API response using caching.',
-    challenges: [
-      'Handling large scraped data',
-      'Reducing API latency',
+    slug: 'freekaamaal-web',
+    title: 'Freekaamaal Web',
+    description: 'Cashback & deals platform',
+    shortDescription:
+      'SEO optimized deals and cashback platform',
+    image: `${baseUrl}p/freekaamaal.png`,
+    tags: [
+      'Next.js',
+      'React.js',
+      'TypeScript',
+      'SEO',
+      'SSR',
     ],
-    solutions: [
-      'Redis caching layer',
-      'Optimized backend microservices',
-    ],
-    results: [
-      'Response time reduced to 200ms',
-      'Better mobile UX',
-    ],
-    liveUrl: 'https://bachatjar.com',
-    featured: false,
-  },
 
-  {
-    id: '4',
-    slug: 'gaurastra-ecommerce',
-    title: 'Gaurastra',
-    description: 'Full-stack e-commerce platform',
-    shortDescription: 'E-commerce with PhonePe integration',
-    image: `${baseUrl}p/gaurastra.png`,
-    tags: ['Next.js', 'Node.js', 'MongoDB', 'PhonePe'],
     overview:
-      'Modern Ayurvedic e-commerce platform with secure payments.',
+      'Freekaamaal is a high-traffic cashback and coupon platform where users can discover deals and cashback offers from multiple brands. I worked on frontend development, SEO optimization, and performance improvements.',
+
     challenges: [
-      'Handling payment failures',
-      'Reliable order processing',
+      'Handling heavy traffic during sale events',
+      'Maintaining SEO rankings',
+      'Reducing page load times',
+      'Managing dynamic deal pages',
     ],
+
     solutions: [
-      'PhonePe integration with webhooks',
-      'Automated order reconciliation',
+      'Implemented SSR and ISR using Next.js',
+      'Optimized image loading and code splitting',
+      'Applied SEO best practices',
+      'Created scalable frontend architecture',
     ],
+
     results: [
-      '99.9% payment success rate',
-      '5000+ successful orders',
+      '90+ Lighthouse performance score',
+      'Improved Google indexing',
+      'Increased organic traffic',
+      'Better user experience during peak traffic',
     ],
-    liveUrl: 'https://www.gaurastra.com',
+
+    liveUrl: 'https://freekaamaal.com/',
     featured: true,
   },
 
   {
-    id: '5',
-    slug: 'pos-system',
-    title: 'POS System',
-    description: 'Offline-first billing system',
-    shortDescription: 'Retail POS with offline sync',
-    image: `${baseUrl}p/gaurastra.png`,
-    tags: ['Node.js', 'MongoDB', 'Socket.io'],
+    id: '4',
+    slug: 'freekaamaal-backend',
+    title: 'Freekaamaal Backend API',
+    description: 'Scalable deals backend infrastructure',
+    shortDescription:
+      'Node.js backend with Redis caching',
+    image: `${baseUrl}p/freekaamaal.png`,
+    tags: [
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'API',
+    ],
+
     overview:
-      'Retail billing system that works even without internet.',
+      'Backend infrastructure powering Freekaamaal cashback and deals ecosystem. I worked on scalable APIs, caching systems, database optimization, and third-party integrations.',
+
     challenges: [
-      'Offline data consistency',
-      'Sync after reconnect',
+      'Handling large API traffic',
+      'Reducing database query latency',
+      'Managing high concurrent requests',
+      'Maintaining server stability',
     ],
+
     solutions: [
-      'Local storage + sync engine',
-      'Background sync system',
+      'Implemented Redis caching layer',
+      'Optimized MongoDB indexing',
+      'Built scalable REST APIs',
+      'Added retry and queue handling system',
     ],
+
     results: [
-      'Zero downtime billing',
-      'Reliable offline operations',
+      'Handled 20K+ API requests daily',
+      'Reduced response time below 80ms',
+      'Maintained high backend uptime',
+      'Improved overall scalability',
     ],
-    liveUrl: 'https://test.gaurastra.com/offline/login',
+
+    liveUrl: 'https://freekaamaal.com/',
+    featured: true,
+  },
+  {
+    id: '14',
+    slug: 'freekaamaal-mobile-app',
+    title: 'Freekaamaal Mobile App',
+    description: 'Cashback & deals mobile application',
+    shortDescription:
+      'React Native cashback and coupon mobile app',
+    image: `${baseUrl}p/freekaamaal.png`,
+    tags: [
+      'React Native',
+      'Redux',
+      'Node.js',
+      'Firebase',
+      'REST API',
+    ],
+
+    overview:
+      'Freekaamaal Mobile App is a cross-platform cashback and deals application developed using React Native and Expo. The app allows users to browse deals, cashback offers, coupons, and shopping discounts from multiple brands with optimized performance and real-time updates.',
+
+    challenges: [
+      'Handling large dynamic deals data efficiently',
+      'Maintaining smooth app performance during heavy API loads',
+      'Optimizing mobile rendering for low-end devices',
+      'Managing scalable state across multiple screens',
+      'Implementing reliable push notification delivery',
+    ],
+
+    solutions: [
+      'Implemented Redux Toolkit for centralized state management',
+      'Optimized API handling with pagination and lazy loading',
+      'Used reusable component architecture for scalability',
+      'Integrated Firebase push notifications',
+      'Applied performance optimizations for list rendering',
+    ],
+
+    results: [
+      'Improved mobile user engagement',
+      'Smooth browsing experience across devices',
+      'Faster deals loading performance',
+      'Reliable notification delivery system',
+      'Enhanced mobile shopping experience',
+    ],
+
+    liveUrl:
+      'https://play.google.com/store/apps/details?id=com.freekaamaalapp',
+
+    featured: true,
+  },
+
+
+  {
+    id: '5',
+    slug: 'bachatjar-platform',
+    title: 'BachatJar',
+    description: 'Coupon & cashback aggregator',
+    shortDescription:
+      'Fast deals platform with Redis caching',
+    image: `${baseUrl}p/bachatjar_logo.png`,
+    tags: ['Next.js', 'MongoDB', 'Redis', 'SEO'],
+
+    overview:
+      'Deals aggregation platform optimized for speed and SEO with caching systems for fast API responses and better mobile experience.',
+
+    challenges: [
+      'Handling large scraped datasets',
+      'Reducing API response latency',
+      'Maintaining SEO optimization',
+    ],
+
+    solutions: [
+      'Implemented Redis caching',
+      'Optimized backend microservices',
+      'Improved query performance',
+    ],
+
+    results: [
+      'Reduced response time to 200ms',
+      'Improved mobile performance',
+      'Better SEO rankings',
+    ],
+
+    liveUrl: 'https://github.com/Bablu-Verma/bachatjar',
     featured: false,
   },
 
   {
     id: '6',
-    slug: 'strategy-classes',
-    title: 'Strategy Classes',
-    description: 'Online exam platform',
-    shortDescription: 'High-scale LMS system',
-    image: `${baseUrl}p/strategy.png`,
-    tags: ['Node.js', 'PostgreSQL', 'React.js'],
+    slug: 'gaurastra-ecommerce',
+    title: 'Gaurastra',
+    description: 'Full-stack e-commerce platform',
+    shortDescription:
+      'E-commerce platform with PhonePe integration',
+    image: `${baseUrl}p/gaurastra.png`,
+    tags: [
+      'Next.js',
+      'Node.js',
+      'MongoDB',
+      'PhonePe',
+    ],
+
     overview:
-      'Learning management system handling large exam traffic.',
+      'Modern Ayurvedic e-commerce platform with secure payment integration, order management, and scalable backend systems.',
+
     challenges: [
-      'Handling thousands of concurrent users',
-      'Server stability',
+      'Handling payment failures',
+      'Reliable order processing',
+      'Maintaining transaction consistency',
     ],
+
     solutions: [
-      'Optimized SQL queries',
-      'Load balancing with Nginx',
+      'Integrated PhonePe payment gateway',
+      'Implemented webhook verification',
+      'Automated order reconciliation',
     ],
+
     results: [
-      '10k+ concurrent users supported',
-      'Zero downtime during exams',
+      '99.9% payment success rate',
+      '5000+ successful orders',
+      'Reliable order management',
     ],
-    liveUrl: 'http://strategyclasses.in/',
-    featured: false,
+
+    liveUrl: 'https://www.gaurastra.com',
+    featured: true,
   },
 
   {
     id: '7',
-    slug: 'axio-app',
-    title: 'Axio',
-    description: 'Cross-platform mobile app',
-    shortDescription: 'React Native mobile application',
-    image: `${baseUrl}p/axio.png`,
-    tags: ['React Native', 'Node.js', 'MongoDB'],
+    slug: 'pos-system',
+    title: 'POS System',
+    description: 'Offline-first billing system',
+    shortDescription:
+      'Retail POS system with offline sync support',
+    image: `${baseUrl}p/gaurastra.png`,
+    tags: ['Node.js', 'MongoDB', 'Socket.io'],
+
     overview:
-      'Mobile app built for both Android & iOS using React Native.',
+      'Retail billing system designed to work even without internet connectivity with automatic sync after reconnect.',
+
     challenges: [
-      'Cross-platform performance',
-      'Consistent UI',
+      'Offline data consistency',
+      'Reliable synchronization after reconnect',
+      'Preventing duplicate billing',
     ],
+
     solutions: [
-      'Optimized component rendering',
-      'Efficient API integration',
+      'Built local storage sync engine',
+      'Implemented background synchronization',
+      'Added conflict resolution system',
     ],
+
     results: [
-      'Smooth cross-platform UX',
-      'Improved engagement',
+      'Zero downtime billing',
+      'Reliable offline operations',
+      'Improved billing stability',
     ],
-    liveUrl: '#',
+
+    liveUrl:
+      'https://test.gaurastra.com/offline/login',
     featured: false,
   },
-
 
   {
     id: '8',
-    slug: 'real-time-chat-system',
-    title: 'Real-time Chat System',
-    description: 'Scalable real-time messaging infrastructure',
-    shortDescription: 'Socket.io chat app with Redis scaling',
-    image: `${baseUrl}p/cinch.png`,
-    tags: ['Node.js', 'Socket.io', 'Redis', 'MongoDB'],
+    slug: 'strategy-classes-web',
+    title: 'Strategy Classes Web',
+    description: 'Online exam platform',
+    shortDescription:
+      'High-scale LMS and examination platform',
+    image: `${baseUrl}p/strategy.png`,
+    tags: [
+      'React.js',
+      'Node.js',
+      'PostgreSQL',
+    ],
+
     overview:
-      'High-performance real-time chat application supporting concurrent users with horizontal scaling and WebSocket authentication.',
+      'Online learning management system handling examinations, lectures, student dashboards, and high concurrent traffic.',
+
     challenges: [
-      'Handling concurrent socket connections',
-      'Maintaining real-time sync across instances',
-      'Reliable reconnection handling',
+      'Handling thousands of concurrent users',
+      'Maintaining server stability during exams',
+      'Managing large datasets',
     ],
+
     solutions: [
-      'Socket.io Redis adapter for horizontal scaling',
-      'JWT authentication during WebSocket handshake',
-      'Redis Pub/Sub for instant status synchronization',
+      'Optimized PostgreSQL queries',
+      'Implemented load balancing',
+      'Built scalable backend APIs',
     ],
+
     results: [
-      'Supported 500+ concurrent users',
-      'Instant real-time message delivery',
-      'Reliable auto reconnection system',
+      'Supported 10K+ concurrent users',
+      'Stable during examination traffic',
+      'Improved overall performance',
     ],
-    liveUrl: '#',
+
+    liveUrl: 'http://strategyclasses.in/',
+    featured: false,
+  },
+  {
+    id: '9',
+    slug: 'strategy-classes-mobile-app',
+    title: 'Strategy Classes Mobile App',
+    description: 'Mobile LMS application',
+    shortDescription:
+      'React Native LMS app with online exams',
+    image: `${baseUrl}p/strategy.png`,
+    tags: [
+      'React Native',
+      'Expo',
+      'Redux',
+      'Firebase',
+    ],
+
+    overview:
+      'Cross-platform mobile LMS application for online lectures, examinations, student performance tracking, and notifications.',
+
+    challenges: [
+      'Managing video streaming performance',
+      'Handling exam submission reliability',
+      'Maintaining app stability',
+    ],
+
+    solutions: [
+      'Optimized API and media loading',
+      'Implemented centralized state management',
+      'Added reliable exam submission flow',
+    ],
+
+    results: [
+      'Improved mobile learning experience',
+      'Better student engagement',
+      'Stable exam system',
+    ],
+
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.strategy&hl=en_IN',
     featured: false,
   },
 
   {
-    id: '9',
-    slug: 'freekaamaal-api-backend',
-    title: 'Freekaamaal API',
-    description: 'High traffic deals backend infrastructure',
-    shortDescription: 'Scalable deals API with Redis caching',
-    image: `${baseUrl}p/freekaamaal.png`,
-    tags: ['Node.js', 'Express.js', 'MongoDB', 'Redis', 'Socket.io'],
+    id: '10',
+    slug: 'strategy-classes-backend',
+    title: 'Strategy Classes Backend',
+    description: 'Backend infrastructure for LMS',
+    shortDescription:
+      'Scalable Node.js backend for examinations',
+    image: `${baseUrl}p/strategy.png`,
+    tags: [
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'Redis',
+    ],
+
     overview:
-      'Scalable backend infrastructure powering real-time deals and cashback systems with optimized APIs and caching.',
+      'Backend infrastructure handling online exams, authentication, analytics, attendance, and student management systems.',
+
     challenges: [
-      'Handling high API traffic',
-      'Reducing query latency',
-      'Managing third-party API rate limits',
+      'Handling heavy exam traffic',
+      'Preventing downtime during peak usage',
+      'Optimizing database-heavy reports',
     ],
+
     solutions: [
-      'Redis caching with TTL invalidation',
-      'MongoDB compound indexing',
-      'Request queue system with retry logic',
+      'Optimized PostgreSQL queries',
+      'Implemented Redis caching',
+      'Created modular scalable APIs',
     ],
+
     results: [
-      'Handled 20K+ daily API calls',
-      'Reduced query time from 800ms to <80ms',
-      'Maintained 99.5% uptime',
+      'Stable high-traffic backend',
+      'Faster report generation',
+      'Improved platform scalability',
     ],
-    liveUrl: 'https://freekaamaal.com/',
+
+    liveUrl: 'https://github.com/Bablu-Verma/tuners-projects/tree/main/strategyclasses-backend',
+    featured: false,
+  },
+
+  {
+    id: '16',
+    slug: 'ebay-listing-scraper-tool',
+    title: 'eBay Listing Scraper Tool',
+    description: 'Automated eBay product listing scraping tool',
+    shortDescription:
+      'JavaScript-based eBay scraping and listing extraction tool',
+    image: `${baseUrl}p/e-bay-scraper.jpg`,
+
+    tags: [
+      'JavaScript',
+      'Node.js',
+      'Web Scraping',
+      'Cheerio',
+      'Axios',
+      'REST API',
+    ],
+
+    overview:
+      'A custom JavaScript-based eBay scraping tool developed to extract product listings, pricing data, seller details, product URLs, and marketplace information from eBay search pages. The tool was designed for automated data collection, listing analysis, and marketplace monitoring with optimized scraping performance and structured data handling.',
+
+    challenges: [
+      'Handling dynamic eBay page structures',
+      'Preventing request blocking and rate limiting',
+      'Extracting structured data from inconsistent HTML',
+      'Managing pagination for large datasets',
+      'Maintaining scraper stability after DOM changes',
+    ],
+
+    solutions: [
+      'Used Axios for efficient HTTP requests',
+      'Implemented Cheerio for HTML parsing and extraction',
+      'Built reusable scraping utility functions',
+      'Added retry and error handling mechanisms',
+      'Implemented pagination handling for bulk scraping',
+    ],
+
+    results: [
+      'Automated large-scale listing extraction',
+      'Reduced manual marketplace research effort',
+      'Fast and structured product data collection',
+      'Reliable extraction of pricing and seller information',
+      'Improved scraping performance and stability',
+    ],
+
+    liveUrl:
+      'https://github.com/Bablu-Verma/ebay-scrape---listing',
+
+    featured: false,
+  },
+
+  {
+    id: '12',
+    slug: 'real-time-chat-system',
+    title: 'Real-time Chat System',
+    description:
+      'Scalable real-time messaging infrastructure',
+    shortDescription:
+      'Socket.io chat app with Redis scaling',
+    image: `${baseUrl}p/cinch.png`,
+    tags: [
+      'Node.js',
+      'Socket.io',
+      'Redis',
+      'MongoDB',
+    ],
+
+    overview:
+      'Scalable real-time messaging infrastructure supporting concurrent users with horizontal scaling and socket authentication.',
+
+    challenges: [
+      'Handling concurrent socket connections',
+      'Maintaining synchronization across servers',
+      'Reliable reconnection handling',
+    ],
+
+    solutions: [
+      'Implemented Socket.io Redis adapter',
+      'Used JWT socket authentication',
+      'Added Redis Pub/Sub synchronization',
+    ],
+
+    results: [
+      'Supported 500+ concurrent users',
+      'Reliable instant messaging',
+      'Stable reconnection handling',
+    ],
+
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.cinchoffline.ccm',
+    featured: false,
+  },
+  {
+    id: '13',
+    slug: 'cinch-ccm-mobile',
+    title: 'CINCH CCM Mobile',
+    description:
+      'Appointment & department management app',
+    shortDescription:
+      'React Native appointment management app',
+    image: `${baseUrl}p/cinch.png`,
+    tags: [
+      'React Native',
+      'Redux',
+      'Firebase',
+      'Socket.io',
+    ],
+
+    overview:
+      'Cross-platform appointment and department management mobile application with real-time communication and authentication features.',
+
+    challenges: [
+      'Managing complex mobile state',
+      'Reliable live chat implementation',
+      'Push notification handling',
+    ],
+
+    solutions: [
+      'Used Redux for centralized state',
+      'Integrated Socket.io live chat',
+      'Implemented Firebase notifications',
+    ],
+
+    results: [
+      'Smooth real-time communication',
+      'Reliable notifications',
+      'Optimized mobile experience',
+    ],
+
+    liveUrl:
+      'https://play.google.com/store/apps/details?id=com.cinchoffline.ccm',
     featured: true,
   },
   {
-  id: '10',
-  slug: 'cinch-ccm-mobile',
-  title: 'CINCH CCM Mobile',
-  description: 'Appointment & department management mobile application',
-  shortDescription: 'React Native appointment management app',
-  image:
-    `${baseUrl}p/cinch.png`,
-  tags: [
-    'React Native',
-    'Android',
-    'Redux',
-    'Firebase',
-    'Push Notifications',
-    'Socket.io',
-  ],
-  overview:
-    'Cross-platform appointment and department management mobile application built using React Native with real-time communication and authentication features.',
-  challenges: [
-    'Managing complex mobile state across screens',
-    'Implementing reliable real-time live chat',
-    'Handling push notifications across devices',
-    'Maintaining smooth mobile performance',
-  ],
-  solutions: [
-    'Used Redux for centralized state management',
-    'Integrated Socket.io for live chat functionality',
-    'Implemented Firebase push notifications',
-    'Added Google Login and mobile number authentication',
-  ],
-  results: [
-    'Smooth real-time communication experience',
-    'Improved appointment management workflow',
-    'Reliable cross-device notification delivery',
-    'Optimized mobile user experience',
-  ],
-  liveUrl:
-    'https://play.google.com/store/apps/details?id=com.cinchoffline.ccm',
-  featured: true,
-},
+    id: '15',
+    slug: 'portfolio-mobile-app',
+    title: 'Developer Portfolio Mobile App',
+    description: 'Personal portfolio mobile application',
+    shortDescription:
+      'Expo React Native portfolio application',
+    image: `${baseUrl}p/portfolio.png`,
+    tags: [
+      'React Native',
+      'Expo',
+      'TypeScript',
+      'Redux',
+      'NativeWind',
+      'React Navigation',
+    ],
+
+    overview:
+      'Cross-platform developer portfolio mobile application built using React Native and Expo to showcase projects, technical skills, experience, and achievements in a modern mobile interface. The application focuses on smooth navigation, responsive layouts, scalable architecture, and optimized mobile performance.',
+
+    challenges: [
+      'Designing a scalable mobile UI architecture',
+      'Maintaining smooth navigation between screens',
+      'Optimizing rendering performance on low-end devices',
+      'Creating reusable and maintainable components',
+      'Ensuring responsive layouts across multiple screen sizes',
+    ],
+
+    solutions: [
+      'Built using Expo ecosystem for faster development',
+      'Used TypeScript for scalable and maintainable codebase',
+      'Implemented reusable component architecture',
+      'Integrated React Navigation for structured navigation flow',
+      'Optimized rendering and screen loading performance',
+      'Used NativeWind/Tailwind styling for consistent UI design',
+    ],
+
+    results: [
+      'Smooth cross-platform mobile experience',
+      'Responsive UI across Android and iOS devices',
+      'Improved project showcase accessibility',
+      'Scalable and maintainable application structure',
+      'Fast and optimized mobile performance',
+    ],
+
+    liveUrl: 'https://bablu-verma.vercel.app/#apkInstall',
+
+    featured: true,
+  },
 ];
 
 export const experiences: Experience[] = [
@@ -376,6 +730,7 @@ export const experiences: Experience[] = [
     ],
     location: 'Noida, India',
   },
+
 ];
 
 export const aboutData: AboutData = {
@@ -674,7 +1029,7 @@ export const galleryImages = [
   { src: `${baseUrl}g/class2.png`, alt: 'Strategy Classes' },
   { src: `${baseUrl}g/fkm1.png`, alt: 'Freekaamaal' },
   { src: `${baseUrl}g/fkm2.png`, alt: 'Freekaamaal' },
- 
+
   { src: `${baseUrl}g/portfolio1.png`, alt: 'Portfolio' },
   { src: `${baseUrl}g/portfolio2.png`, alt: 'Portfolio' },
 

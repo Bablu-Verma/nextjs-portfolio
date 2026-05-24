@@ -29,8 +29,8 @@ export function Gallery() {
       <Container>
         <SectionHeader
           badge="Gallery"
-          title="Moments & Memories"
-          description="A glimpse into my work environment and collaborative moments"
+          title="Project Gallery"
+          description="Showcase of our completed projects and solutions"
         />
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
