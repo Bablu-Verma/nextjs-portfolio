@@ -114,7 +114,7 @@ export default function ClientProjectDetail({ project }: ProjectDetailProps) {
                   <div className="grid sm:grid-cols-3 gap-4">
                     {project.results.map((result, i) => (
                       <div key={i} className="p-4 rounded-xl glass">
-                        <p className="text-2xl font-bold font-heading gradient-text">{result}</p>
+                        <p className="text-md font-normal gradient-text">{result}</p>
                       </div>
                     ))}
                   </div>

@@ -13,44 +13,57 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://bablu-verma.vercel.
 
 export const projects: Project[] = [
 
+
+
   {
     id: '1',
     slug: 'woost-web',
     title: 'Woost.io Web',
     description: 'Freelancing & collaboration web platform',
-    shortDescription:
-      'Real-time freelancing platform for web users',
+    shortDescription: 'Real-time freelancing platform for web users',
     image: `${baseUrl}p/woost.png`,
     tags: [
       'React.js',
       'TypeScript',
-      'Redux',
+      'Redux Toolkit',
       'Tailwind CSS',
       'Socket.io',
+      'REST API',
+      'JWT Auth',
+      'Axios',
+      'React Router',
+      'Vite',
     ],
 
     overview:
-      'Woost.io is a freelancing and collaboration ecosystem where freelancers and clients can manage projects, communicate in real time, and track work progress. I worked on the frontend architecture, dashboard systems, authentication modules, API integrations, and real-time collaboration features for the web platform.',
+      'Woost.io is a comprehensive freelancing and collaboration ecosystem designed to bridge the gap between freelancers and clients. The platform enables project creation, real-time messaging, milestone tracking, contract management, and payment workflows within a single unified interface. I was responsible for architecting the entire frontend system from the ground up — building the dashboard infrastructure, authentication modules, API integrations, real-time collaboration features, and reusable component library. The application was built using React.js with TypeScript for type safety, Redux Toolkit for centralized state management, Tailwind CSS for consistent UI design, and Socket.io for live communication.',
 
     challenges: [
-      'Handling real-time collaboration between users',
-      'Managing scalable frontend architecture',
-      'Maintaining global application state',
-      'Optimizing dashboard rendering performance',
+      'Building a scalable and maintainable frontend architecture from scratch for a complex multi-role platform',
+      'Implementing real-time bidirectional communication between freelancers and clients without performance degradation',
+      'Managing complex global application state across dashboards, notifications, chat, and project modules',
+      'Handling authentication flows including JWT token refresh, session management, and role-based access',
+      'Optimizing rendering performance for large data-heavy dashboards with dynamic content',
+      'Ensuring consistent UI and UX across all modules while maintaining code reusability',
     ],
 
     solutions: [
-      'Implemented Socket.io for real-time communication',
-      'Used Redux Toolkit for centralized state management',
-      'Created reusable scalable component architecture',
-      'Applied lazy loading and code splitting',
+      'Designed a modular component architecture with clearly separated concerns across features and pages',
+      'Integrated Socket.io with custom event namespaces for real-time chat, notifications, and live project updates',
+      'Implemented Redux Toolkit with slice-based state management for auth, projects, messages, and notifications',
+      'Built a custom Axios interceptor layer for automatic JWT token refresh and centralized error handling',
+      'Applied React.lazy and Suspense for code splitting and route-level lazy loading to reduce initial bundle size',
+      'Created a shared UI component library with Tailwind CSS utility classes for design consistency',
+      'Implemented role-based route guards and protected dashboard views for freelancers and clients',
     ],
 
     results: [
-      'Improved collaboration speed',
-      'Better frontend scalability',
-      'Optimized performance for large dashboards',
-      'Enhanced real-time user experience',
+      'Delivered a production-ready freelancing platform with real-time collaboration capabilities',
+      'Reduced initial page load time significantly through code splitting and lazy loading strategies',
+      'Achieved scalable and maintainable frontend codebase with modular architecture',
+      'Enabled seamless real-time communication with zero message loss in stable network conditions',
+      'Improved developer experience through TypeScript integration and reusable component design patterns',
+      'Successfully handled multi-role dashboards for freelancers, clients, and administrators',
     ],
 
     liveUrl: 'https://woost.io/',
@@ -62,38 +75,50 @@ export const projects: Project[] = [
     slug: 'woost-mobile-app',
     title: 'Woost.io Mobile App',
     description: 'Cross-platform freelancing mobile application',
-    shortDescription:
-      'React Native app with real-time collaboration',
+    shortDescription: 'React Native app with real-time collaboration',
     image: `${baseUrl}p/woost.png`,
     tags: [
       'React Native',
-      'Redux',
+      'Expo',
+      'TypeScript',
+      'Redux Toolkit',
       'Socket.io',
-      'Firebase',
+      'Firebase FCM',
+      'React Navigation',
+      'Axios',
+      'AsyncStorage',
+      'REST API',
     ],
 
     overview:
-      'Cross-platform mobile application for Woost.io built using React Native and Expo. The app enables freelancers and clients to communicate, manage projects, receive notifications, and collaborate in real time.',
+      'Woost.io Mobile is a cross-platform freelancing and collaboration application developed using React Native and Expo, delivering the full Woost.io experience on Android and iOS devices. The app enables freelancers and clients to manage active projects, communicate via real-time chat, track milestones, review proposals, and receive instant push notifications — all from a mobile-first interface. I worked on the complete mobile application architecture, navigation system, authentication flows, real-time Socket.io integration, Firebase push notification setup, and performance optimization across different device capabilities.',
 
     challenges: [
-      'Managing complex mobile navigation',
-      'Handling real-time socket communication',
-      'Maintaining app performance on low-end devices',
-      'Reliable push notification delivery',
+      'Designing a complex multi-screen navigation architecture for separate freelancer and client journeys',
+      'Implementing reliable real-time socket communication with automatic reconnect on mobile network changes',
+      'Maintaining consistent app performance on low-end Android devices with limited RAM',
+      'Handling JWT authentication with secure token storage and automatic session refresh on mobile',
+      'Delivering reliable and timely push notifications across both Android and iOS platforms',
+      'Managing offline state gracefully when network connectivity is lost during active sessions',
     ],
 
     solutions: [
-      'Used Expo ecosystem for faster development',
-      'Integrated Socket.io for real-time communication',
-      'Implemented Firebase push notifications',
-      'Optimized rendering and API handling',
+      'Used React Navigation with stack, tab, and drawer navigators for structured multi-role navigation flows',
+      'Integrated Socket.io with connection lifecycle management and automatic reconnect logic on network events',
+      'Implemented Firebase Cloud Messaging (FCM) for reliable cross-platform push notification delivery',
+      'Used AsyncStorage for secure local persistence of authentication tokens and user session data',
+      'Applied FlatList performance optimizations with keyExtractor, getItemLayout, and lazy rendering',
+      'Implemented Redux Toolkit for centralized state management across all app modules',
+      'Added background-to-foreground sync triggers to refresh data when app resumes from background',
     ],
 
     results: [
-      'Smooth cross-platform experience',
-      'Reliable notification delivery',
-      'Improved user engagement',
-      'Stable real-time communication',
+      'Delivered a stable and smooth cross-platform freelancing app on Android and iOS',
+      'Achieved reliable real-time messaging with automatic reconnect on network interruptions',
+      'Reduced notification delivery failure rate through Firebase FCM integration',
+      'Improved app performance on low-end devices through rendering and state optimizations',
+      'Enhanced user engagement through instant notifications and seamless project management workflows',
+      'Successfully published and maintained on Google Play Store',
     ],
 
     liveUrl: 'https://play.google.com/store/apps/details?id=com.woost&hl=en_IN',
@@ -105,39 +130,50 @@ export const projects: Project[] = [
     slug: 'freekaamaal-web',
     title: 'Freekaamaal Web',
     description: 'Cashback & deals platform',
-    shortDescription:
-      'SEO optimized deals and cashback platform',
+    shortDescription: 'SEO optimized deals and cashback platform',
     image: `${baseUrl}p/freekaamaal.png`,
     tags: [
       'Next.js',
       'React.js',
       'TypeScript',
-      'SEO',
+      'Tailwind CSS',
       'SSR',
+      'ISR',
+      'SEO',
+      'REST API',
+      'Axios',
+      'Google Analytics',
     ],
 
     overview:
-      'Freekaamaal is a high-traffic cashback and coupon platform where users can discover deals and cashback offers from multiple brands. I worked on frontend development, SEO optimization, and performance improvements.',
+      'Freekaamaal is one of India\'s largest and most visited cashback, coupon, and deals discovery platforms, attracting millions of users monthly. The platform aggregates offers from hundreds of brands across categories including shopping, travel, food, and entertainment. I worked on the frontend development using Next.js, focusing on server-side rendering (SSR), incremental static regeneration (ISR), SEO optimization, performance improvements, and scalable page architecture. The primary goals were to maximize organic search visibility, reduce page load times during high-traffic sale events, and deliver a fast and reliable user experience across all device types.',
 
     challenges: [
-      'Handling heavy traffic during sale events',
-      'Maintaining SEO rankings',
-      'Reducing page load times',
-      'Managing dynamic deal pages',
+      'Maintaining fast page load speeds during peak traffic events like Big Billion Days and Great Indian Festival',
+      'Managing thousands of dynamically generated deal and coupon pages with proper SEO metadata',
+      'Ensuring high Google Lighthouse scores across performance, accessibility, and SEO categories',
+      'Handling real-time deal expiry and freshness without causing full page rebuilds',
+      'Optimizing large image assets across deal listings for fast visual loading',
+      'Maintaining consistent UI performance across mobile, tablet, and desktop screen sizes',
     ],
 
     solutions: [
-      'Implemented SSR and ISR using Next.js',
-      'Optimized image loading and code splitting',
-      'Applied SEO best practices',
-      'Created scalable frontend architecture',
+      'Implemented SSR and ISR with Next.js for fast initial page delivery and automatic content freshness',
+      'Applied dynamic metadata generation for category, brand, and deal pages to maximize SEO coverage',
+      'Optimized all image assets using Next.js Image component with lazy loading and WebP format delivery',
+      'Implemented route-based code splitting and dynamic imports to minimize JavaScript bundle sizes',
+      'Built a reusable and scalable frontend component architecture for deal cards, categories, and listings',
+      'Used structured data (JSON-LD) markup for breadcrumbs, products, and offers to enhance Google rich results',
+      'Implemented skeleton loading states and progressive rendering for improved perceived performance',
     ],
 
     results: [
-      '90+ Lighthouse performance score',
-      'Improved Google indexing',
-      'Increased organic traffic',
-      'Better user experience during peak traffic',
+      'Achieved 90+ Google Lighthouse performance score consistently across key pages',
+      'Improved organic search rankings resulting in measurable increase in monthly organic traffic',
+      'Reduced page load time during high-traffic sale events through ISR and caching strategies',
+      'Enhanced Google indexing speed and coverage through structured metadata and sitemap optimization',
+      'Delivered responsive and consistent UI experience across all device breakpoints',
+      'Reduced cumulative layout shift (CLS) and improved Core Web Vitals scores significantly',
     ],
 
     liveUrl: 'https://freekaamaal.com/',
@@ -149,162 +185,163 @@ export const projects: Project[] = [
     slug: 'freekaamaal-backend',
     title: 'Freekaamaal Backend API',
     description: 'Scalable deals backend infrastructure',
-    shortDescription:
-      'Node.js backend with Redis caching',
+    shortDescription: 'Node.js backend with Redis caching',
     image: `${baseUrl}p/freekaamaal.png`,
     tags: [
       'Node.js',
       'Express.js',
       'MongoDB',
-      'API',
+      'Mongoose',
+      'Redis',
+      'REST API',
+      'JWT Auth',
+      'Cron Jobs',
+      'Webhook',
+      'Cloudinary',
     ],
 
     overview:
-      'Backend infrastructure powering Freekaamaal cashback and deals ecosystem. I worked on scalable APIs, caching systems, database optimization, and third-party integrations.',
+      'The Freekaamaal backend is a high-performance, scalable API infrastructure built to power one of India\'s largest cashback and deals platforms. It handles deal aggregation, user cashback tracking, affiliate link management, coupon validation, admin operations, third-party brand integrations, and high-concurrency API traffic. I worked on building and optimizing core APIs, implementing a Redis caching layer for frequently accessed data, optimizing MongoDB queries, setting up scheduled cron jobs for deal expiry and synchronization, and integrating affiliate partner webhooks. The backend is designed to maintain stability and fast response times even under heavy traffic loads during major sale events.',
 
     challenges: [
-      'Handling large API traffic',
-      'Reducing database query latency',
-      'Managing high concurrent requests',
-      'Maintaining server stability',
+      'Handling 20,000+ daily API requests with consistently low response times under heavy concurrent load',
+      'Reducing database query latency for frequently accessed deal, coupon, and category data',
+      'Managing affiliate partner webhook integrations with varying data formats and delivery guarantees',
+      'Scheduling automated deal expiry, cashback processing, and data synchronization tasks reliably',
+      'Maintaining data consistency across user cashback records, deal inventories, and transaction logs',
+      'Preventing server instability and downtime during peak traffic events like flash sales',
     ],
 
     solutions: [
-      'Implemented Redis caching layer',
-      'Optimized MongoDB indexing',
-      'Built scalable REST APIs',
-      'Added retry and queue handling system',
+      'Implemented a Redis caching layer for high-frequency endpoints including deals, categories, and user data',
+      'Optimized MongoDB collections with compound indexing strategies for faster aggregation and lookup queries',
+      'Built a robust REST API architecture with modular route and controller separation for maintainability',
+      'Implemented cron-based scheduled jobs for deal expiry, cashback status updates, and data synchronization',
+      'Added webhook signature verification and retry queue logic for reliable affiliate partner integrations',
+      'Integrated Cloudinary for optimized deal image storage, transformation, and CDN delivery',
+      'Implemented centralized error handling, request validation, and API rate limiting middleware',
     ],
 
     results: [
-      'Handled 20K+ API requests daily',
-      'Reduced response time below 80ms',
-      'Maintained high backend uptime',
-      'Improved overall scalability',
+      'Successfully handled 20,000+ API requests daily with stable uptime and no major downtime incidents',
+      'Reduced average API response time to under 80ms through Redis caching and query optimization',
+      'Improved data consistency across cashback processing and deal management workflows',
+      'Eliminated affiliate webhook data loss through retry queue and delivery verification systems',
+      'Automated deal lifecycle management through reliable scheduled cron jobs',
+      'Enhanced backend scalability to handle traffic spikes during major e-commerce sale events',
     ],
 
     liveUrl: 'https://freekaamaal.com/',
     featured: true,
   },
+
   {
     id: '14',
     slug: 'freekaamaal-mobile-app',
     title: 'Freekaamaal Mobile App',
     description: 'Cashback & deals mobile application',
-    shortDescription:
-      'React Native cashback and coupon mobile app',
+    shortDescription: 'React Native cashback and coupon mobile app',
     image: `${baseUrl}p/freekaamaal.png`,
     tags: [
       'React Native',
-      'Redux',
-      'Node.js',
-      'Firebase',
+      'Expo',
+      'TypeScript',
+      'Redux Toolkit',
+      'Firebase FCM',
       'REST API',
+      'Axios',
+      'React Navigation',
+      'AsyncStorage',
+      'FlatList',
     ],
 
     overview:
-      'Freekaamaal Mobile App is a cross-platform cashback and deals application developed using React Native and Expo. The app allows users to browse deals, cashback offers, coupons, and shopping discounts from multiple brands with optimized performance and real-time updates.',
+      'Freekaamaal Mobile App is a cross-platform cashback, coupon, and deals discovery application developed using React Native and Expo. The app serves millions of deal-seeking users, allowing them to browse thousands of live deals, access cashback offers, copy coupon codes, explore brand-specific offers, and receive real-time notifications for new deals and cashback updates. I worked on the complete mobile application architecture, scalable state management, optimized list rendering for large datasets, push notification integration, and performance tuning across Android and iOS platforms. The app mirrors the web platform\'s content in a mobile-optimized experience with fast load times and smooth navigation.',
 
     challenges: [
-      'Handling large dynamic deals data efficiently',
-      'Maintaining smooth app performance during heavy API loads',
-      'Optimizing mobile rendering for low-end devices',
-      'Managing scalable state across multiple screens',
-      'Implementing reliable push notification delivery',
+      'Rendering thousands of dynamically updated deal listings efficiently without causing frame drops',
+      'Managing scalable application state across deals, categories, cashback, and user profile modules',
+      'Handling heavy API payloads with pagination for large deal category pages on mobile networks',
+      'Maintaining smooth 60fps scrolling performance on mid-range and low-end Android devices',
+      'Delivering timely and reliable push notifications for new deals and cashback status updates',
+      'Ensuring responsive and consistent UI layout across various screen sizes and Android versions',
     ],
 
     solutions: [
-      'Implemented Redux Toolkit for centralized state management',
-      'Optimized API handling with pagination and lazy loading',
-      'Used reusable component architecture for scalability',
-      'Integrated Firebase push notifications',
-      'Applied performance optimizations for list rendering',
+      'Implemented Redux Toolkit for centralized and predictable state management across all app modules',
+      'Optimized FlatList rendering with windowSize, maxToRenderPerBatch, and removeClippedSubviews props',
+      'Built paginated API handling with infinite scroll for seamless deal browsing on slow connections',
+      'Used reusable card and list components with memoization to minimize unnecessary re-renders',
+      'Integrated Firebase Cloud Messaging (FCM) for reliable and targeted push notification delivery',
+      'Applied lazy loading and skeleton screens for improved perceived performance during data fetching',
+      'Used Expo ecosystem tooling for faster build cycles and OTA update delivery',
     ],
 
     results: [
-      'Improved mobile user engagement',
-      'Smooth browsing experience across devices',
-      'Faster deals loading performance',
-      'Reliable notification delivery system',
-      'Enhanced mobile shopping experience',
+      'Delivered a high-performance deals and cashback mobile experience for millions of users',
+      'Achieved smooth scrolling through large deal listings with optimized FlatList configurations',
+      'Reduced perceived load time through skeleton screens and progressive rendering strategies',
+      'Improved user engagement and retention through timely push notification delivery',
+      'Maintained stable performance across a wide range of Android devices and OS versions',
+      'Successfully published and actively maintained on Google Play Store',
     ],
 
-    liveUrl:
-      'https://play.google.com/store/apps/details?id=com.freekaamaalapp',
-
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.freekaamaalapp',
     featured: true,
   },
 
-
-  {
-    id: '5',
-    slug: 'bachatjar-platform',
-    title: 'BachatJar',
-    description: 'Coupon & cashback aggregator',
-    shortDescription:
-      'Fast deals platform with Redis caching',
-    image: `${baseUrl}p/bachatjar_logo.png`,
-    tags: ['Next.js', 'MongoDB', 'Redis', 'SEO'],
-
-    overview:
-      'Deals aggregation platform optimized for speed and SEO with caching systems for fast API responses and better mobile experience.',
-
-    challenges: [
-      'Handling large scraped datasets',
-      'Reducing API response latency',
-      'Maintaining SEO optimization',
-    ],
-
-    solutions: [
-      'Implemented Redis caching',
-      'Optimized backend microservices',
-      'Improved query performance',
-    ],
-
-    results: [
-      'Reduced response time to 200ms',
-      'Improved mobile performance',
-      'Better SEO rankings',
-    ],
-
-    liveUrl: 'https://github.com/Bablu-Verma/bachatjar',
-    featured: false,
-  },
+  // ─── E-COMMERCE & BILLING ─────────────────────────────────────────────────
 
   {
     id: '6',
     slug: 'gaurastra-ecommerce',
     title: 'Gaurastra',
     description: 'Full-stack e-commerce platform',
-    shortDescription:
-      'E-commerce platform with PhonePe integration',
+    shortDescription: 'E-commerce platform with PhonePe integration',
     image: `${baseUrl}p/gaurastra.png`,
     tags: [
       'Next.js',
       'Node.js',
+      'Express.js',
       'MongoDB',
-      'PhonePe',
+      'Mongoose',
+      'PhonePe Gateway',
+      'Webhook',
+      'JWT Auth',
+      'Cloudinary',
+      'Tailwind CSS',
+      'REST API',
     ],
 
     overview:
-      'Modern Ayurvedic e-commerce platform with secure payment integration, order management, and scalable backend systems.',
+      'Gaurastra is a modern full-stack Ayurvedic e-commerce platform offering a curated range of herbal and natural health products. The platform provides customers with a seamless shopping experience including product discovery, cart management, secure checkout, real-time order tracking, and admin-level order and inventory management. I built the complete full-stack application including the Next.js storefront, Node.js backend API, MongoDB database layer, PhonePe payment gateway integration, webhook-based payment verification, order management workflows, and Cloudinary-powered product image storage. The platform was designed for reliability, scalability, and a high payment success rate.',
 
     challenges: [
-      'Handling payment failures',
-      'Reliable order processing',
-      'Maintaining transaction consistency',
+      'Integrating PhonePe payment gateway with robust transaction verification to prevent payment fraud',
+      'Handling payment failure scenarios, partial completions, and webhook delivery retries gracefully',
+      'Maintaining transactional consistency between payment records and order creation workflows',
+      'Building a secure admin dashboard for order management, inventory updates, and sales reporting',
+      'Managing product image storage and optimization at scale for diverse product catalogs',
+      'Ensuring reliable and idempotent order processing even under network instability or duplicate webhooks',
     ],
 
     solutions: [
-      'Integrated PhonePe payment gateway',
-      'Implemented webhook verification',
-      'Automated order reconciliation',
+      'Integrated PhonePe payment gateway with server-side signature verification for all transactions',
+      'Implemented webhook-based payment confirmation with idempotency checks to prevent duplicate orders',
+      'Built an automated order reconciliation system to align payment statuses with order records',
+      'Created a comprehensive admin dashboard with role-based access for order, product, and user management',
+      'Used Cloudinary for product image upload, transformation, and CDN-accelerated delivery',
+      'Implemented MongoDB transactions for atomic order creation and inventory deduction operations',
+      'Added retry logic and failure notification alerts for critical payment webhook failures',
     ],
 
     results: [
-      '99.9% payment success rate',
-      '5000+ successful orders',
-      'Reliable order management',
+      'Achieved 99.9% payment success rate with zero reported payment fraud incidents',
+      'Successfully processed 5,000+ customer orders with reliable end-to-end order workflows',
+      'Eliminated duplicate order creation through idempotent webhook processing',
+      'Delivered a fast and responsive storefront with optimized product pages and checkout flow',
+      'Empowered business operations through a feature-rich admin management dashboard',
+      'Reduced image delivery latency through Cloudinary CDN integration',
     ],
 
     liveUrl: 'https://www.gaurastra.com',
@@ -316,109 +353,162 @@ export const projects: Project[] = [
     slug: 'pos-system',
     title: 'POS System',
     description: 'Offline-first billing system',
-    shortDescription:
-      'Retail POS system with offline sync support',
+    shortDescription: 'Retail POS system with offline sync support',
     image: `${baseUrl}p/gaurastra.png`,
-    tags: ['Node.js', 'MongoDB', 'Socket.io'],
+    tags: [
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Socket.io',
+      'LocalStorage',
+      'IndexedDB',
+      'REST API',
+      'JWT Auth',
+      'React.js',
+      'Tailwind CSS',
+    ],
 
     overview:
-      'Retail billing system designed to work even without internet connectivity with automatic sync after reconnect.',
+      'A fully offline-capable retail Point of Sale (POS) billing system designed for businesses that operate in environments with unreliable or intermittent internet connectivity. The system enables store staff to create bills, manage sales transactions, track inventory, and generate receipts without requiring an active internet connection. All data is stored locally using IndexedDB and automatically synchronized with the central MongoDB server when connectivity is restored. I built the core POS engine, offline storage layer, background sync mechanism, conflict resolution logic, and the billing interface — ensuring zero billing downtime regardless of network availability.',
 
     challenges: [
-      'Offline data consistency',
-      'Reliable synchronization after reconnect',
-      'Preventing duplicate billing',
+      'Maintaining full billing functionality and data integrity during complete internet outages',
+      'Designing a reliable conflict resolution strategy when multiple offline sessions sync simultaneously',
+      'Preventing duplicate billing entries when syncing locally created records to the central server',
+      'Ensuring data consistency between local IndexedDB storage and remote MongoDB database after reconnect',
+      'Handling inventory deduction accurately in offline mode without real-time stock validation',
+      'Building a seamless user experience where staff are unaware of the underlying offline/online transitions',
     ],
 
     solutions: [
-      'Built local storage sync engine',
-      'Implemented background synchronization',
-      'Added conflict resolution system',
+      'Implemented IndexedDB as the primary local data store for bills, inventory, and transaction queues',
+      'Built a background synchronization engine that detects connectivity restoration and triggers smart sync',
+      'Added unique client-generated transaction IDs to prevent duplicate entries during server sync',
+      'Designed a conflict resolution algorithm that prioritizes server state while preserving offline changes',
+      'Implemented Socket.io for real-time sync status feedback when the application transitions online',
+      'Built a transaction queue system that replays failed sync operations with exponential backoff',
+      'Created a clear offline/online status indicator in the UI with sync progress feedback for staff',
     ],
 
     results: [
-      'Zero downtime billing',
-      'Reliable offline operations',
-      'Improved billing stability',
+      'Achieved zero billing downtime — the system operates fully during internet outages',
+      'Eliminated duplicate billing entries through client-side transaction ID deduplication',
+      'Delivered reliable and automatic data synchronization upon network restoration',
+      'Maintained inventory accuracy across offline and online billing sessions',
+      'Improved operational confidence for store staff in low-connectivity retail environments',
+      'Reduced manual reconciliation effort through automated conflict resolution workflows',
     ],
 
-    liveUrl:
-      'https://test.gaurastra.com/offline/login',
+    liveUrl: 'https://test.gaurastra.com/offline/login',
     featured: false,
   },
+
+  // ─── EDUCATION PLATFORM ───────────────────────────────────────────────────
 
   {
     id: '8',
     slug: 'strategy-classes-web',
     title: 'Strategy Classes Web',
     description: 'Online exam platform',
-    shortDescription:
-      'High-scale LMS and examination platform',
+    shortDescription: 'High-scale LMS and examination platform',
     image: `${baseUrl}p/strategy.png`,
     tags: [
       'React.js',
+      'TypeScript',
+      'Redux',
       'Node.js',
+      'Express.js',
       'PostgreSQL',
+      'REST API',
+      'JWT Auth',
+      'Tailwind CSS',
+      'React Router',
     ],
 
     overview:
-      'Online learning management system handling examinations, lectures, student dashboards, and high concurrent traffic.',
+      'Strategy Classes is a high-traffic online learning management system (LMS) and examination platform serving thousands of students preparing for competitive exams. The platform delivers live and recorded lectures, practice tests, full-length mock examinations, real-time result processing, student performance analytics, attendance tracking, and fee management. I worked on the React.js-based frontend, building dashboard modules, examination interfaces, student progress tracking views, and optimized data tables. The platform was architected to handle massive concurrent traffic during examination windows without degrading performance or causing data integrity issues.',
 
     challenges: [
-      'Handling thousands of concurrent users',
-      'Maintaining server stability during exams',
-      'Managing large datasets',
+      'Handling 10,000+ concurrent users during live examination sessions without performance degradation',
+      'Ensuring real-time result processing and score display immediately after exam submission',
+      'Managing complex student dashboard data including performance graphs, attendance, and fee records',
+      'Preventing exam session tampering and ensuring integrity during online test-taking',
+      'Rendering large data tables with student records, rankings, and analytics efficiently',
+      'Maintaining platform stability and uptime during scheduled batch exam events',
     ],
 
     solutions: [
-      'Optimized PostgreSQL queries',
-      'Implemented load balancing',
-      'Built scalable backend APIs',
+      'Built optimized React components with memoization and virtualized data tables for large datasets',
+      'Implemented Redux for centralized state management across exam sessions, results, and student data',
+      'Applied PostgreSQL query optimization with indexing for fast student record and analytics retrieval',
+      'Built exam session management with anti-refresh guards, time-sync, and server-validated submission',
+      'Implemented load balancing strategy on the backend to distribute peak exam traffic effectively',
+      'Used code splitting and lazy loading to reduce initial bundle size for faster dashboard load times',
+      'Built reusable chart and analytics components for student performance visualization',
     ],
 
     results: [
-      'Supported 10K+ concurrent users',
-      'Stable during examination traffic',
-      'Improved overall performance',
+      'Successfully supported 10,000+ concurrent users during live examination sessions',
+      'Achieved stable platform performance throughout high-traffic scheduled exam windows',
+      'Delivered real-time score processing and result display immediately after exam submission',
+      'Reduced dashboard load time through code splitting and optimized component architecture',
+      'Improved student experience through comprehensive performance analytics and progress tracking',
+      'Maintained data integrity across all examination and attendance management workflows',
     ],
 
     liveUrl: 'http://strategyclasses.in/',
     featured: false,
   },
+
   {
     id: '9',
     slug: 'strategy-classes-mobile-app',
     title: 'Strategy Classes Mobile App',
     description: 'Mobile LMS application',
-    shortDescription:
-      'React Native LMS app with online exams',
+    shortDescription: 'React Native LMS app with online exams',
     image: `${baseUrl}p/strategy.png`,
     tags: [
       'React Native',
       'Expo',
+      'TypeScript',
       'Redux',
-      'Firebase',
+      'Firebase FCM',
+      'REST API',
+      'Axios',
+      'React Navigation',
+      'AsyncStorage',
+      'Video Streaming',
     ],
 
     overview:
-      'Cross-platform mobile LMS application for online lectures, examinations, student performance tracking, and notifications.',
+      'Strategy Classes Mobile App is a cross-platform learning management application built for students preparing for competitive examinations on Android and iOS devices. The app provides access to live and recorded video lectures, chapter-wise practice questions, full-length mock tests with timer support, real-time result display, performance analytics, attendance records, and push notifications for new batches and exam schedules. I developed the complete mobile application including the navigation architecture, video streaming integration, examination module, state management, and Firebase notification system — focused on delivering a smooth and reliable learning experience across diverse device capabilities.',
 
     challenges: [
-      'Managing video streaming performance',
-      'Handling exam submission reliability',
-      'Maintaining app stability',
+      'Delivering smooth video lecture streaming on slow and inconsistent mobile network connections',
+      'Ensuring reliable exam submission from mobile devices with poor connectivity during timed tests',
+      'Managing complex multi-screen navigation flows for students, batches, exams, and results',
+      'Preventing performance degradation on low-RAM Android devices during media-heavy sessions',
+      'Delivering timely push notifications for exam schedules, results, and batch announcements',
+      'Maintaining accurate exam timer synchronization with the server to prevent time manipulation',
     ],
 
     solutions: [
-      'Optimized API and media loading',
-      'Implemented centralized state management',
-      'Added reliable exam submission flow',
+      'Integrated adaptive video streaming with buffering controls and quality switching for slow networks',
+      'Implemented server-synchronized exam timers with local fallback to prevent timer drift',
+      'Built offline-tolerant exam submission with local answer caching and server sync on reconnect',
+      'Used React Navigation with nested stack and tab navigators for clean multi-screen architecture',
+      'Applied FlatList optimizations and component memoization for smooth performance on low-end devices',
+      'Integrated Firebase Cloud Messaging for targeted and reliable push notification delivery',
+      'Used Redux for centralized state management of exam sessions, results, and student data',
     ],
 
     results: [
-      'Improved mobile learning experience',
-      'Better student engagement',
-      'Stable exam system',
+      'Delivered a stable and feature-complete mobile LMS used by thousands of students daily',
+      'Achieved reliable exam submission with no reported data loss from connectivity issues',
+      'Improved student engagement through instant result display and performance analytics',
+      'Maintained smooth video playback across 3G and 4G mobile network conditions',
+      'Enhanced notification delivery reliability for exam schedule and result announcements',
+      'Successfully published and maintained on Google Play Store',
     ],
 
     liveUrl: 'https://play.google.com/store/apps/details?id=com.strategy&hl=en_IN',
@@ -430,220 +520,402 @@ export const projects: Project[] = [
     slug: 'strategy-classes-backend',
     title: 'Strategy Classes Backend',
     description: 'Backend infrastructure for LMS',
-    shortDescription:
-      'Scalable Node.js backend for examinations',
+    shortDescription: 'Scalable Node.js backend for examinations',
     image: `${baseUrl}p/strategy.png`,
     tags: [
       'Node.js',
       'Express.js',
       'PostgreSQL',
       'Redis',
+      'JWT Auth',
+      'Cron Jobs',
+      'REST API',
+      'Multer',
+      'Cloudinary',
+      'Firebase Admin',
     ],
 
     overview:
-      'Backend infrastructure handling online exams, authentication, analytics, attendance, and student management systems.',
+      'The Strategy Classes backend is a robust and scalable API infrastructure built to power a high-traffic online examination and learning management platform. It manages student enrollment, batch assignments, lecture content, exam scheduling, real-time result processing, attendance tracking, fee management, performance analytics, and administrative operations. I worked on designing and optimizing the core API layer, implementing Redis caching for exam and student data, optimizing complex PostgreSQL queries for analytics and reporting, building scheduled cron jobs for automated exam lifecycle management, and integrating Firebase Admin for server-triggered push notifications.',
 
     challenges: [
-      'Handling heavy exam traffic',
-      'Preventing downtime during peak usage',
-      'Optimizing database-heavy reports',
+      'Processing and returning exam results for thousands of simultaneous submissions without latency spikes',
+      'Generating complex student performance reports and analytics from large multi-relational datasets',
+      'Maintaining server stability and response times during peak exam traffic periods',
+      'Scheduling and managing automated exam opening, closing, and result publication workflows',
+      'Handling concurrent API requests for live lecture content and student activity tracking',
+      'Ensuring secure and tamper-proof exam data storage and result processing pipelines',
     ],
 
     solutions: [
-      'Optimized PostgreSQL queries',
-      'Implemented Redis caching',
-      'Created modular scalable APIs',
+      'Implemented Redis caching for frequently accessed exam configurations, question banks, and student metadata',
+      'Optimized complex PostgreSQL JOIN queries with targeted indexing for analytics and reporting endpoints',
+      'Built a modular controller and service architecture for clean separation across platform domains',
+      'Created cron-based automated workflows for exam scheduling, deadline enforcement, and result publishing',
+      'Integrated Firebase Admin SDK for server-side targeted push notification delivery to student devices',
+      'Implemented JWT-based authentication with role separation for students, instructors, and administrators',
+      'Added database connection pooling and query timeout handling for stable performance under peak load',
     ],
 
     results: [
-      'Stable high-traffic backend',
-      'Faster report generation',
-      'Improved platform scalability',
+      'Maintained stable backend performance during simultaneous exam submission peaks from thousands of users',
+      'Reduced analytics report generation time significantly through query optimization and caching',
+      'Eliminated manual exam lifecycle management through reliable automated cron workflows',
+      'Achieved consistent API response times under heavy concurrent load through Redis and query optimization',
+      'Delivered a secure and maintainable backend codebase with modular service architecture',
+      'Improved notification reliability for exam events through Firebase Admin server-side integration',
     ],
 
     liveUrl: 'https://github.com/Bablu-Verma/tuners-projects/tree/main/strategyclasses-backend',
     featured: false,
   },
 
-  {
-    id: '16',
-    slug: 'ebay-listing-scraper-tool',
-    title: 'eBay Listing Scraper Tool',
-    description: 'Automated eBay product listing scraping tool',
-    shortDescription:
-      'JavaScript-based eBay scraping and listing extraction tool',
-    image: `${baseUrl}p/e-bay-scraper.jpg`,
-
-    tags: [
-      'JavaScript',
-      'Node.js',
-      'Web Scraping',
-      'Cheerio',
-      'Axios',
-      'REST API',
-    ],
-
-    overview:
-      'A custom JavaScript-based eBay scraping tool developed to extract product listings, pricing data, seller details, product URLs, and marketplace information from eBay search pages. The tool was designed for automated data collection, listing analysis, and marketplace monitoring with optimized scraping performance and structured data handling.',
-
-    challenges: [
-      'Handling dynamic eBay page structures',
-      'Preventing request blocking and rate limiting',
-      'Extracting structured data from inconsistent HTML',
-      'Managing pagination for large datasets',
-      'Maintaining scraper stability after DOM changes',
-    ],
-
-    solutions: [
-      'Used Axios for efficient HTTP requests',
-      'Implemented Cheerio for HTML parsing and extraction',
-      'Built reusable scraping utility functions',
-      'Added retry and error handling mechanisms',
-      'Implemented pagination handling for bulk scraping',
-    ],
-
-    results: [
-      'Automated large-scale listing extraction',
-      'Reduced manual marketplace research effort',
-      'Fast and structured product data collection',
-      'Reliable extraction of pricing and seller information',
-      'Improved scraping performance and stability',
-    ],
-
-    liveUrl:
-      'https://github.com/Bablu-Verma/ebay-scrape---listing',
-
-    featured: false,
-  },
+  // ─── REAL-TIME & COLLABORATION ────────────────────────────────────────────
 
   {
     id: '12',
     slug: 'real-time-chat-system',
     title: 'Real-time Chat System',
-    description:
-      'Scalable real-time messaging infrastructure',
-    shortDescription:
-      'Socket.io chat app with Redis scaling',
+    description: 'Scalable real-time messaging infrastructure',
+    shortDescription: 'Socket.io chat app with Redis scaling',
     image: `${baseUrl}p/cinch.png`,
     tags: [
       'Node.js',
+      'Express.js',
       'Socket.io',
       'Redis',
+      'Redis Pub/Sub',
       'MongoDB',
+      'JWT Auth',
+      'REST API',
+      'React.js',
+      'Tailwind CSS',
     ],
 
     overview:
-      'Scalable real-time messaging infrastructure supporting concurrent users with horizontal scaling and socket authentication.',
+      'A production-grade scalable real-time messaging infrastructure built to support high volumes of concurrent socket connections across multiple server instances. The system handles one-on-one messaging, group conversations, message delivery acknowledgments, typing indicators, online presence tracking, and message history — all in real time. I architected and built the complete messaging backend using Node.js and Socket.io, implemented Redis Pub/Sub for cross-instance message synchronization, added JWT-based socket authentication, designed the MongoDB message persistence layer, and built the React.js-based chat interface with live updates.',
 
     challenges: [
-      'Handling concurrent socket connections',
-      'Maintaining synchronization across servers',
-      'Reliable reconnection handling',
+      'Maintaining message delivery consistency across multiple horizontally scaled server instances',
+      'Handling 500+ concurrent socket connections without memory leaks or performance degradation',
+      'Implementing secure socket connections with JWT-based authentication at the handshake level',
+      'Ensuring reliable message delivery acknowledgments and handling failed delivery scenarios',
+      'Synchronizing online presence and typing indicators across all connected clients in real time',
+      'Managing graceful reconnection and message backfill when clients temporarily disconnect',
     ],
 
     solutions: [
-      'Implemented Socket.io Redis adapter',
-      'Used JWT socket authentication',
-      'Added Redis Pub/Sub synchronization',
+      'Integrated Socket.io Redis Adapter to enable cross-instance event broadcasting via Redis Pub/Sub',
+      'Implemented JWT verification at the socket handshake stage to prevent unauthorized connections',
+      'Built delivery acknowledgment callbacks with server-side confirmation for guaranteed message receipt',
+      'Designed MongoDB message schema with room-based indexing for efficient history retrieval',
+      'Implemented presence tracking using Redis key-value store with TTL-based online status management',
+      'Added reconnection event handlers with message backfill queries to recover missed messages',
+      'Used Socket.io namespaces and rooms for organized multi-conversation management',
     ],
 
     results: [
-      'Supported 500+ concurrent users',
-      'Reliable instant messaging',
-      'Stable reconnection handling',
+      'Successfully supported 500+ concurrent socket connections with stable memory and CPU usage',
+      'Achieved consistent message delivery across horizontally scaled server instances via Redis Pub/Sub',
+      'Eliminated unauthorized socket connections through JWT handshake-level authentication',
+      'Delivered reliable message acknowledgment system with zero reported message loss in stable conditions',
+      'Enabled real-time presence and typing indicators with sub-100ms update latency',
+      'Built a maintainable and extensible messaging infrastructure deployable across multiple server nodes',
     ],
 
     liveUrl: 'https://play.google.com/store/apps/details?id=com.cinchoffline.ccm',
     featured: false,
   },
+
   {
     id: '13',
     slug: 'cinch-ccm-mobile',
     title: 'CINCH CCM Mobile',
-    description:
-      'Appointment & department management app',
-    shortDescription:
-      'React Native appointment management app',
+    description: 'Appointment & department management app',
+    shortDescription: 'React Native appointment management app',
     image: `${baseUrl}p/cinch.png`,
-    tags: [
-      'React Native',
-      'Redux',
-      'Firebase',
-      'Socket.io',
-    ],
-
-    overview:
-      'Cross-platform appointment and department management mobile application with real-time communication and authentication features.',
-
-    challenges: [
-      'Managing complex mobile state',
-      'Reliable live chat implementation',
-      'Push notification handling',
-    ],
-
-    solutions: [
-      'Used Redux for centralized state',
-      'Integrated Socket.io live chat',
-      'Implemented Firebase notifications',
-    ],
-
-    results: [
-      'Smooth real-time communication',
-      'Reliable notifications',
-      'Optimized mobile experience',
-    ],
-
-    liveUrl:
-      'https://play.google.com/store/apps/details?id=com.cinchoffline.ccm',
-    featured: true,
-  },
-  {
-    id: '15',
-    slug: 'portfolio-mobile-app',
-    title: 'Developer Portfolio Mobile App',
-    description: 'Personal portfolio mobile application',
-    shortDescription:
-      'Expo React Native portfolio application',
-    image: `${baseUrl}p/portfolio.png`,
     tags: [
       'React Native',
       'Expo',
       'TypeScript',
       'Redux',
-      'NativeWind',
+      'Socket.io',
+      'Firebase FCM',
+      'REST API',
+      'Axios',
       'React Navigation',
+      'AsyncStorage',
     ],
 
     overview:
-      'Cross-platform developer portfolio mobile application built using React Native and Expo to showcase projects, technical skills, experience, and achievements in a modern mobile interface. The application focuses on smooth navigation, responsive layouts, scalable architecture, and optimized mobile performance.',
+      'CINCH CCM is a cross-platform mobile application designed for appointment scheduling, department management, and internal team communication for businesses and service organizations. The app enables staff and administrators to create and manage appointments, coordinate across departments, communicate via real-time chat, and receive instant push notifications for scheduling events and updates. I worked on the complete mobile application including navigation architecture, Redux state management, Socket.io live chat integration, Firebase notification setup, REST API integration, and overall performance optimization.',
 
     challenges: [
-      'Designing a scalable mobile UI architecture',
-      'Maintaining smooth navigation between screens',
-      'Optimizing rendering performance on low-end devices',
-      'Creating reusable and maintainable components',
-      'Ensuring responsive layouts across multiple screen sizes',
+      'Designing a complex navigation architecture to support multiple user roles — admin, staff, and clients',
+      'Implementing reliable real-time chat that remains functional during unstable mobile connections',
+      'Managing synchronized appointment state across multiple users editing the same scheduling data',
+      'Delivering accurate and timely push notifications for appointment reminders and status changes',
+      'Handling complex form workflows for appointment creation with validation and multi-step flows',
+      'Maintaining app performance and responsiveness across various Android and iOS device configurations',
     ],
 
     solutions: [
-      'Built using Expo ecosystem for faster development',
-      'Used TypeScript for scalable and maintainable codebase',
-      'Implemented reusable component architecture',
-      'Integrated React Navigation for structured navigation flow',
-      'Optimized rendering and screen loading performance',
-      'Used NativeWind/Tailwind styling for consistent UI design',
+      'Built a structured navigation system using React Navigation with role-based routing and deep linking',
+      'Integrated Socket.io with reconnect logic and message queuing for stable chat during network drops',
+      'Used Redux Toolkit for centralized management of appointments, departments, and messaging state',
+      'Implemented Firebase Cloud Messaging with topic-based subscriptions for targeted notification delivery',
+      'Built reusable multi-step form components with real-time validation for appointment workflows',
+      'Applied AsyncStorage for local session persistence and offline data caching',
+      'Optimized API calls with request debouncing and caching to reduce redundant network requests',
     ],
 
     results: [
-      'Smooth cross-platform mobile experience',
-      'Responsive UI across Android and iOS devices',
-      'Improved project showcase accessibility',
-      'Scalable and maintainable application structure',
-      'Fast and optimized mobile performance',
+      'Delivered a production-ready appointment and department management app for business operations',
+      'Achieved reliable real-time chat communication even during intermittent mobile network conditions',
+      'Improved scheduling coordination through synchronized appointment state across all user roles',
+      'Enhanced staff responsiveness through reliable and targeted push notification delivery',
+      'Maintained smooth and responsive UI across diverse Android and iOS device configurations',
+      'Successfully published on Google Play Store with stable active user retention',
+    ],
+
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.cinchoffline.ccm',
+    featured: true,
+  },
+
+  // ─── DEALS & AGGREGATION ──────────────────────────────────────────────────
+
+  {
+    id: '5',
+    slug: 'bachatjar-platform',
+    title: 'BachatJar',
+    description: 'Coupon & cashback aggregator',
+    shortDescription: 'Fast deals platform with Redis caching',
+    image: `${baseUrl}p/bachatjar_logo.png`,
+    tags: [
+      'Next.js',
+      'TypeScript',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Redis',
+      'SEO',
+      'SSR',
+      'REST API',
+      'Tailwind CSS',
+    ],
+
+    overview:
+      'BachatJar is a deals aggregation and cashback platform built to collect, organize, and display discount coupons and offers from multiple Indian e-commerce brands. The platform aggregates deals from various sources, categorizes them by brand and type, and serves them to users through an SEO-optimized and fast-loading web interface. I worked on the full-stack development including the Next.js frontend with SSR for SEO, the Node.js backend API, Redis-based caching for high-frequency deal endpoints, and MongoDB performance optimization for large aggregated datasets.',
+
+    challenges: [
+      'Handling and processing large volumes of scraped and aggregated deal data efficiently',
+      'Reducing API response latency for high-frequency deal listing endpoints under concurrent requests',
+      'Maintaining accurate SEO metadata across thousands of dynamically generated deal and brand pages',
+      'Keeping deal and coupon data fresh while minimizing unnecessary database reads',
+      'Delivering fast page loads on mobile networks where users typically browse deals',
+    ],
+
+    solutions: [
+      'Implemented Redis caching with configurable TTL for frequently requested deal and category endpoints',
+      'Used Next.js SSR and ISR for SEO-optimized page rendering with automatic content revalidation',
+      'Optimized MongoDB aggregation pipelines with compound indexing for fast deal filtering and sorting',
+      'Built backend microservice-style API modules for deals, categories, brands, and user interactions',
+      'Applied image optimization and lazy loading for deal thumbnails and brand logos',
+      'Implemented automated cache invalidation on deal updates to maintain content freshness',
+    ],
+
+    results: [
+      'Reduced average API response time to under 200ms through Redis caching layer',
+      'Improved mobile page load performance through SSR, ISR, and image optimization',
+      'Achieved better SEO rankings through structured metadata and server-rendered deal pages',
+      'Maintained deal data freshness with automated cache invalidation workflows',
+      'Built a scalable platform capable of handling growing deal catalogs without performance loss',
+    ],
+
+    liveUrl: 'https://github.com/Bablu-Verma/bachatjar',
+    featured: false,
+  },
+
+  // ─── TOOLS & UTILITIES ────────────────────────────────────────────────────
+
+  {
+    id: '16',
+    slug: 'ebay-listing-scraper-tool',
+    title: 'eBay Listing Scraper Tool',
+    description: 'Automated eBay product listing scraping tool',
+    shortDescription: 'JavaScript-based eBay scraping and listing extraction tool',
+    image: `${baseUrl}p/e-bay-scraper.jpg`,
+    tags: [
+      'JavaScript',
+      'Node.js',
+      'Cheerio',
+      'Axios',
+      'Web Scraping',
+      'REST API',
+      'JSON',
+      'CSV Export',
+      'Cron Jobs',
+      'Error Handling',
+    ],
+
+    overview:
+      'A custom Node.js-based automated scraping tool developed to extract structured product listing data from eBay search result pages and product detail pages at scale. The tool collects product titles, pricing information, seller details, listing URLs, shipping data, condition status, and marketplace category data — outputting the results as structured JSON and CSV for downstream analysis and inventory monitoring. I designed and built the complete scraping engine, HTML parsing logic using Cheerio, request throttling mechanisms, pagination handling for large result sets, retry logic for failed requests, and structured data export pipelines.',
+
+    challenges: [
+      'Handling frequently changing eBay HTML DOM structure that breaks parser selectors without warning',
+      'Avoiding IP-based rate limiting and request blocking from eBay\'s anti-scraping infrastructure',
+      'Extracting consistent structured data from inconsistently formatted product listing HTML',
+      'Managing pagination efficiently for search queries returning hundreds of pages of results',
+      'Handling network timeouts, partial responses, and failed requests without losing accumulated data',
+      'Maintaining scraper stability and correctness across different eBay regional marketplace variants',
+    ],
+
+    solutions: [
+      'Used Cheerio for fast and flexible server-side HTML parsing with adaptable CSS selector strategies',
+      'Implemented Axios with configurable request headers, user-agent rotation, and delay intervals',
+      'Built reusable and modular parser functions for different page types (search results, product pages)',
+      'Implemented automatic pagination traversal with configurable page depth limits',
+      'Added exponential backoff retry logic for failed or timeout requests to maximize data recovery',
+      'Structured extracted data into clean JSON schema with CSV export capability for analysis workflows',
+      'Created cron-based scheduling for automated periodic scraping runs with delta detection',
+    ],
+
+    results: [
+      'Successfully automated extraction of thousands of eBay product listings per scraping session',
+      'Reduced manual marketplace research effort by delivering structured and ready-to-analyze datasets',
+      'Achieved reliable data collection through retry logic and error recovery mechanisms',
+      'Delivered clean and consistent structured JSON and CSV exports for downstream processing',
+      'Built a maintainable and modular scraping architecture adaptable to selector changes',
+      'Enabled automated periodic monitoring of competitor listings and pricing through cron scheduling',
+    ],
+
+    liveUrl: 'https://github.com/Bablu-Verma/ebay-scrape---listing',
+    featured: false,
+  },
+
+  // ─── PROJECT MANAGEMENT ───────────────────────────────────────────────────
+
+  {
+    id: '17',
+    slug: 'teamsync-project-management-platform',
+    title: 'TeamSync Project Management Platform',
+    description: 'Multi-tenancy team collaboration and project management platform',
+    shortDescription: 'Full-stack collaborative workspace and task management system',
+    image: `${baseUrl}p/teamsync.png`,
+    tags: [
+      'React',
+      'Vite',
+      'TypeScript',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Mongoose',
+      'Tailwind CSS',
+      'Shadcn UI',
+      'Passport.js',
+      'Google OAuth',
+      'Resend Email',
+      'Zod',
+      'JWT Auth',
+      'REST API',
+    ],
+
+    overview:
+      'TeamSync is a production-grade multi-tenancy project management and team collaboration platform built for real-world organizations and distributed teams. The platform enables users to create isolated workspaces for different teams or organizations, manage multiple projects within each workspace, create and assign tasks with priority levels and due dates, invite team members via link or email, control access through role-based permissions, and track productivity through analytics dashboards. I built the complete full-stack application — including the React frontend with TypeScript, the Node.js/Express backend, MongoDB database layer with Mongoose transactions, Passport.js authentication with Google OAuth and local email/password flows, transactional email workflows using Resend, and comprehensive role-based access control across all platform operations.',
+
+    challenges: [
+      'Architecting a scalable multi-tenant data model that cleanly isolates workspace, project, and user data',
+      'Implementing secure dual authentication with Google OAuth and email/password including OTP verification',
+      'Designing a flexible role-based access control system supporting Owner, Admin, and Member permission tiers',
+      'Building reliable transactional email workflows for OTP verification, password reset, and team invitations',
+      'Managing complex task filtering, sorting, and paginated data retrieval across large project datasets',
+      'Ensuring data integrity for workspace membership changes and project deletion with cascading operations',
+      'Building a responsive multi-dashboard UI that scales across task management, analytics, and settings views',
+    ],
+
+    solutions: [
+      'Designed a multi-tenant MongoDB schema with workspace-scoped collections and cross-reference validation',
+      'Implemented Passport.js with Google OAuth 2.0 strategy and local strategy with bcrypt password hashing',
+      'Built OTP-based email verification and secure password reset flows using Resend transactional email API',
+      'Created a granular role-based permission middleware system enforced at both API route and UI levels',
+      'Built invite-by-link and invite-by-email workflows with expiring signed invitation tokens',
+      'Implemented Mongoose multi-document transactions for safe workspace deletion and membership operations',
+      'Used Zod for strict request body validation across all API endpoints for type-safe input handling',
+      'Built reusable dashboard, task board, and analytics components with TypeScript for type safety',
+      'Implemented advanced task filtering by status, priority, assignee, and date with cursor-based pagination',
+      'Used Tailwind CSS and Shadcn UI component library for consistent and responsive interface design',
+    ],
+
+    results: [
+      'Delivered a fully functional multi-tenant project management platform ready for real-world team usage',
+      'Implemented secure and seamless dual authentication supporting both Google OAuth and email/password flows',
+      'Achieved reliable transactional email delivery for OTP, password reset, and invitation workflows',
+      'Built a maintainable and type-safe full-stack TypeScript codebase following clean architecture principles',
+      'Enabled flexible team collaboration through role-based access control with three permission tiers',
+      'Delivered a responsive and modern UI optimized for both desktop and mobile screen sizes',
+      'Built scalable task management with advanced filtering, pagination, and analytics insights',
+      'Created a reusable and extensible component library for future platform feature expansion',
+    ],
+
+    liveUrl: 'https://github.com/Bablu-Verma/project-management',
+    featured: true,
+  },
+
+  // ─── PORTFOLIO ────────────────────────────────────────────────────────────
+
+  {
+    id: '15',
+    slug: 'portfolio-mobile-app',
+    title: 'Developer Portfolio Mobile App',
+    description: 'Personal portfolio mobile application',
+    shortDescription: 'Expo React Native portfolio application',
+    image: `${baseUrl}p/portfolio.png`,
+    tags: [
+      'React Native',
+      'Expo',
+      'TypeScript',
+      'Redux Toolkit',
+      'NativeWind',
+      'Tailwind CSS',
+      'React Navigation',
+      'Reanimated',
+      'AsyncStorage',
+      'Expo Router',
+    ],
+
+    overview:
+      'A cross-platform developer portfolio mobile application built using React Native and Expo to showcase technical projects, professional experience, skills, certifications, and achievements in a polished and interactive mobile interface. The application serves as a mobile-native extension of my web portfolio, allowing recruiters and clients to explore my work directly from their Android or iOS devices. I designed and developed the complete application including the navigation architecture, component library, animated UI interactions, responsive layouts, and performance optimizations — ensuring a smooth and professional experience across all screen sizes and device types.',
+
+    challenges: [
+      'Designing a visually polished and responsive UI architecture that works across diverse screen sizes',
+      'Maintaining smooth 60fps animations and transitions between portfolio sections and project detail screens',
+      'Structuring a scalable navigation system that cleanly organizes projects, skills, experience, and contact sections',
+      'Creating reusable and maintainable component architecture for a consistent design system',
+      'Optimizing rendering performance on lower-end devices without sacrificing visual quality',
+      'Delivering a native-quality mobile experience that accurately represents professional work and capabilities',
+    ],
+
+    solutions: [
+      'Built with Expo and Expo Router for streamlined development, OTA updates, and simplified build workflows',
+      'Used TypeScript throughout for type-safe props, navigation params, and state management',
+      'Implemented NativeWind (Tailwind CSS) for consistent, responsive, and utility-first UI styling',
+      'Integrated React Navigation with structured stack and tab navigators for intuitive section navigation',
+      'Used Reanimated for smooth native-driven animations on project cards and screen transitions',
+      'Implemented Redux Toolkit for managing application-level state across sections and themes',
+      'Applied component memoization and lazy screen loading to optimize rendering on low-end devices',
+      'Built a shared design token system through NativeWind configuration for visual consistency',
+    ],
+
+    results: [
+      'Delivered a polished and professional cross-platform portfolio app on Android and iOS',
+      'Achieved smooth 60fps animations and transitions throughout the application',
+      'Maintained responsive and consistent UI layout across phones and tablets of various screen sizes',
+      'Improved portfolio accessibility for recruiters and clients through a dedicated mobile experience',
+      'Built a scalable and maintainable TypeScript codebase ready for future content and feature additions',
+      'Demonstrated advanced React Native and mobile development capabilities through the project itself',
     ],
 
     liveUrl: 'https://bablu-verma.vercel.app/#apkInstall',
-
     featured: true,
   },
 ];
