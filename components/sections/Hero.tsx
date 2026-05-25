@@ -67,7 +67,7 @@ export function Hero() {
               <span className="font-semibold text-foreground">
                 Bablu Verma
               </span>{' '}
-              — Full Stack Developer specializing in React, Next.js & scalable backend systems.
+              — Full Stack Developer specializing in Python, Node.js, Next.js & scalable backend systems.
             </p>
           </FadeIn>
 
