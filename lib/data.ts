@@ -1009,7 +1009,7 @@ export const aboutData: AboutData = {
 
 
   bio: [
-    "I'm a Full Stack Developer with 4+ years of experience building scalable web applications, backend systems, mobile apps, and real-time infrastructures. My core expertise lies in React.js, Next.js, Node.js, Express.js, React Native, PostgreSQL, and MongoDB.",
+    "I'm a Full Stack Developer with 4+ years of experience building scalable web applications, backend systems, mobile apps, and real-time infrastructures. My core expertise lies in React.js, Next.js, Node.js, Express.js, Python, React Native, PostgreSQL, and MongoDB.",
 
     "I specialize in high-performance architectures including SSR/SSG/ISR rendering, real-time communication systems, offline-first applications, caching strategies, and database optimization. I focus on building production-ready applications that are scalable, maintainable, and optimized for performance.",
 
@@ -1045,6 +1045,7 @@ export const aboutData: AboutData = {
         'Redis Pub/Sub',
         'JWT Authentication',
         'RBAC',
+        'Python'
       ],
     },
 
@@ -1209,7 +1210,6 @@ export const testimonials: Testimonial[] = [
     name: 'Aayush',
     role: 'CTO',
     company: '4tuners Tech',
-
     content:
       'Exceptional attention to detail and a true partner in development. The POS system he built for us has revolutionized our offline operations.',
   },
