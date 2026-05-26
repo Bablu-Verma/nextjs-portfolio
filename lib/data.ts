@@ -349,6 +349,76 @@ export const projects: Project[] = [
   },
 
   {
+    id: '18',
+    slug: 'babyshop-ecommerce-platform',
+    title: 'BabyShop E-Commerce Platform',
+    description:
+      'Full-stack e-commerce platform for baby products with customer storefront, admin dashboard, and secure backend API',
+    shortDescription:
+      'Next.js e-commerce system with admin dashboard, Stripe payments, and MongoDB backend',
+
+    image: `${baseUrl}p/babyshop.png`,
+
+    tags: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Mongoose',
+      'Tailwind CSS',
+      'Stripe',
+      'Zustand',
+      'JWT',
+      'Cloudinary',
+      'Nodemailer',
+      'Swagger',
+      'Shadcn UI',
+    ],
+
+    overview:
+      'BabyShop is a modern full-stack e-commerce platform built for baby products and kids essentials, consisting of a customer-facing storefront, an advanced admin dashboard, and a scalable backend API. The platform provides a complete shopping experience including product browsing, advanced filtering, Stripe-powered payments, order tracking, wishlist management, and responsive mobile-first UI. I developed the entire architecture across frontend, admin panel, and backend services, including authentication systems, REST APIs, payment integration, inventory management, image uploads, analytics dashboards, and production-ready deployment workflows.',
+
+    challenges: [
+      'Designing a scalable architecture to support client storefront, admin dashboard, and backend API simultaneously',
+      'Implementing secure authentication and authorization across multiple user roles',
+      'Handling Stripe payment workflows including success, failure, and webhook-based order verification',
+      'Managing large product catalogs with filtering, sorting, pagination, and search optimization',
+      'Building a responsive and performant UI across desktop, tablet, and mobile devices',
+      'Optimizing MongoDB queries and relational data handling for products, users, and orders',
+      'Implementing secure media upload and management with Cloudinary integration',
+      'Maintaining centralized state consistency for cart, wishlist, authentication, and checkout flows',
+    ],
+
+    solutions: [
+      'Built the customer storefront using Next.js 15 App Router with TypeScript and server/client component architecture',
+      'Developed a dedicated admin dashboard using React, Vite, Zustand, and Recharts for analytics and management operations',
+      'Integrated Stripe payment gateway with secure checkout sessions and payment verification handling',
+      'Implemented JWT-based authentication with protected routes and middleware authorization',
+      'Used MongoDB with Mongoose ODM for schema validation, optimized queries, and relationship management',
+      'Integrated Cloudinary and Multer for secure product image upload and storage',
+      'Implemented Zustand for lightweight and scalable global state management',
+      'Used React Hook Form and Zod for robust form validation and error handling',
+      'Created RESTful APIs with Express.js including Swagger API documentation',
+      'Implemented Nodemailer for transactional emails such as order confirmations and user notifications',
+    ],
+
+    results: [
+      'Delivered a complete production-ready full-stack e-commerce ecosystem',
+      'Enabled secure online payments and streamlined checkout experiences using Stripe',
+      'Improved admin productivity through centralized inventory, order, and customer management tools',
+      'Achieved responsive and optimized user experience across all major device sizes',
+      'Built scalable backend APIs capable of handling product, user, and order management efficiently',
+      'Enhanced customer engagement through wishlist, order tracking, and account management features',
+      'Provided maintainable and extensible architecture suitable for future feature expansion',
+    ],
+
+    liveUrl: 'https://github.com/Bablu-Verma/baby-shop-e-commerce',
+
+    featured: true,
+  },
+  {
     id: '7',
     slug: 'pos-system',
     title: 'POS System',
