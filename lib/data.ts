@@ -698,6 +698,88 @@ export const projects: Project[] = [
   },
 
   {
+    id: '19',
+
+    slug: 'taskzeno-automation-saas',
+
+    title: 'TaskZeno Automation SaaS',
+
+    description:
+      'AI-powered workflow automation SaaS platform for businesses with dashboard, billing, automation management, and admin controls',
+
+    shortDescription:
+      'Automation-as-a-Service platform with AI workflows, payments, and admin management',
+
+    image: `${baseUrl}p/taskzeno.png`,
+
+    tags: [
+      'Next.js 15',
+      'React 19',
+      'TypeScript',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Mongoose',
+      'Tailwind CSS',
+      'Redux Toolkit',
+      'React Query',
+      'JWT',
+      'Firebase',
+      'Google OAuth',
+      'Cloudinary',
+      'Puppeteer',
+      'PDFKit',
+      'Nodemailer',
+      'Sharp',
+      'Tiptap Editor',
+      'Framer Motion',
+    ],
+
+    overview:
+      'TaskZeno is a modern Automation-as-a-Service (AaaS) SaaS platform designed to help businesses automate repetitive manual workflows using AI-powered automation systems and pre-built services. The platform provides intelligent workflow execution, automation management dashboards, subscription billing, execution tracking, and centralized administration tools. I developed the complete full-stack architecture including the SaaS dashboard, authentication systems, automation execution flows, admin management panel, payment integration, invoice generation, image processing pipelines, and third-party integrations. The system was built with scalability, performance, and multi-business usability in mind while maintaining a modern responsive user experience.',
+
+    challenges: [
+      'Designing a scalable SaaS architecture capable of handling multiple business automation workflows simultaneously',
+      'Implementing secure authentication flows with email/password, Google OAuth, and OTP verification',
+      'Managing real-time workflow execution tracking and automation monitoring',
+      'Handling complex third-party integrations including Google APIs and Firebase services',
+      'Building a responsive dashboard with billing, automation management, and execution analytics',
+      'Generating downloadable invoices and PDF reports dynamically for users',
+      'Optimizing image uploads and processing workflows with Cloudinary and Sharp',
+      'Ensuring reliable automation execution using Puppeteer and background task processing',
+      'Maintaining secure role-based access control between users and administrators',
+    ],
+
+    solutions: [
+      'Built the frontend using Next.js 15, React 19, TypeScript, and Tailwind CSS with scalable component architecture',
+      'Implemented Redux Toolkit and React Query for centralized state management and efficient server-state synchronization',
+      'Developed a robust backend using Node.js, Express 5, and MongoDB with Mongoose ODM',
+      'Integrated JWT authentication along with Google OAuth and OTP verification flows for secure user access',
+      'Created AI-powered workflow automation modules with reusable pre-built automation services',
+      'Integrated payment gateway functionality with automated invoice generation using PDFKit',
+      'Implemented rich content creation functionality using the Tiptap rich text editor',
+      'Used Cloudinary and Sharp for optimized image upload, transformation, and delivery',
+      'Integrated Puppeteer-based automation handling for browser automation workflows',
+      'Implemented Nodemailer for transactional emails, notifications, and user communication',
+      'Built a centralized admin panel for user management, automation monitoring, payment tracking, and newsletter/contact management',
+    ],
+
+    results: [
+      'Delivered a production-ready SaaS automation platform capable of serving multiple businesses',
+      'Enabled businesses to automate repetitive workflows and reduce manual operational effort',
+      'Improved workflow efficiency through AI-powered automation execution systems',
+      'Built a scalable dashboard infrastructure supporting billing, analytics, and automation tracking',
+      'Enhanced user onboarding and accessibility through Google OAuth and OTP-based authentication',
+      'Delivered secure payment processing with downloadable invoices and subscription management',
+      'Achieved responsive and optimized performance across desktop and mobile devices',
+      'Successfully established the brand positioning: "100+ Businesses Trust TaskZeno"',
+    ],
+
+    liveUrl: 'https://github.com/Bablu-Verma/automation-saas',
+
+    featured: false,
+  },
+  {
     id: '13',
     slug: 'cinch-ccm-mobile',
     title: 'CINCH CCM Mobile',
