@@ -1070,6 +1070,58 @@ export const projects: Project[] = [
     liveUrl: 'https://bablu-verma.vercel.app/#apkInstall',
     featured: true,
   },
+  {
+    id: '21',
+    slug: 'blinkit-ecommerce-platform',
+    title: 'BlinkIt E-Commerce',
+    description: 'Full-stack grocery & convenience store platform inspired by BlinkIt',
+    shortDescription: '10-minute delivery grocery platform with Stripe payments',
+    image: `${baseUrl}p/blinkeyit.jpg`,
+    tags: [
+      'React.js',
+      'Vite',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Redux Toolkit',
+      'Stripe',
+      'Cloudinary',
+      'JWT',
+      'Tailwind CSS',
+    ],
+
+    overview:
+      'BlinkIt E-Commerce is a full-stack grocery and convenience store web application inspired by BlinkIt, designed to provide a fast and seamless online shopping experience with 10-minute delivery messaging. The platform includes complete user authentication, product browsing with category and sub-category filtering, full-text search with infinite scrolling, shopping cart management, Stripe online payments, order history tracking, and address management. I developed both the frontend and backend architecture using React, Redux Toolkit, Node.js, Express, and MongoDB while implementing secure JWT authentication, Cloudinary image handling, and scalable REST APIs.',
+
+    challenges: [
+      'Managing scalable product filtering and full-text search with pagination across large product datasets',
+      'Implementing secure JWT authentication with refresh token handling and protected admin routes',
+      'Handling dynamic product structures with custom fields, discounts, stock, and multiple category mappings',
+      'Building a smooth checkout workflow supporting both Cash on Delivery and Stripe online payments',
+      'Maintaining responsive UI performance during infinite scrolling, cart updates, and large product rendering',
+    ],
+
+    solutions: [
+      'Implemented MongoDB text indexing and optimized query pipelines for fast product search and filtering',
+      'Built JWT-based authentication with access and refresh token mechanisms for secure session handling',
+      'Designed modular REST APIs for users, products, categories, orders, carts, and address management',
+      'Integrated Stripe payment gateway for secure online transactions alongside COD support',
+      'Used Redux Toolkit for centralized state management across authentication, cart, and product flows',
+      'Integrated Cloudinary for scalable image upload and hosting of product and user assets',
+      'Implemented protected admin dashboards with role-based route authorization and CRUD operations',
+    ],
+
+    results: [
+      'Delivered a complete production-ready full-stack e-commerce platform with scalable architecture',
+      'Achieved fast product discovery using optimized search, category filtering, and infinite scrolling',
+      'Improved user experience through persistent carts, responsive UI, and streamlined checkout flow',
+      'Enabled secure payment processing with Stripe integration and protected authentication flows',
+      'Built a maintainable admin system for managing products, categories, orders, and inventory efficiently',
+    ],
+
+    liveUrl: 'https://github.com/Bablu-Verma/binkeyit-e-commerce',
+    featured: false,
+  },
 ];
 
 export const experiences: Experience[] = [
