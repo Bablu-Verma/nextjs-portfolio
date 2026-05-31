@@ -6,6 +6,9 @@ import { FadeIn } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
 import { Download, Zap, Shield, RefreshCw, Smartphone } from 'lucide-react';
 
+
+const apkurl = 'https://expo.dev/artifacts/eas/kjo5sqMyM1ryqZw7JfV7E5.apk'
+
 export function AndroidApp() {
   return (
     <Section className="pt-20 relative overflow-hidden">
@@ -27,7 +30,7 @@ export function AndroidApp() {
 
           <FadeIn delay={0.2} className="relative">
             <Button size="lg" className="group">
-              <a href='https://expo.dev/artifacts/eas/4kWdxxPFb3VkWADLp7ZK8x.apk' className="flex items-center">
+              <a href={apkurl} className="flex items-center">
                 <Download className="mr-2 w-4 h-4 group-hover:translate-y-1 transition-transform" />
                 Install Now
               </a>

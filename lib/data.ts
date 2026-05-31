@@ -1124,6 +1124,74 @@ export const projects: Project[] = [
     liveUrl: 'https://github.com/Bablu-Verma/binkeyit-e-commerce',
     featured: false,
   },
+  {
+  id: '21',
+  slug: 'automation-saas',
+  title: 'Automation SaaS Platform',
+  description: 'White-label workflow automation and business process management platform',
+  shortDescription: 'Low-code automation platform powered by workflow templates and n8n integrations',
+  image: `${baseUrl}p/automation.png`,
+  tags: [
+    'Next.js 15',
+    'React 19',
+    'TypeScript',
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'Mongoose',
+    'Redux Toolkit',
+    'React Query',
+    'Tailwind CSS',
+    'JWT Auth',
+    'Google OAuth',
+    'n8n',
+    'Cloudinary',
+    'Firebase',
+    'PDFKit',
+    'Node Cron',
+    'Nodemailer',
+  ],
+
+  overview:
+    'Automation SaaS is a full-stack workflow automation platform built to help businesses deploy and manage automated processes without directly interacting with complex automation tools. The system provides a catalog of predefined workflow templates, allowing users to create automation instances, configure credentials, manage subscriptions, monitor execution history, and handle billing through a centralized dashboard. The platform integrates with n8n as the automation engine while offering a fully customized SaaS experience including user management, payment processing, invoicing, documentation, analytics, and role-based administration. I was responsible for designing and developing the complete frontend and backend architecture, database design, authentication system, workflow management engine, billing infrastructure, and admin dashboard.',
+
+  challenges: [
+    'Designing a scalable SaaS architecture capable of supporting multiple workflow templates and user automation instances',
+    'Creating a flexible workflow management system that could dynamically handle different automation configurations and inputs',
+    'Implementing secure authentication with OTP verification, JWT sessions, Google OAuth, and role-based authorization',
+    'Managing subscription plans, usage limits, billing cycles, and automation lifecycle states within a unified system',
+    'Building an admin dashboard capable of controlling users, workflows, payments, documentation, and support requests',
+    'Handling file uploads, image optimization, invoice generation, and email notifications efficiently',
+    'Integrating external automation infrastructure while maintaining a seamless white-label user experience',
+  ],
+
+  solutions: [
+    'Designed a modular monorepo architecture separating frontend and backend services for maintainability and scalability',
+    'Implemented reusable Master Workflow templates allowing users to create automation instances with dynamic configurations',
+    'Built secure authentication using JWT, bcrypt, email OTP verification, Passport Google OAuth, and protected API middleware',
+    'Developed a subscription and billing engine supporting multiple pricing tiers, currencies, discounts, taxes, and payment tracking',
+    'Created comprehensive admin management modules for users, workflows, payments, support tickets, newsletters, and documentation',
+    'Integrated Cloudinary, Multer, and Sharp for optimized file handling and image processing workflows',
+    'Implemented automated invoice generation using PDFKit and email delivery using Nodemailer',
+    'Built dashboard analytics and execution monitoring systems for both users and administrators',
+    'Integrated n8n workflow orchestration through automation instance mapping and workflow lifecycle management',
+    'Used React Query, Redux Toolkit, and TypeScript to create a scalable frontend state management architecture',
+  ],
+
+  results: [
+    'Delivered a production-ready workflow automation SaaS platform with complete user and administration ecosystems',
+    'Enabled businesses to deploy and manage automation workflows through a user-friendly low-code interface',
+    'Successfully implemented subscription-based monetization with multi-currency billing support',
+    'Reduced operational complexity by centralizing workflow management, billing, support, and analytics into a single platform',
+    'Achieved scalable architecture through reusable workflow templates and modular backend services',
+    'Improved security with OTP verification, OAuth integration, JWT authentication, and role-based access control',
+    'Automated invoicing, notifications, and workflow lifecycle management to reduce manual administrative effort',
+    'Provided a foundation for future workflow expansion and third-party service integrations',
+  ],
+
+  liveUrl: 'https://github.com/Bablu-Verma/automation-saas',
+  featured: false,
+}
 ];
 
 export const experiences: Experience[] = [
@@ -1513,6 +1581,10 @@ export const galleryImages = [
   { src: `${baseUrl}g/class2.png`, alt: 'Strategy Classes' },
   { src: `${baseUrl}g/fkm1.png`, alt: 'Freekaamaal' },
   { src: `${baseUrl}g/fkm2.png`, alt: 'Freekaamaal' },
+
+
+  { src: `${baseUrl}g/taskzeno.png`, alt: 'taskzeno' },
+  { src: `${baseUrl}g/taskzeno1.png`, alt: 'taskzeno' },
 
   { src: `${baseUrl}g/portfolio1.png`, alt: 'Portfolio' },
   { src: `${baseUrl}g/portfolio2.png`, alt: 'Portfolio' },
