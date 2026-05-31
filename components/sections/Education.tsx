@@ -8,23 +8,11 @@ import { motion } from 'framer-motion';
 import { Calendar, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
 
 export function Education() {
-  const { data: education = [], isLoading } = useEducation();
+  const { data: educationData } = useEducation();
   const [showAll, setShowAll] = useState(false);
+  const education = educationData?.items ?? [];
+  const intro = educationData?.intro ?? [];
   const displayed = showAll ? education : education.slice(0, 3);
-
-  if (isLoading) {
-    return (
-      <Section className="bg-secondary/30 relative overflow-hidden">
-        <Container className="relative">
-          <div className="space-y-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-32 rounded-2xl bg-card/50 animate-pulse" />
-            ))}
-          </div>
-        </Container>
-      </Section>
-    );
-  }
 
   return (
     <Section className="bg-secondary/30 relative overflow-hidden">
@@ -35,17 +23,17 @@ export function Education() {
           <div>
             <SectionHeader
               badge="Education"
-              className="text-center lg:text-left items-center lg:items-start"
+
               title="My Academic Journey"
-              description=""
+              description="A foundation built on continuous learning and academic excellence in computer science"
             />
 
             <FadeIn delay={0.2}>
-              <p className="text-muted-foreground text-center md:text-left leading-relaxed max-w-md">
-                My education has played a key role in shaping my development skills.
-                Along with formal learning, I continuously improve through real-world projects
-                and self-learning in modern technologies.
-              </p>
+              {intro.map((paragraph, i) => (
+                <p key={i} className="text-muted-foreground mb-2 text-left max-w-2xl leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
             </FadeIn>
           </div>
 

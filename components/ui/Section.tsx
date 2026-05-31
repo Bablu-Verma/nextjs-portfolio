@@ -10,7 +10,7 @@ interface SectionProps extends HTMLAttributes<HTMLElement> {
 
 export function Section({ id, className, children, ...props }: SectionProps) {
   return (
-    <section id={id} className={cn('py-16 md:py-24', className)} {...props}>
+    <section id={id} className={cn('py-16 md:py-16', className)} {...props}>
       {children}
     </section>
   );
@@ -37,7 +37,7 @@ interface SectionHeaderProps {
 
 export function SectionHeader({ badge, title, description, className }: SectionHeaderProps) {
   return (
-    <div className={cn('text-center mb-16', className)}>
+    <div className='mb-10'>
       {badge && (
         <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-4">
           {badge}
@@ -47,7 +47,7 @@ export function SectionHeader({ badge, title, description, className }: SectionH
         {title}
       </h2>
       {description && (
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground max-w-2xl">
           {description}
         </p>
       )}

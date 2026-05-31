@@ -28,21 +28,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export function Services() {
-  const { data: services = [], isLoading } = useServices();
-
-  if (isLoading) {
-    return (
-      <Section id="services" className="relative">
-        <Container>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="h-48 rounded-2xl bg-card/50 animate-pulse" />
-            ))}
-          </div>
-        </Container>
-      </Section>
-    );
-  }
+  const { data: services = [] } = useServices();
 
   return (
     <Section id="services" className="relative">

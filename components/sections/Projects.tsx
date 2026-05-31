@@ -8,23 +8,9 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 export function Projects() {
-  const { data: projects = [], isLoading } = useProjects();
+  const { data: projects = [] } = useProjects();
 
   const featuredProjects = projects.filter((p) => p.featured);
-
-  if (isLoading) {
-    return (
-      <Section id="projects" className="relative">
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-64 rounded-2xl bg-card/50 animate-pulse" />
-            ))}
-          </div>
-        </Container>
-      </Section>
-    );
-  }
 
   return (
     <Section id="projects" className="relative">

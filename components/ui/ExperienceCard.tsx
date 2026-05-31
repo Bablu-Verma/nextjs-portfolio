@@ -57,7 +57,7 @@ export function ExperienceCard({ exp }: ExperienceCardProps) {
 
                 {/* 🏷 Tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                    {exp.responsibilities.slice(0, 4).map((resp: string, i: number) => (
+                    {exp.responsibilities.slice(0, 2).map((resp: string, i: number) => (
                         <span
                             key={i}
                             className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"

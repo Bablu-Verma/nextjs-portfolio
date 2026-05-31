@@ -15,21 +15,7 @@ const icons = [Search, Code, Palette, Rocket];
 export function Workflow() {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
-  const { data: steps = [], isLoading } = useWorkflowSteps();
-
-  if (isLoading) {
-    return (
-      <Section className="relative overflow-hidden workflow">
-        <Container className="relative">
-          <div className="grid md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-48 rounded-2xl bg-card/50 animate-pulse" />
-            ))}
-          </div>
-        </Container>
-      </Section>
-    );
-  }
+  const { data: steps = [] } = useWorkflowSteps();
 
   return (
     <Section className="relative overflow-hidden workflow">

@@ -39,6 +39,11 @@ export interface Education {
   description?: string;
 }
 
+export interface EducationData {
+  intro: string[];
+  items: Education[];
+}
+
 export interface Service {
   id: string;
   title: string;
@@ -87,12 +92,14 @@ export interface SocialLink {
   icon: string;
 }
 
+export interface SkillGroup {
+  title: string;
+  items: string[];
+}
+
 export interface AboutData {
   bio: string[];
-  skillGroups: Array<{
-    title: string;
-    items: string[];
-  }>;
+  image: string;
 }
 
 export type Theme = 'dark' | 'light';

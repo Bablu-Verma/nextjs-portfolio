@@ -11,21 +11,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 
 export function Testimonials() {
-  const { data: testimonials = [], isLoading } = useTestimonials();
-
-  if (isLoading) {
-    return (
-      <Section className="bg-secondary/30 relative overflow-hidden">
-        <Container>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[1, 2].map((i) => (
-              <div key={i} className="h-48 rounded-2xl bg-card/50 animate-pulse" />
-            ))}
-          </div>
-        </Container>
-      </Section>
-    );
-  }
+  const { data: testimonials = [] } = useTestimonials();
 
   return (
     <Section className="bg-secondary/30 relative overflow-hidden">

@@ -8,21 +8,7 @@ import { ExperienceCard } from '../ui/ExperienceCard';
 import { ArrowRight } from 'lucide-react';
 
 export function Experience() {
-  const { data: experiences = [], isLoading } = useExperiences();
-
-  if (isLoading) {
-    return (
-      <Section id="experience" className="relative">
-        <Container>
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-48 rounded-2xl bg-card/50 animate-pulse" />
-            ))}
-          </div>
-        </Container>
-      </Section>
-    );
-  }
+  const { data: experiences = [] } = useExperiences();
 
   return (
     <Section id="experience" className="relative">
@@ -33,7 +19,7 @@ export function Experience() {
           description="A journey through my professional career and the impactful projects I've delivered."
         />
 
-        <StaggerContainer className="grid md:grid-cols-2 gap-8 mt-12">
+        <StaggerContainer className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mt-12">
           {experiences.slice(0, 4).map((exp) => (
             <ExperienceCard key={exp.id} exp={exp} />
           ))}

@@ -2,11 +2,13 @@ import type {
   Project,
   Experience,
   Education,
+  EducationData,
   Service,
   Testimonial,
   FAQItem,
   WorkflowStep,
   AboutData,
+  SkillGroup,
 } from '@/types';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://bablu-verma.vercel.app/'
@@ -1209,9 +1211,83 @@ export const experiences: Experience[] = [
 
 ];
 
+export const skills: SkillGroup[] = [
+  {
+    title: 'Frontend & Mobile',
+    items: [
+      'React.js',
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'React Native',
+      'Expo',
+      'Redux Toolkit',
+      'React Query',
+      'Material UI',
+      'Styled Components',
+    ],
+  },
+
+  {
+    title: 'Backend & APIs',
+    items: [
+      'Node.js',
+      'Express.js',
+      'REST APIs',
+      'GraphQL',
+      'Socket.io',
+      'BullMQ',
+      'Redis Pub/Sub',
+      'JWT Authentication',
+      'RBAC',
+      'Python'
+    ],
+  },
+
+  {
+    title: 'Database & Performance',
+    items: [
+      'MongoDB',
+      'PostgreSQL',
+      'Redis',
+      'Prisma ORM',
+      'Mongoose',
+      'Query Optimization',
+      'Caching Strategies',
+      'Indexing',
+    ],
+  },
+
+  {
+    title: 'DevOps & Infrastructure',
+    items: [
+      'Docker',
+      'GitHub Actions',
+      'AWS',
+      'Nginx',
+      'PM2',
+      'Vercel',
+      'Netlify',
+      'Firebase',
+    ],
+  },
+
+  {
+    title: 'Tools & Testing',
+    items: [
+      'Git',
+      'GitHub',
+      'Postman',
+      'Jest',
+      'React Testing Library',
+      'Swagger',
+      'Sentry',
+      'Linux',
+    ],
+  },
+];
+
 export const aboutData: AboutData = {
-
-
   bio: [
     "I'm a Full Stack Developer with 4+ years of experience building scalable web applications, backend systems, mobile apps, and real-time infrastructures. My core expertise lies in React.js, Next.js, Node.js, Express.js, Python, React Native, PostgreSQL, and MongoDB.",
 
@@ -1220,84 +1296,15 @@ export const aboutData: AboutData = {
     "Beyond development, I actively work on system design, DevOps workflows, CI/CD pipelines, Dockerized deployments, and engineering best practices. I enjoy solving complex scalability problems and transforming business requirements into reliable technical solutions.",
   ],
 
-  skillGroups: [
-    {
-      title: 'Frontend & Mobile',
-      items: [
-        'React.js',
-        'Next.js',
-        'TypeScript',
-        'Tailwind CSS',
-        'React Native',
-        'Expo',
-        'Redux Toolkit',
-        'React Query',
-        'Material UI',
-        'Styled Components',
-      ],
-    },
-
-    {
-      title: 'Backend & APIs',
-      items: [
-        'Node.js',
-        'Express.js',
-        'REST APIs',
-        'GraphQL',
-        'Socket.io',
-        'BullMQ',
-        'Redis Pub/Sub',
-        'JWT Authentication',
-        'RBAC',
-        'Python'
-      ],
-    },
-
-    {
-      title: 'Database & Performance',
-      items: [
-        'MongoDB',
-        'PostgreSQL',
-        'Redis',
-        'Prisma ORM',
-        'Mongoose',
-        'Query Optimization',
-        'Caching Strategies',
-        'Indexing',
-      ],
-    },
-
-    {
-      title: 'DevOps & Infrastructure',
-      items: [
-        'Docker',
-        'GitHub Actions',
-        'AWS',
-        'Nginx',
-        'PM2',
-        'Vercel',
-        'Netlify',
-        'Firebase',
-      ],
-    },
-
-    {
-      title: 'Tools & Testing',
-      items: [
-        'Git',
-        'GitHub',
-        'Postman',
-        'Jest',
-        'React Testing Library',
-        'Swagger',
-        'Sentry',
-        'Linux',
-      ],
-    },
-  ],
+  image: `${baseUrl}bablu.jpg`,
 };
 
-export const education: Education[] = [
+export const educationData: EducationData = {
+  intro: [
+    "My education has played a key role in shaping my development skills. Along with formal learning, I continuously improve through real-world projects and self-learning in modern technologies.",
+    "I try to bring value through my work by solving complex problems and creating meaningful impact.",
+  ],
+  items: [
   {
     id: '1',
     institution: 'Amity University',
@@ -1352,7 +1359,8 @@ export const education: Education[] = [
     description:
       'Comprehensive training covering React.js, Node.js, Express.js, MongoDB, REST APIs, authentication systems, backend architecture, and scalable production deployment workflows.',
   },
-];
+  ],
+};
 
 export const services: Service[] = [
   {

@@ -4,7 +4,7 @@ import { Section, Container } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
 import { FadeIn } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, User2 } from 'lucide-react';
 import Link from 'next/link';
 
 export function CTA() {
@@ -39,7 +39,12 @@ export function CTA() {
             <Link href="/#contact">
               <Button size="lg" className="group">
                 Start a Project
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+            <Link href="/#contact">
+              <Button variant='outline' size="lg" className="group">
+                Hire Me
+                <User2 className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>

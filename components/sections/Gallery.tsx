@@ -8,21 +8,7 @@ import { ArrowRight } from 'lucide-react';
 import { GalleryCard } from '../ui/GalleryCard';
 
 export function Gallery() {
-  const { data: images = [], isLoading } = useGalleryImages();
-
-  if (isLoading) {
-    return (
-      <Section className="relative overflow-hidden">
-        <Container>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="h-40 rounded-2xl bg-card/50 animate-pulse" />
-            ))}
-          </div>
-        </Container>
-      </Section>
-    );
-  }
+  const { data: images = [] } = useGalleryImages();
 
   return (
     <Section className="relative overflow-hidden">

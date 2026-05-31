@@ -1,5 +1,5 @@
 import { useQuery, useSuspenseQuery } from '@tanstack/react-query';
-import type { Project, Experience, Education, Service, Testimonial, FAQItem, WorkflowStep, AboutData } from '@/types';
+import type { Project, Experience, Education, EducationData, Service, Testimonial, FAQItem, WorkflowStep, AboutData, SkillGroup } from '@/types';
 
 async function fetchData<T>(endpoint: string): Promise<T> {
   const res = await fetch(endpoint);
@@ -36,16 +36,16 @@ export function useSuspenseExperiences() {
 }
 
 export function useEducation() {
-  return useQuery<Education[]>({
+  return useQuery<EducationData>({
     queryKey: ['education'],
-    queryFn: () => fetchData<Education[]>('/api/education'),
+    queryFn: () => fetchData<EducationData>('/api/education'),
   });
 }
 
 export function useSuspenseEducation() {
-  return useSuspenseQuery<Education[]>({
+  return useSuspenseQuery<EducationData>({
     queryKey: ['education'],
-    queryFn: () => fetchData<Education[]>('/api/education'),
+    queryFn: () => fetchData<EducationData>('/api/education'),
   });
 }
 
@@ -116,6 +116,20 @@ export function useSuspenseAbout() {
   return useSuspenseQuery<AboutData>({
     queryKey: ['about'],
     queryFn: () => fetchData<AboutData>('/api/about'),
+  });
+}
+
+export function useSkills() {
+  return useQuery<SkillGroup[]>({
+    queryKey: ['skills'],
+    queryFn: () => fetchData<SkillGroup[]>('/api/skills'),
+  });
+}
+
+export function useSuspenseSkills() {
+  return useSuspenseQuery<SkillGroup[]>({
+    queryKey: ['skills'],
+    queryFn: () => fetchData<SkillGroup[]>('/api/skills'),
   });
 }
 

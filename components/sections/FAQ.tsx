@@ -10,21 +10,7 @@ import { cn } from '@/lib/utils';
 
 export function FAQ() {
   const [openId, setOpenId] = useState<string | null>(null);
-  const { data: faqs = [], isLoading } = useFaqs();
-
-  if (isLoading) {
-    return (
-      <Section className="relative">
-        <Container>
-          <div className="space-y-4">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-16 rounded-xl bg-card/50 animate-pulse" />
-            ))}
-          </div>
-        </Container>
-      </Section>
-    );
-  }
+  const { data: faqs = [] } = useFaqs();
 
   return (
     <Section className="relative">
@@ -34,14 +20,10 @@ export function FAQ() {
             <div className="lg:sticky lg:top-24 self-start">
               <SectionHeader
                 badge="FAQ"
-                className="text-center lg:text-left items-center lg:items-start"
-                title="Frequently Asked Questions"
-                description=""
-              />
 
-              <p className="mt-6 text-center md:text-left text-base text-muted-foreground leading-relaxed">
-                I believe in transparency and smooth communication. Here are some common things clients usually ask before starting a project.
-              </p>
+                title="Frequently Asked Questions"
+                description="Answers to common questions about my experience, workflow, and collaboration process"
+              />
             </div>
           </FadeIn>
 

@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Mail, Sparkles } from 'lucide-react';
+import { ArrowRight, Mail, Sparkles, FileText } from 'lucide-react';
 import { FaLinkedin, FaGithub, FaLink } from 'react-icons/fa6';
 import { TypeAnimation } from 'react-type-animation';
 import { Button } from '@/components/ui/Button';
@@ -24,7 +24,7 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative pt-24 min-h-screen flex items-center overflow-hidden"
+      className="relative mt-16 min-h-screen flex items-center overflow-hidden"
     >
       {/* 🌈 Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
@@ -119,9 +119,10 @@ export function Hero() {
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
 
-              <a href="/bablu_verma_full_stack_site.pdf" download>
+              <a target='_blank' href="/bablu_verma_full_stack_site.pdf" >
                 <Button variant="outline" size="lg">
-                  Download Resume
+                  <FileText className="mr-2 w-4 h-4" />
+                  My Resume
                 </Button>
               </a>
             </div>

@@ -2,11 +2,13 @@ import type {
   Project,
   Experience,
   Education,
+  EducationData,
   Service,
   Testimonial,
   FAQItem,
   WorkflowStep,
   AboutData,
+  SkillGroup,
 } from '@/types';
 
 // Single source of truth
@@ -44,7 +46,7 @@ export async function getExperienceByCompany(companySlug: string) {
   return data.find(e => e.companySlug === companySlug);
 }
 
-export async function getEducation(): Promise<Education[]> {
+export async function getEducation(): Promise<EducationData> {
   return fetchData("/api/education");
 }
 
@@ -66,6 +68,10 @@ export async function getWorkflowSteps(): Promise<WorkflowStep[]> {
 
 export async function getAbout(): Promise<AboutData> {
   return fetchData("/api/about");
+}
+
+export async function getSkills(): Promise<SkillGroup[]> {
+  return fetchData("/api/skills");
 }
 
 export async function getGalleryImages() {

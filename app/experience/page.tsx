@@ -36,7 +36,7 @@ export default function ExperiencePage() {
           description="A journey through my professional career and the impactful projects I've delivered."
         />
 
-        <StaggerContainer className="grid md:grid-cols-2 gap-8 mt-12">
+        <StaggerContainer className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mt-12">
           {experiences.map((exp) => (
             <ExperienceCard key={exp.id} exp={exp} />
           ))}
