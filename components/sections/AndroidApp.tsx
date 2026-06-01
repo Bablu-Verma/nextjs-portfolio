@@ -7,7 +7,10 @@ import { motion } from 'framer-motion';
 import { Download, Zap, Shield, RefreshCw, Smartphone } from 'lucide-react';
 
 
+// new apk url 
 const apkurl = 'https://expo.dev/artifacts/eas/cwF6F2xFwjutwasBXekkpf.apk'
+
+
 
 export function AndroidApp() {
   return (
