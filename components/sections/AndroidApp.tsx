@@ -15,8 +15,6 @@ const apkurl = 'https://expo.dev/artifacts/eas/cwF6F2xFwjutwasBXekkpf.apk'
 export function AndroidApp() {
   return (
     <Section className="pt-20 relative overflow-hidden">
-
-
       <Container className="relative">
         <div id='apkInstall' className="md:flex justify-between gap-12  items-center ">
           <FadeIn className='max-w-[700]'>

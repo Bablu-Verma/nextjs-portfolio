@@ -102,6 +102,40 @@ export interface AboutData {
   image: string;
 }
 
+export interface GitHubUser {
+  login: string;
+  name: string;
+  avatar_url: string;
+  html_url: string;
+  bio: string;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  location: string;
+  blog: string;
+  created_at: string;
+}
+
+export interface GitHubRepo {
+  name: string;
+  html_url: string;
+  description: string | null;
+  language: string | null;
+  stargazers_count: number;
+  forks_count: number;
+  updated_at: string;
+  topics: string[];
+}
+
+export interface GitHubData {
+  user: GitHubUser;
+  repos: GitHubRepo[];
+  totalStars: number;
+  totalForks: number;
+  topLanguages: { language: string; count: number; percentage: number }[];
+}
+
 export type Theme = 'dark' | 'light';
 
 export interface UIState {

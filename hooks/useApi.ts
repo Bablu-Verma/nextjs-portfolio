@@ -1,5 +1,5 @@
 import { useQuery, useSuspenseQuery } from '@tanstack/react-query';
-import type { Project, Experience, Education, EducationData, Service, Testimonial, FAQItem, WorkflowStep, AboutData, SkillGroup } from '@/types';
+import type { Project, Experience, Education, EducationData, Service, Testimonial, FAQItem, WorkflowStep, AboutData, SkillGroup, GitHubData } from '@/types';
 
 async function fetchData<T>(endpoint: string): Promise<T> {
   const res = await fetch(endpoint);
@@ -144,5 +144,21 @@ export function useSuspenseGalleryImages() {
   return useSuspenseQuery<{ src: string; alt: string }[]>({
     queryKey: ['gallery'],
     queryFn: () => fetchData<{ src: string; alt: string }[]>('/api/gallery'),
+  });
+}
+
+export function useGitHub() {
+  return useQuery<GitHubData>({
+    queryKey: ['github'],
+    queryFn: () => fetchData<GitHubData>('/api/github'),
+    staleTime: 1000 * 60 * 30,
+  });
+}
+
+export function useSuspenseGitHub() {
+  return useSuspenseQuery<GitHubData>({
+    queryKey: ['github'],
+    queryFn: () => fetchData<GitHubData>('/api/github'),
+    staleTime: 1000 * 60 * 30,
   });
 }

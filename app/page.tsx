@@ -17,6 +17,7 @@ import { FAQ } from '@/components/sections/FAQ';
 import { Contact } from '@/components/sections/Contact';
 import { CTA } from '@/components/sections/CTA';
 import { AndroidApp } from '@/components/sections/AndroidApp';
+import { GitHubStats } from '@/components/sections/GitHubStats';
 import HashScroller from '@/components/ui/HashScroller';
 
 export default function Home() {
@@ -40,6 +41,7 @@ export default function Home() {
         <Values />
         <CTA />
 
+        <GitHubStats />
         <Gallery />
         <Testimonials />
         <FAQ />
