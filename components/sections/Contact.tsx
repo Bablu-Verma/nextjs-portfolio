@@ -9,9 +9,8 @@ import { Button } from '@/components/ui/Button';
 import { FadeIn, StaggerContainer, staggerItem } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import toast from 'react-hot-toast';
-import { FaAndroid } from 'react-icons/fa6';
 
 export function Contact() {
   const {

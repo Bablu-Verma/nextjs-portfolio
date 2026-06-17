@@ -7,8 +7,9 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { GalleryCard } from '../ui/GalleryCard';
 
-export function Gallery() {
-  const { data: images = [] } = useGalleryImages();
+export function Gallery({ data: propData }: { data?: { src: string; alt: string }[] }) {
+  const { data: fetchedImages = [] } = useGalleryImages(!propData);
+  const images = propData ?? fetchedImages;
 
   return (
     <Section className="relative overflow-hidden">

@@ -18,6 +18,7 @@ export interface Project {
 export interface Experience {
   id: string;
   company: string;
+  logo: string;
   companySlug: string;
   role: string;
   startDate: string;
@@ -52,21 +53,6 @@ export interface Service {
   tech?: string[];
 }
 
-export interface Testimonial {
-  id: string;
-  name: string;
-  role: string;
-  company: string;
-
-  content: string;
-}
-
-export interface FAQItem {
-  id: string;
-  question: string;
-  answer: string;
-}
-
 export interface WorkflowStep {
   id: string;
   title: string;
@@ -81,20 +67,15 @@ export interface ContactFormData {
   message: string;
 }
 
-export interface NavItem {
-  label: string;
-  href: string;
-}
-
-export interface SocialLink {
+export interface Skill {
   name: string;
-  url: string;
-  icon: string;
+  image: string;
+  rating: number;
 }
 
 export interface SkillGroup {
   title: string;
-  items: string[];
+  items: Skill[];
 }
 
 export interface AboutData {
@@ -102,44 +83,15 @@ export interface AboutData {
   image: string;
 }
 
-export interface GitHubUser {
-  login: string;
-  name: string;
-  avatar_url: string;
-  html_url: string;
-  bio: string;
-  public_repos: number;
-  public_gists: number;
-  followers: number;
-  following: number;
-  location: string;
-  blog: string;
-  created_at: string;
+
+export interface HomePageData {
+  about: AboutData;
+  skills: SkillGroup[];
+  services: Service[];
+  projects: Project[];
+  experiences: Experience[];
+  education: EducationData;
+  workflowSteps: WorkflowStep[];
+  gallery: { src: string; alt: string }[];
 }
 
-export interface GitHubRepo {
-  name: string;
-  html_url: string;
-  description: string | null;
-  language: string | null;
-  stargazers_count: number;
-  forks_count: number;
-  updated_at: string;
-  topics: string[];
-}
-
-export interface GitHubData {
-  user: GitHubUser;
-  repos: GitHubRepo[];
-  totalStars: number;
-  totalForks: number;
-  topLanguages: { language: string; count: number; percentage: number }[];
-}
-
-export type Theme = 'dark' | 'light';
-
-export interface UIState {
-  isMenuOpen: boolean;
-  isLoading: boolean;
-  activeModal: string | null;
-}

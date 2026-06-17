@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, CheckCircle, Target, Lightbulb, TrendingUp } from 'lucide-react';

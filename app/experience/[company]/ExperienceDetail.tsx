@@ -1,8 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, MapPin, Award, CheckCircle } from 'lucide-react';
+import Image from 'next/image';
+import { Calendar, MapPin, Award } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { FadeIn } from '@/components/shared/Animations';
 import { useThemeStore } from '@/store';
@@ -38,19 +38,31 @@ export default function ExperienceDetail({ experience }: ExperienceDetailProps) 
                 </span>
               </div>
 
-              <h1 className="text-3xl md:text-5xl font-bold font-heading mb-2">
-                {experience.role}
-              </h1>
-              <p className="text-2xl text-primary font-semibold mb-4">{experience.company}</p>
-
-              <div className="flex flex-wrap gap-4 text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
-                  <span>{experience.startDate} - {experience.current ? 'Present' : experience.endDate}</span>
+              <div className="flex items-start gap-6 mb-6">
+                <div className="w-20 h-20 rounded-2xl bg-card border border-border flex items-center justify-center p-4 shrink-0 shadow-sm">
+                  <Image
+                    src={experience.logo}
+                    alt={experience.company}
+                    width={80}
+                    height={80}
+                    className="object-contain w-full h-full"
+                  />
                 </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
-                  <span>{experience.location}</span>
+                <div className="min-w-0">
+                  <h1 className="text-3xl md:text-5xl font-bold font-heading mb-1">
+                    {experience.role}
+                  </h1>
+                  <p className="text-2xl text-primary font-semibold mb-3">{experience.company}</p>
+                  <div className="flex flex-wrap gap-4 text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>{experience.startDate} - {experience.current ? 'Present' : experience.endDate}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4" />
+                      <span>{experience.location}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -128,7 +140,7 @@ export default function ExperienceDetail({ experience }: ExperienceDetailProps) 
                   <div className="p-6 rounded-xl glass">
                     <h3 className="font-semibold mb-4">Looking to Hire?</h3>
                     <p className="text-sm text-muted-foreground mb-4">
-                      I&apos;m currently open to new opportunities. Let&apos;s connect!
+                      I&apos;m currently open to collaborate. Let&apos;s connect!
                     </p>
                     <Link href="/#contact">
                       <Button className="w-full">Get in Touch</Button>

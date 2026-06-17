@@ -3,12 +3,14 @@
 import { useState } from 'react';
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
 import { useEducation } from '@/hooks/useApi';
+import type { EducationData } from '@/types';
 import { FadeIn } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
 import { Calendar, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
 
-export function Education() {
-  const { data: educationData } = useEducation();
+export function Education({ data: propData }: { data?: EducationData }) {
+  const { data: fetchedData } = useEducation(!propData);
+  const educationData = propData ?? fetchedData;
   const [showAll, setShowAll] = useState(false);
   const education = educationData?.items ?? [];
   const intro = educationData?.intro ?? [];

@@ -5,6 +5,7 @@ import { Cursor } from "./shared/Cursor";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { ScrollToTop } from "./shared/ScrollToTop";
+import { Terminal } from "./sections/Terminal";
 import { useEffect } from "react";
 import { useThemeStore } from "@/store";
 import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
@@ -39,6 +40,7 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
                     }}
                 />
                 <Footer />
+                <Terminal />
                 <ScrollToTop />
             </div>
         </ReactQueryProvider>

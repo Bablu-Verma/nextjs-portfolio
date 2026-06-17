@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Calendar, MapPin, ArrowRight, Briefcase } from 'lucide-react';
+import Image from 'next/image';
+import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 
 interface ExperienceCardProps {
     exp: any;
@@ -17,23 +18,25 @@ export function ExperienceCard({ exp }: ExperienceCardProps) {
         >
             <div className="relative h-full p-6 rounded-2xl border border-border bg-card/50 backdrop-blur-xl overflow-hidden transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-[0_10px_40px_rgba(232,93,4,0.15)]">
 
-
-
-
-                {/* 💼 Icon */}
-                <div className="w-12 h-12 absolute right-6 top-6 mb-4 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <Briefcase className="w-6 h-6 text-primary" />
+                <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center p-2.5 shrink-0">
+                        <Image
+                            src={exp.logo}
+                            alt={exp.company}
+                            width={48}
+                            height={48}
+                            className="object-contain w-full h-full"
+                        />
+                    </div>
+                    <div className="min-w-0">
+                        <h3 className="text-xl font-semibold group-hover:text-primary transition-colors truncate">
+                            {exp.role}
+                        </h3>
+                        <p className="text-primary font-medium truncate">
+                            {exp.company}
+                        </p>
+                    </div>
                 </div>
-
-                {/* 💼 Role */}
-                <h3 className="text-xl font-semibold mb-1 group-hover:text-primary transition-colors">
-                    {exp.role}
-                </h3>
-
-                {/* 🏢 Company */}
-                <p className="text-primary font-medium mb-4">
-                    {exp.company}
-                </p>
 
                 {/* 📅 + 📍 */}
                 <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">

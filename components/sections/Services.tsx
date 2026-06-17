@@ -2,6 +2,7 @@
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
 import { useServices } from '@/hooks/useApi';
+import type { Service } from '@/types';
 import { Card } from '@/components/ui/Card';
 import { FadeIn, StaggerContainer, staggerItem } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
@@ -27,8 +28,9 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   terminal: Terminal,
 };
 
-export function Services() {
-  const { data: services = [] } = useServices();
+export function Services({ data: propData }: { data?: Service[] }) {
+  const { data: fetchedData = [] } = useServices(!propData);
+  const services = propData ?? fetchedData;
 
   return (
     <Section id="services" className="relative">

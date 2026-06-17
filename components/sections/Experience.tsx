@@ -2,13 +2,15 @@
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
 import { useExperiences } from '@/hooks/useApi';
+import type { Experience as ExperienceType } from '@/types';
 import { FadeIn, StaggerContainer, staggerItem } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
 import { ExperienceCard } from '../ui/ExperienceCard';
 import { ArrowRight } from 'lucide-react';
 
-export function Experience() {
-  const { data: experiences = [] } = useExperiences();
+export function Experience({ data: propData }: { data?: ExperienceType[] }) {
+  const { data: fetchedData = [] } = useExperiences(!propData);
+  const experiences = propData ?? fetchedData;
 
   return (
     <Section id="experience" className="relative">

@@ -1,5 +1,5 @@
-import { useQuery, useSuspenseQuery } from '@tanstack/react-query';
-import type { Project, Experience, Education, EducationData, Service, Testimonial, FAQItem, WorkflowStep, AboutData, SkillGroup, GitHubData } from '@/types';
+import { useQuery } from '@tanstack/react-query';
+import type { Project, Experience, Education, EducationData, Service, WorkflowStep, AboutData, SkillGroup, HomePageData } from '@/types';
 
 async function fetchData<T>(endpoint: string): Promise<T> {
   const res = await fetch(endpoint);
@@ -7,158 +7,73 @@ async function fetchData<T>(endpoint: string): Promise<T> {
   return res.json();
 }
 
-export function useProjects() {
+export function useProjects(enabled = true) {
   return useQuery<Project[]>({
     queryKey: ['projects'],
     queryFn: () => fetchData<Project[]>('/api/projects'),
+    enabled,
   });
 }
 
-export function useSuspenseProjects() {
-  return useSuspenseQuery<Project[]>({
-    queryKey: ['projects'],
-    queryFn: () => fetchData<Project[]>('/api/projects'),
-  });
-}
-
-export function useExperiences() {
+export function useExperiences(enabled = true) {
   return useQuery<Experience[]>({
     queryKey: ['experiences'],
     queryFn: () => fetchData<Experience[]>('/api/experiences'),
+    enabled,
   });
 }
 
-export function useSuspenseExperiences() {
-  return useSuspenseQuery<Experience[]>({
-    queryKey: ['experiences'],
-    queryFn: () => fetchData<Experience[]>('/api/experiences'),
-  });
-}
-
-export function useEducation() {
+export function useEducation(enabled = true) {
   return useQuery<EducationData>({
     queryKey: ['education'],
     queryFn: () => fetchData<EducationData>('/api/education'),
+    enabled,
   });
 }
 
-export function useSuspenseEducation() {
-  return useSuspenseQuery<EducationData>({
-    queryKey: ['education'],
-    queryFn: () => fetchData<EducationData>('/api/education'),
-  });
-}
-
-export function useServices() {
+export function useServices(enabled = true) {
   return useQuery<Service[]>({
     queryKey: ['services'],
     queryFn: () => fetchData<Service[]>('/api/services'),
+    enabled,
   });
 }
 
-export function useSuspenseServices() {
-  return useSuspenseQuery<Service[]>({
-    queryKey: ['services'],
-    queryFn: () => fetchData<Service[]>('/api/services'),
-  });
-}
-
-export function useTestimonials() {
-  return useQuery<Testimonial[]>({
-    queryKey: ['testimonials'],
-    queryFn: () => fetchData<Testimonial[]>('/api/testimonials'),
-  });
-}
-
-export function useSuspenseTestimonials() {
-  return useSuspenseQuery<Testimonial[]>({
-    queryKey: ['testimonials'],
-    queryFn: () => fetchData<Testimonial[]>('/api/testimonials'),
-  });
-}
-
-export function useFaqs() {
-  return useQuery<FAQItem[]>({
-    queryKey: ['faqs'],
-    queryFn: () => fetchData<FAQItem[]>('/api/faqs'),
-  });
-}
-
-export function useSuspenseFaqs() {
-  return useSuspenseQuery<FAQItem[]>({
-    queryKey: ['faqs'],
-    queryFn: () => fetchData<FAQItem[]>('/api/faqs'),
-  });
-}
-
-export function useWorkflowSteps() {
+export function useWorkflowSteps(enabled = true) {
   return useQuery<WorkflowStep[]>({
     queryKey: ['workflow'],
     queryFn: () => fetchData<WorkflowStep[]>('/api/workflow'),
+    enabled,
   });
 }
 
-export function useSuspenseWorkflowSteps() {
-  return useSuspenseQuery<WorkflowStep[]>({
-    queryKey: ['workflow'],
-    queryFn: () => fetchData<WorkflowStep[]>('/api/workflow'),
-  });
-}
-
-export function useAbout() {
+export function useAbout(enabled = true) {
   return useQuery<AboutData>({
     queryKey: ['about'],
     queryFn: () => fetchData<AboutData>('/api/about'),
+    enabled,
   });
 }
 
-export function useSuspenseAbout() {
-  return useSuspenseQuery<AboutData>({
-    queryKey: ['about'],
-    queryFn: () => fetchData<AboutData>('/api/about'),
-  });
-}
-
-export function useSkills() {
+export function useSkills(enabled = true) {
   return useQuery<SkillGroup[]>({
     queryKey: ['skills'],
     queryFn: () => fetchData<SkillGroup[]>('/api/skills'),
+    enabled,
   });
 }
 
-export function useSuspenseSkills() {
-  return useSuspenseQuery<SkillGroup[]>({
-    queryKey: ['skills'],
-    queryFn: () => fetchData<SkillGroup[]>('/api/skills'),
-  });
-}
-
-export function useGalleryImages() {
+export function useGalleryImages(enabled = true) {
   return useQuery<{ src: string; alt: string }[]>({
     queryKey: ['gallery'],
     queryFn: () => fetchData<{ src: string; alt: string }[]>('/api/gallery'),
+    enabled,
   });
 }
 
-export function useSuspenseGalleryImages() {
-  return useSuspenseQuery<{ src: string; alt: string }[]>({
-    queryKey: ['gallery'],
-    queryFn: () => fetchData<{ src: string; alt: string }[]>('/api/gallery'),
-  });
-}
-
-export function useGitHub() {
-  return useQuery<GitHubData>({
-    queryKey: ['github'],
-    queryFn: () => fetchData<GitHubData>('/api/github'),
-    staleTime: 1000 * 60 * 30,
-  });
-}
-
-export function useSuspenseGitHub() {
-  return useSuspenseQuery<GitHubData>({
-    queryKey: ['github'],
-    queryFn: () => fetchData<GitHubData>('/api/github'),
-    staleTime: 1000 * 60 * 30,
+export function useHomeData() {
+  return useQuery<HomePageData>({
+    queryKey: ['home'],
+    queryFn: () => fetchData<HomePageData>('/api/home'),
   });
 }

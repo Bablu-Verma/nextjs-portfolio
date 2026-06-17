@@ -1,11 +1,10 @@
 import type {
   Project,
   Experience,
-  Education,
+
   EducationData,
   Service,
-  Testimonial,
-  FAQItem,
+
   WorkflowStep,
   AboutData,
   SkillGroup,
@@ -14,7 +13,6 @@ import type {
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://bablu-verma.vercel.app/'
 
 export const projects: Project[] = [
-
 
 
   {
@@ -1125,73 +1123,73 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-  id: '22',
-  slug: 'automation-saas',
-  title: 'Automation SaaS Platform',
-  description: 'White-label workflow automation and business process management platform',
-  shortDescription: 'Low-code automation platform powered by workflow templates and n8n integrations',
-  image: `${baseUrl}p/automation.png`,
-  tags: [
-    'Next.js 15',
-    'React 19',
-    'TypeScript',
-    'Node.js',
-    'Express.js',
-    'MongoDB',
-    'Mongoose',
-    'Redux Toolkit',
-    'React Query',
-    'Tailwind CSS',
-    'JWT Auth',
-    'Google OAuth',
-    'n8n',
-    'Cloudinary',
-    'Firebase',
-    'PDFKit',
-    'Node Cron',
-    'Nodemailer',
-  ],
+    id: '22',
+    slug: 'automation-saas',
+    title: 'Automation SaaS Platform',
+    description: 'White-label workflow automation and business process management platform',
+    shortDescription: 'Low-code automation platform powered by workflow templates and n8n integrations',
+    image: `${baseUrl}p/automation.png`,
+    tags: [
+      'Next.js 15',
+      'React 19',
+      'TypeScript',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Mongoose',
+      'Redux Toolkit',
+      'React Query',
+      'Tailwind CSS',
+      'JWT Auth',
+      'Google OAuth',
+      'n8n',
+      'Cloudinary',
+      'Firebase',
+      'PDFKit',
+      'Node Cron',
+      'Nodemailer',
+    ],
 
-  overview:
-    'Automation SaaS is a full-stack workflow automation platform built to help businesses deploy and manage automated processes without directly interacting with complex automation tools. The system provides a catalog of predefined workflow templates, allowing users to create automation instances, configure credentials, manage subscriptions, monitor execution history, and handle billing through a centralized dashboard. The platform integrates with n8n as the automation engine while offering a fully customized SaaS experience including user management, payment processing, invoicing, documentation, analytics, and role-based administration. I was responsible for designing and developing the complete frontend and backend architecture, database design, authentication system, workflow management engine, billing infrastructure, and admin dashboard.',
+    overview:
+      'Automation SaaS is a full-stack workflow automation platform built to help businesses deploy and manage automated processes without directly interacting with complex automation tools. The system provides a catalog of predefined workflow templates, allowing users to create automation instances, configure credentials, manage subscriptions, monitor execution history, and handle billing through a centralized dashboard. The platform integrates with n8n as the automation engine while offering a fully customized SaaS experience including user management, payment processing, invoicing, documentation, analytics, and role-based administration. I was responsible for designing and developing the complete frontend and backend architecture, database design, authentication system, workflow management engine, billing infrastructure, and admin dashboard.',
 
-  challenges: [
-    'Designing a scalable SaaS architecture capable of supporting multiple workflow templates and user automation instances',
-    'Creating a flexible workflow management system that could dynamically handle different automation configurations and inputs',
-    'Implementing secure authentication with OTP verification, JWT sessions, Google OAuth, and role-based authorization',
-    'Managing subscription plans, usage limits, billing cycles, and automation lifecycle states within a unified system',
-    'Building an admin dashboard capable of controlling users, workflows, payments, documentation, and support requests',
-    'Handling file uploads, image optimization, invoice generation, and email notifications efficiently',
-    'Integrating external automation infrastructure while maintaining a seamless white-label user experience',
-  ],
+    challenges: [
+      'Designing a scalable SaaS architecture capable of supporting multiple workflow templates and user automation instances',
+      'Creating a flexible workflow management system that could dynamically handle different automation configurations and inputs',
+      'Implementing secure authentication with OTP verification, JWT sessions, Google OAuth, and role-based authorization',
+      'Managing subscription plans, usage limits, billing cycles, and automation lifecycle states within a unified system',
+      'Building an admin dashboard capable of controlling users, workflows, payments, documentation, and support requests',
+      'Handling file uploads, image optimization, invoice generation, and email notifications efficiently',
+      'Integrating external automation infrastructure while maintaining a seamless white-label user experience',
+    ],
 
-  solutions: [
-    'Designed a modular monorepo architecture separating frontend and backend services for maintainability and scalability',
-    'Implemented reusable Master Workflow templates allowing users to create automation instances with dynamic configurations',
-    'Built secure authentication using JWT, bcrypt, email OTP verification, Passport Google OAuth, and protected API middleware',
-    'Developed a subscription and billing engine supporting multiple pricing tiers, currencies, discounts, taxes, and payment tracking',
-    'Created comprehensive admin management modules for users, workflows, payments, support tickets, newsletters, and documentation',
-    'Integrated Cloudinary, Multer, and Sharp for optimized file handling and image processing workflows',
-    'Implemented automated invoice generation using PDFKit and email delivery using Nodemailer',
-    'Built dashboard analytics and execution monitoring systems for both users and administrators',
-    'Integrated n8n workflow orchestration through automation instance mapping and workflow lifecycle management',
-    'Used React Query, Redux Toolkit, and TypeScript to create a scalable frontend state management architecture',
-  ],
+    solutions: [
+      'Designed a modular monorepo architecture separating frontend and backend services for maintainability and scalability',
+      'Implemented reusable Master Workflow templates allowing users to create automation instances with dynamic configurations',
+      'Built secure authentication using JWT, bcrypt, email OTP verification, Passport Google OAuth, and protected API middleware',
+      'Developed a subscription and billing engine supporting multiple pricing tiers, currencies, discounts, taxes, and payment tracking',
+      'Created comprehensive admin management modules for users, workflows, payments, support tickets, newsletters, and documentation',
+      'Integrated Cloudinary, Multer, and Sharp for optimized file handling and image processing workflows',
+      'Implemented automated invoice generation using PDFKit and email delivery using Nodemailer',
+      'Built dashboard analytics and execution monitoring systems for both users and administrators',
+      'Integrated n8n workflow orchestration through automation instance mapping and workflow lifecycle management',
+      'Used React Query, Redux Toolkit, and TypeScript to create a scalable frontend state management architecture',
+    ],
 
-  results: [
-    'Delivered a production-ready workflow automation SaaS platform with complete user and administration ecosystems',
-    'Enabled businesses to deploy and manage automation workflows through a user-friendly low-code interface',
-    'Successfully implemented subscription-based monetization with multi-currency billing support',
-    'Reduced operational complexity by centralizing workflow management, billing, support, and analytics into a single platform',
-    'Achieved scalable architecture through reusable workflow templates and modular backend services',
-    'Improved security with OTP verification, OAuth integration, JWT authentication, and role-based access control',
-    'Automated invoicing, notifications, and workflow lifecycle management to reduce manual administrative effort',
-    'Provided a foundation for future workflow expansion and third-party service integrations',
-  ],
+    results: [
+      'Delivered a production-ready workflow automation SaaS platform with complete user and administration ecosystems',
+      'Enabled businesses to deploy and manage automation workflows through a user-friendly low-code interface',
+      'Successfully implemented subscription-based monetization with multi-currency billing support',
+      'Reduced operational complexity by centralizing workflow management, billing, support, and analytics into a single platform',
+      'Achieved scalable architecture through reusable workflow templates and modular backend services',
+      'Improved security with OTP verification, OAuth integration, JWT authentication, and role-based access control',
+      'Automated invoicing, notifications, and workflow lifecycle management to reduce manual administrative effort',
+      'Provided a foundation for future workflow expansion and third-party service integrations',
+    ],
 
-  liveUrl: 'https://github.com/Bablu-Verma/automation-saas',
-  featured: false,
-}
+    liveUrl: 'https://github.com/Bablu-Verma/automation-saas',
+    featured: false,
+  }
 ];
 
 export const experiences: Experience[] = [
@@ -1199,6 +1197,7 @@ export const experiences: Experience[] = [
     id: '1',
     company: '4tuners Technologies',
     companySlug: '4tuners',
+    logo: `${baseUrl}e/tuners.png`,
     role: 'Full Stack Developer',
     startDate: '2025-07',
     endDate: '2026-03',
@@ -1228,6 +1227,7 @@ export const experiences: Experience[] = [
     companySlug: 'freekaamaal',
     role: 'React.js & React Native Developer',
     startDate: '2022-09',
+    logo: `${baseUrl}e/fkm.png`,
     endDate: '2025-05',
     current: false,
     description:
@@ -1256,6 +1256,7 @@ export const experiences: Experience[] = [
     companySlug: 'qwerty',
     role: 'Web Developer',
     startDate: '2021-10',
+    logo: `${baseUrl}e/qwerty.png`,
     endDate: '2022-08',
     current: false,
     description:
@@ -1281,78 +1282,75 @@ export const experiences: Experience[] = [
 
 export const skills: SkillGroup[] = [
   {
-    title: 'Frontend & Mobile',
+    title: "Frontend & Mobile",
     items: [
-      'React.js',
-      'Next.js',
-      'TypeScript',
-      'Tailwind CSS',
-      'React Native',
-      'Expo',
-      'Redux Toolkit',
-      'React Query',
-      'Material UI',
-      'Styled Components',
+      { name: "React.js", image: `${baseUrl}s/react.svg`, rating: 9 },
+      { name: "Next.js", image: `${baseUrl}s/nextdotjs.svg`, rating: 9 },
+      { name: "TypeScript", image: `${baseUrl}s/typescript.svg`, rating: 8 },
+      { name: "Tailwind CSS", image: `${baseUrl}s/tailwindcss.svg`, rating: 9 },
+      { name: "React Native", image: `${baseUrl}s/react.svg`, rating: 8 },
+      { name: "Expo", image: `${baseUrl}s/expo.svg`, rating: 8 },
+      { name: "Redux Toolkit", image: `${baseUrl}s/redux.svg`, rating: 8 },
+      { name: "React Query", image: `${baseUrl}s/reactquery.svg`, rating: 8 },
+      { name: "Material UI", image: `${baseUrl}s/mui.svg`, rating: 8 },
+      { name: "Styled Components", image: `${baseUrl}s/styledcomponents.svg`, rating: 7 },
     ],
   },
-
   {
-    title: 'Backend & APIs',
+    title: "Backend & APIs",
     items: [
-      'Node.js',
-      'Express.js',
-      'REST APIs',
-      'GraphQL',
-      'Socket.io',
-      'BullMQ',
-      'Redis Pub/Sub',
-      'JWT Authentication',
-      'RBAC',
-      'Python'
+      { name: "Node.js", image: `${baseUrl}s/nodedotjs.svg`, rating: 9 },
+      { name: "Express.js", image: `${baseUrl}s/express.svg`, rating: 9 },
+      { name: "REST APIs", image: `${baseUrl}s/openapiinitiative.svg`, rating: 9 },
+      { name: "GraphQL", image: `${baseUrl}s/graphql.svg`, rating: 7 },
+      { name: "Socket.io", image: `${baseUrl}s/socketdotio.svg`, rating: 8 },
+      { name: "BullMQ", image: `${baseUrl}s/redis.svg`, rating: 7 },
+      { name: "Redis Pub/Sub", image: `${baseUrl}s/redis.svg`, rating: 8 },
+      { name: "JWT Authentication", image: `${baseUrl}s/jsonwebtokens.svg`, rating: 9 },
+      { name: "RBAC", image: `${baseUrl}s/auth0.svg`, rating: 8 },
+      { name: "Python", image: `${baseUrl}s/python.svg`, rating: 7 },
     ],
   },
-
   {
-    title: 'Database & Performance',
+    title: "Database & Performance",
     items: [
-      'MongoDB',
-      'PostgreSQL',
-      'Redis',
-      'Prisma ORM',
-      'Mongoose',
-      'Query Optimization',
-      'Caching Strategies',
-      'Indexing',
+      { name: "MongoDB", image: `${baseUrl}s/mongodb.svg`, rating: 9 },
+      { name: "PostgreSQL", image: `${baseUrl}s/postgresql.svg`, rating: 8 },
+      { name: "Redis", image: `${baseUrl}s/redis.svg`, rating: 8 },
+      { name: "Prisma ORM", image: `${baseUrl}s/prisma.svg`, rating: 8 },
+      { name: "Mongoose", image: `${baseUrl}s/mongodb.svg`, rating: 8 },
+      { name: "Query Optimization", image: `${baseUrl}s/postgresql.svg`, rating: 8 },
+      { name: "Caching Strategies", image: `${baseUrl}s/redis.svg`, rating: 8 },
+      { name: "Indexing", image: `${baseUrl}s/elasticsearch.svg`, rating: 8 },
     ],
   },
-
   {
-    title: 'DevOps & Infrastructure',
+    title: "DevOps & Infrastructure",
     items: [
-      'Docker',
-      'GitHub Actions',
-      'AWS',
-      'Nginx',
-      'PM2',
-      'Vercel',
-      'Netlify',
-      'Firebase',
+      { name: "Docker", image: `${baseUrl}s/docker.svg`, rating: 8 },
+      { name: "GitHub Actions", image: `${baseUrl}s/githubactions.svg`, rating: 7 },
+      { name: "AWS", image: `${baseUrl}s/icloud.svg`, rating: 7 },
+      { name: "Nginx", image: `${baseUrl}s/nginx.svg`, rating: 8 },
+      { name: "PM2", image: `${baseUrl}s/pm2.svg`, rating: 8 },
+      { name: "Vercel", image: `${baseUrl}s/vercel.svg`, rating: 9 },
+      { name: "Netlify", image: `${baseUrl}s/netlify.svg`, rating: 8 },
+      { name: "Firebase", image: `${baseUrl}s/firebase.svg`, rating: 8 },
     ],
   },
-
   {
-    title: 'Tools & Testing',
+    title: "Tools & Testing",
     items: [
-      'Git',
-      'GitHub',
-      'Postman',
-      'Jest',
-      'React Testing Library',
-      'Swagger',
-      'Sentry',
-      'Linux',
+      { name: "Git", image: `${baseUrl}s/git.svg`, rating: 9 },
+      { name: "GitHub", image: `${baseUrl}s/github.svg`, rating: 9 },
+      { name: "Postman", image: `${baseUrl}s/postman.svg`, rating: 9 },
+      { name: "Jest", image: `${baseUrl}s/jest.svg`, rating: 7 },
+      { name: "React Testing Library", image: `${baseUrl}s/testinglibrary.svg`, rating: 7 },
+      { name: "Swagger", image: `${baseUrl}s/swagger.svg`, rating: 8 },
+      { name: "Sentry", image: `${baseUrl}s/sentry.svg`, rating: 7 },
+      { name: "Linux", image: `${baseUrl}s/linux.svg`, rating: 8 },
     ],
-  },
+  }
+
 ];
 
 export const aboutData: AboutData = {
@@ -1373,60 +1371,60 @@ export const educationData: EducationData = {
     "I try to bring value through my work by solving complex problems and creating meaningful impact.",
   ],
   items: [
-  {
-    id: '1',
-    institution: 'Amity University',
-    degree: 'Bachelor of Computer Applications',
-    field: 'Cloud & Cyber Security',
-    startDate: '2023',
-    endDate: '2026',
-    description:
-      'Pursuing BCA with specialization in Cloud Computing and Cyber Security while simultaneously working full-time in the software industry. Focused on scalable application architecture, backend systems, secure development practices, distributed systems, and modern cloud technologies.',
-  },
+    {
+      id: '1',
+      institution: 'Amity University',
+      degree: 'Bachelor of Computer Applications',
+      field: 'Cloud & Cyber Security',
+      startDate: '2023',
+      endDate: '2026',
+      description:
+        'Pursuing BCA with specialization in Cloud Computing and Cyber Security while simultaneously working full-time in the software industry. Focused on scalable application architecture, backend systems, secure development practices, distributed systems, and modern cloud technologies.',
+    },
 
-  {
-    id: '2',
-    institution: 'GBSS School, Delhi',
-    degree: 'Senior Secondary (12th)',
-    field: '',
-    startDate: '2020',
-    endDate: '2021',
-    description:
-      'Completed senior secondary education with strong analytical and problem-solving foundation that supported transition into software engineering and full stack development.',
-  },
+    {
+      id: '2',
+      institution: 'GBSS School, Delhi',
+      degree: 'Senior Secondary (12th)',
+      field: '',
+      startDate: '2020',
+      endDate: '2021',
+      description:
+        'Completed senior secondary education with strong analytical and problem-solving foundation that supported transition into software engineering and full stack development.',
+    },
 
-  {
-    id: '3',
-    institution: 'Self Learning & Industry Experience',
-    degree: 'Continuous Professional Learning',
-    field: 'Full Stack Development, System Design & DevOps',
-    startDate: '2021',
-    endDate: 'Present',
-    description:
-      'Continuously learning through real-world production projects, system architecture implementation, technical documentation, advanced frontend/backend engineering, DevOps workflows, and scalable infrastructure development.',
-  },
+    {
+      id: '3',
+      institution: 'Self Learning & Industry Experience',
+      degree: 'Continuous Professional Learning',
+      field: 'Full Stack Development, System Design & DevOps',
+      startDate: '2021',
+      endDate: 'Present',
+      description:
+        'Continuously learning through real-world production projects, system architecture implementation, technical documentation, advanced frontend/backend engineering, DevOps workflows, and scalable infrastructure development.',
+    },
 
-  {
-    id: '4',
-    institution: 'Udemy',
-    degree: 'Next.js 14 & React - The Complete Guide',
-    field: 'Frontend Engineering',
-    startDate: '2023',
-    endDate: '2023',
-    description:
-      'Covered advanced React.js and Next.js concepts including App Router, Server Components, SSR, SSG, ISR, API Routes, authentication systems, and production deployment strategies.',
-  },
+    {
+      id: '4',
+      institution: 'Udemy',
+      degree: 'Next.js 14 & React - The Complete Guide',
+      field: 'Frontend Engineering',
+      startDate: '2023',
+      endDate: '2023',
+      description:
+        'Covered advanced React.js and Next.js concepts including App Router, Server Components, SSR, SSG, ISR, API Routes, authentication systems, and production deployment strategies.',
+    },
 
-  {
-    id: '5',
-    institution: 'Udemy',
-    degree: 'Full Stack Development Bootcamp',
-    field: 'MERN Stack Development',
-    startDate: '2024',
-    endDate: '2024',
-    description:
-      'Comprehensive training covering React.js, Node.js, Express.js, MongoDB, REST APIs, authentication systems, backend architecture, and scalable production deployment workflows.',
-  },
+    {
+      id: '5',
+      institution: 'Udemy',
+      degree: 'Full Stack Development Bootcamp',
+      field: 'MERN Stack Development',
+      startDate: '2024',
+      endDate: '2024',
+      description:
+        'Comprehensive training covering React.js, Node.js, Express.js, MongoDB, REST APIs, authentication systems, backend architecture, and scalable production deployment workflows.',
+    },
   ],
 };
 
@@ -1472,68 +1470,6 @@ export const services: Service[] = [
     description: 'CI/CD pipelines, cloud infrastructure and automated deployment workflows.',
     icon: 'cloud',
     tech: ['Docker', 'AWS', 'Vercel', 'GitHub Actions'],
-  },
-];
-
-export const testimonials: Testimonial[] = [
-  {
-    id: '1',
-    name: 'Ravi Kumar',
-    role: 'Founder',
-    company: 'Freekaamaal',
-
-    content:
-      'Bablu transformed our complex ecommerce requirements into a seamless, high-performing reality. His expertise in Node.js and real-time systems is unparalleled.',
-  },
-  {
-    id: '2',
-    name: 'Aayush',
-    role: 'CTO',
-    company: '4tuners Tech',
-    content:
-      'Exceptional attention to detail and a true partner in development. The POS system he built for us has revolutionized our offline operations.',
-  },
-  {
-    id: '3',
-    name: 'Sanjay',
-    role: 'Director',
-    company: 'Strategy Classes',
-
-    content:
-      'Working with Bablu was a breeze. He understands business goals as much as technical constraints. Highly recommended for any serious web project.',
-  },
-];
-
-export const faqs: FAQItem[] = [
-  {
-    id: '1',
-    question: 'What is your typical project timeline?',
-    answer:
-      'Typically, a web project takes 3 to 6 weeks, and mobile apps can take 6 to 10 weeks depending on the complexity, features, and integrations required.',
-  },
-  {
-    id: '2',
-    question: 'What tech stack do you recommend for startups?',
-    answer:
-      'For most startups, I recommend the MERN stack (MongoDB, Express, React, Node.js) or Next.js. These are fast, scalable, and have a strong ecosystem for future growth.',
-  },
-  {
-    id: '3',
-    question: 'Do you help with deployment?',
-    answer:
-      'Yes, I handle the complete process — from development and testing to deployment on AWS, Vercel, and app stores.',
-  },
-  {
-    id: '4',
-    question: 'How do you ensure post-launch support?',
-    answer:
-      'I provide 3 to 6 months of active maintenance support after launch to ensure everything runs smoothly and handle any improvements.',
-  },
-  {
-    id: '5',
-    question: 'What if I need changes after the project is complete?',
-    answer:
-      'I offer flexible maintenance and update plans. Whether it’s a small tweak or a major feature, I am available for long-term collaboration.',
   },
 ];
 
@@ -1591,3 +1527,4 @@ export const galleryImages = [
 
 
 ];
+

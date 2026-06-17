@@ -2,13 +2,15 @@
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
 import { useProjects } from '@/hooks/useApi';
+import type { Project } from '@/types';
 import { ProjectCard } from '../ui/ProjectCard';
 import { FadeIn } from '@/components/shared/Animations';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-export function Projects() {
-  const { data: projects = [] } = useProjects();
+export function Projects({ data: propData }: { data?: Project[] }) {
+  const { data: fetchedData = [] } = useProjects(!propData);
+  const projects = propData ?? fetchedData;
 
   const featuredProjects = projects.filter((p) => p.featured);
 

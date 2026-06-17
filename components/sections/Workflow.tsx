@@ -2,6 +2,7 @@
 
 import { Section, Container, SectionHeader } from '@/components/ui/Section';
 import { useWorkflowSteps } from '@/hooks/useApi';
+import type { WorkflowStep } from '@/types';
 import { Search, Code, Palette, Rocket } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
@@ -12,10 +13,11 @@ import 'swiper/css/pagination';
 
 const icons = [Search, Code, Palette, Rocket];
 
-export function Workflow() {
+export function Workflow({ data: propData }: { data?: WorkflowStep[] }) {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
-  const { data: steps = [] } = useWorkflowSteps();
+  const { data: fetchedSteps = [] } = useWorkflowSteps(!propData);
+  const steps = propData ?? fetchedSteps;
 
   return (
     <Section className="relative overflow-hidden workflow">

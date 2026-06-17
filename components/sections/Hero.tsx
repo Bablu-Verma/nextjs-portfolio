@@ -2,13 +2,11 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Mail, Sparkles, FileText } from 'lucide-react';
-import { FaLinkedin, FaGithub, FaLink } from 'react-icons/fa6';
+import { ArrowRight, Sparkles, FileText } from 'lucide-react';
+import { FaLinkedin, FaGithub } from 'react-icons/fa6';
 import { TypeAnimation } from 'react-type-animation';
 import { Button } from '@/components/ui/Button';
 import { FadeIn } from '@/components/shared/Animations';
-import { FaAndroid } from 'react-icons/fa';
-import Link from 'next/link';
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -99,9 +97,7 @@ export function Hero() {
               <a href="https://linkedin.com/in/babluverma" target="_blank">
                 <FaLinkedin className="w-6 h-6 hover:text-primary transition transform hover:scale-110" />
               </a>
-              <Link href="/#apkInstall">
-                <FaAndroid className="w-6 h-6 hover:text-primary transition transform hover:scale-110" />
-              </Link>
+
             </div>
           </FadeIn>
 
