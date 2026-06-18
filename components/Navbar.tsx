@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useThemeStore, useUIStore } from '@/store';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
@@ -70,29 +70,37 @@ export function Navbar() {
             </div>
 
             <div className="flex items-center gap-4">
-              <Button
-                variant="ghost"
-                size="icon"
+              <button
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
-                className="hidden md:flex"
+                className="hidden md:flex relative w-11 h-11 rounded-full items-center justify-center transition-all duration-500 group"
               >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={theme}
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {theme === 'dark' ? (
-                      <Sun className="w-5 h-5" />
-                    ) : (
-                      <Moon className="w-5 h-5" />
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-              </Button>
+                <motion.div
+                  className="relative flex items-center justify-center"
+                  animate={theme === 'light' ? { scale: 1 } : { scale: 0.85 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                >
+                  {theme === 'light' ? (
+                    <>
+                      {/* Glowing Sun in light mode */}
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.3 }}
+                        animate={{ opacity: [0.5, 1, 0.5], scale: 1 }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="absolute w-8 h-8 rounded-full bg-amber-400/30 blur-lg"
+                      />
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="absolute inset-0 w-14 h-14 -m-1.5 rounded-full bg-amber-400/10 blur-2xl"
+                      />
+                      <Sun className="relative z-10 w-6 h-6 text-amber-400" />
+                    </>
+                  ) : (
+                    <Moon className="relative z-10 w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
+                  )}
+                </motion.div>
+              </button>
 
               <Link
                 href='/#contact'
@@ -155,17 +163,44 @@ export function Navbar() {
                   transition={{ delay: navItems.length * 0.1 }}
                   className="flex items-center gap-4 mt-4"
                 >
-                  <Button variant="outline" size="icon" onClick={toggleTheme}>
-                    <AnimatePresence mode="wait">
-                      <motion.div key={theme}>
-                        {theme === 'dark' ? (
-                          <Sun className="w-5 h-5" />
-                        ) : (
-                          <Moon className="w-5 h-5" />
-                        )}
-                      </motion.div>
-                    </AnimatePresence>
-                  </Button>
+                  <Link
+                    href="/#contact"
+                    onClick={closeMenu}
+                  >
+                    <Button variant="primary" size="sm">
+                      Let&apos;s Talk
+                    </Button>
+                  </Link>
+                  <button
+                    onClick={toggleTheme}
+                    aria-label="Toggle theme"
+                    className="relative w-11 h-11 rounded-full flex items-center justify-center transition-all duration-500"
+                  >
+                    <motion.div
+                      className="relative flex items-center justify-center"
+                      animate={theme === 'light' ? { scale: 1 } : { scale: 0.85 }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                    >
+                      {theme === 'light' ? (
+                        <>
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.3 }}
+                            animate={{ opacity: [0.5, 1, 0.5], scale: 1 }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                            className="absolute w-8 h-8 rounded-full bg-amber-400/30 blur-lg"
+                          />
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            className="absolute inset-0 w-14 h-14 -m-1.5 rounded-full bg-amber-400/10 blur-2xl"
+                          />
+                          <Sun className="relative z-10 w-6 h-6 text-amber-400" />
+                        </>
+                      ) : (
+                        <Moon className="relative z-10 w-6 h-6 text-muted-foreground" />
+                      )}
+                    </motion.div>
+                  </button>
                 </motion.div>
               </div>
             </motion.nav>

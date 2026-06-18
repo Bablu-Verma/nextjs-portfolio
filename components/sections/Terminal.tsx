@@ -437,16 +437,26 @@ export function Terminal() {
     <>
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed right-4 bottom-24 z-50 w-14 h-14 rounded-2xl bg-[#0a0a0f] border-2 border-green-500/40 text-green-400 shadow-[0_0_15px_rgba(34,197,94,0.15)] flex items-center justify-center hover:border-green-400 hover:shadow-[0_0_25px_rgba(34,197,94,0.3)] transition-all duration-200 font-mono"
-        whileHover={{ scale: 1.08 }}
-        title={`${isOpen ? 'Close Terminal' : 'Open Terminal'}`}
-        whileTap={{ scale: 0.92 }}
+        className="fixed right-8 bottom-24 z-50 w-14 h-14 rounded-2xl bg-[#0a0a0f] border-2 border-green-400/70 text-green-400 shadow-[0_0_20px_rgba(34,197,94,0.3)] flex items-center justify-center hover:border-green-300 hover:shadow-[0_0_40px_rgba(34,197,94,0.5)] active:scale-90 transition-all duration-200 font-mono group cursor-pointer"
+        title="Open Terminal (Ctrl+`)"
+        whileTap={{ scale: 0.85 }}
         aria-label="Toggle terminal"
       >
+        {/* Tooltip label */}
+        <span className="absolute -top-10 right-0 px-3 py-1.5 rounded-lg bg-[#0a0a0f] border border-green-500/30 text-green-400 text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-lg shadow-green-500/10">
+          Terminal ▾
+        </span>
+
+        {/* Pulsing glow ring */}
+        <span className="absolute inset-0 rounded-2xl border-2 border-green-400/30 animate-pulse-slow" />
+
+        {/* Subtle ambient glow */}
+        <span className="absolute inset-0 rounded-2xl bg-green-500/5 animate-pulse-slow" style={{ animationDelay: '1s' }} />
+
         {isOpen ? (
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5 relative z-10" />
         ) : (
-          <span className="text-lg font-bold leading-none">
+          <span className="text-lg font-bold leading-none relative z-10">
             {'>'}<span className="animate-pulse">_</span>
           </span>
         )}

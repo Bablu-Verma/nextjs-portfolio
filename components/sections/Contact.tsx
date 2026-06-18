@@ -95,7 +95,7 @@ ${data.message}
                   href={info.href}
                   className="flex items-start gap-4 p-4 rounded-xl glass group hover:scale-[1.02] transition"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition">
                     <info.icon className="w-5 h-5 text-primary group-hover:text-white" />
                   </div>
 

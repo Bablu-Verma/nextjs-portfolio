@@ -21,7 +21,7 @@ export function Education({ data: propData }: { data?: EducationData }) {
       <div className="absolute inset-0 grid-pattern opacity-30" />
 
       <Container className="relative">
-        <div className="grid lg:grid-cols-2 gap-12 items">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <SectionHeader
               badge="Education"

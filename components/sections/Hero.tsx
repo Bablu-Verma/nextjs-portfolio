@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative mt-16 min-h-screen flex items-center overflow-hidden"
+      className="relative mt-16 min-h-[100dvh] flex items-center overflow-hidden"
     >
       {/* 🌈 Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
@@ -71,7 +71,7 @@ export function Hero() {
 
           {/* ⚡ Typing Animation */}
           <FadeIn delay={0.5}>
-            <div className="text-xl md:text-2xl text-primary font-medium mb-6 h-[40px]">
+            <div className="text-lg md:text-2xl text-primary font-medium mb-6 min-h-[40px]">
               <TypeAnimation
                 sequence={[
                   'I build fast & scalable apps',

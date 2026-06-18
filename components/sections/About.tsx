@@ -86,7 +86,7 @@ export function About({ data: propData }: { data?: AboutData }) {
             <FadeIn direction="right" delay={0.2}>
               <div className="relative">
 
-                <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-border">
+                <div className="relative w-[85vw] h-[85vw] sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] max-w-[28rem] rounded-2xl overflow-hidden border-2 border-border">
                   {about?.image && (
                     <Image
                       src={about.image}
