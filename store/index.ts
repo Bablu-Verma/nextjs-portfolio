@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import type { HomePageData } from '@/types';
 
 interface UIState {
   isMenuOpen: boolean;
@@ -42,3 +43,29 @@ export const useThemeStore = create<ThemeState>()(
     }
   )
 );
+
+interface TerminalDataState {
+  homeData: HomePageData | null;
+  isLoading: boolean;
+  error: string | null;
+  lastFetched: number | null;
+  fetchHomeData: () => Promise<void>;
+}
+
+export const useTerminalDataStore = create<TerminalDataState>((set) => ({
+  homeData: null,
+  isLoading: false,
+  error: null,
+  lastFetched: null,
+  fetchHomeData: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      const res = await fetch('/api/home');
+      if (!res.ok) throw new Error(`Failed to fetch: ${res.status}`);
+      const data: HomePageData = await res.json();
+      set({ homeData: data, isLoading: false, lastFetched: Date.now() });
+    } catch (err) {
+      set({ error: err instanceof Error ? err.message : 'Failed to load data', isLoading: false });
+    }
+  },
+}));

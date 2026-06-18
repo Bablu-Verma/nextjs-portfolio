@@ -2,7 +2,9 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Minus, Maximize2 } from 'lucide-react';
+import { X } from 'lucide-react';
+import { useTerminalDataStore } from '@/store';
+import type { HomePageData } from '@/types';
 
 const BANNER = `
 \x1b[38;5;208m  ╔══════════════════════════════════════╗
@@ -12,173 +14,6 @@ const BANNER = `
 
   Type \x1b[38;5;208mhelp\x1b[0m to see available commands.
 `;
-
-const commands = [
-  {
-    cmd: 'help',
-    output: `
-\x1b[38;5;208mAvailable commands:\x1b[0m
-
-  \x1b[38;5;208mabout\x1b[0m        About Bablu Verma
-  \x1b[38;5;208mskills\x1b[0m       Technical skills & technologies
-  \x1b[38;5;208mexperience\x1b[0m   Work experience
-  \x1b[38;5;208meducation\x1b[0m    Education & certifications
-  \x1b[38;5;208mservices\x1b[0m     Services I provide
-  \x1b[38;5;208mprojects\x1b[0m     List featured projects
-  \x1b[38;5;208mcontact\x1b[0m      Contact information
-  \x1b[38;5;208msocial\x1b[0m       Social profiles & links
-
-  \x1b[38;5;208mbanner\x1b[0m       Show welcome banner
-  \x1b[38;5;208mwhoami\x1b[0m       Current user info
-  \x1b[38;5;208mdate\x1b[0m         Current date & time
-  \x1b[38;5;208mneofetch\x1b[0m     System-like info (portfolio edition)
-  \x1b[38;5;208mgithub\x1b[0m       Open GitHub profile
-  \x1b[38;5;208mlinkedin\x1b[0m     Open LinkedIn profile
-  \x1b[38;5;208mecho\x1b[0m         Repeat a message
-  \x1b[38;5;208msudo\x1b[0m         Try it 😉
-  \x1b[38;5;208mclear\x1b[0m        Clear terminal
-`,
-  },
-  {
-    cmd: 'about',
-    output: `
-\x1b[38;5;208m  Bablu Verma\x1b[0m
-  ────────────────────────────────────────────
-  Full Stack Developer with 4+ years of experience
-  building scalable web, backend, and mobile applications.
-
-  \x1b[38;5;208mSpecialized in:\x1b[0m
-  • React.js / Next.js / React Native
-  • Node.js / Express.js
-  • PostgreSQL / MongoDB / Redis
-  • Real-time systems & scalable architecture
-
-  Focused on performance optimization,
-  clean architecture, and production-ready engineering.
-`,
-  },
-  {
-    cmd: 'skills',
-    output: `
-\x1b[38;5;208m  Technical Skills\x1b[0m
-  ────────────────────────────────────────────
-
-  \x1b[38;5;208mFrontend & Mobile:\x1b[0m
-    React.js  Next.js  TypeScript  Tailwind CSS
-    React Native  Redux Toolkit  React Query
-
-  \x1b[38;5;208mBackend & APIs:\x1b[0m
-    Node.js  Express.js  REST APIs  Socket.io
-    Redis Pub/Sub  BullMQ  GraphQL
-
-  \x1b[38;5;208mDatabase:\x1b[0m
-    MongoDB  PostgreSQL  Redis  Prisma  Mongoose
-
-  \x1b[38;5;208mDevOps & Tools:\x1b[0m
-    Docker  AWS  GitHub Actions  Nginx
-    PM2  Vercel  Firebase
-`,
-  },
-  {
-    cmd: 'experience',
-    output: `
-\x1b[38;5;208m  Work Experience\x1b[0m
-  ────────────────────────────────────────────
-
-  \x1b[38;5;208m4tuners Technologies\x1b[0m
-  → Full Stack Developer
-  → Jul 2025 - Mar 2026
-
-  \x1b[38;5;208mFreekaamaal.com\x1b[0m
-  → React.js & React Native Developer
-  → Sep 2022 - May 2025
-
-  \x1b[38;5;208mQwerty Code\x1b[0m
-  → Web Developer
-  → Oct 2021 - Aug 2022
-
-  \x1b[38;5;208mHighlights:\x1b[0m
-  • 4+ years industry experience
-  • Built scalable production systems
-  • Led frontend & backend architecture
-`,
-  },
-  {
-    cmd: 'education',
-    output: `
-\x1b[38;5;208m  Education\x1b[0m
-  ────────────────────────────────────────────
-
-  \x1b[38;5;208mAmity University\x1b[0m
-  → BCA (Cloud & Cyber Security)
-  → 2023 - 2026
-
-  \x1b[38;5;208mGBSS School, Delhi\x1b[0m
-  → Senior Secondary (12th)
-
-  \x1b[38;5;208mCertifications:\x1b[0m
-  • Next.js 14 & React Certification
-  • Full Stack Development Bootcamp
-`,
-  },
-  {
-    cmd: 'services',
-    output: `
-\x1b[38;5;208m  Services\x1b[0m
-  ────────────────────────────────────────────
-
-  • Full Stack Web Development
-  • Backend API Development
-  • React & Next.js Applications
-  • React Native Mobile Apps
-  • Real-time Systems
-  • Ecommerce Development
-  • Performance Optimization
-  • SEO Optimization
-  • DevOps & Deployment
-`,
-  },
-  {
-    cmd: 'projects',
-    output: `
-\x1b[38;5;208m  Featured Projects\x1b[0m
-  ────────────────────────────────────────────
-
-  Run \x1b[38;5;208mrepo <number>\x1b[0m to open a project:
-
-  \x1b[38;5;208m[1]\x1b[0m  Woost.io Web          — Freelancing web platform
-  \x1b[38;5;208m[2]\x1b[0m  Woost.io Mobile       — Cross-platform freelancing app
-  \x1b[38;5;208m[3]\x1b[0m  Freekaamaal Web       — Cashback & deals platform
-  \x1b[38;5;208m[4]\x1b[0m  Freekaamaal Backend   — Scalable deals API
-  \x1b[38;5;208m[5]\x1b[0m  Gaurastra Ecommerce   — Ayurvedic e-commerce
-  \x1b[38;5;208m[6]\x1b[0m  TaskZeno SaaS         — Automation platform
-  \x1b[38;5;208m[7]\x1b[0m  POS System            — Offline-first billing
-  \x1b[38;5;208m[8]\x1b[0m  Real-time Chat        — Socket.io messaging
-`,
-  },
-  {
-    cmd: 'contact',
-    output: `
-\x1b[38;5;208m  Contact Information\x1b[0m
-  ────────────────────────────────────────────
-
-  📧 \x1b[38;5;208mEmail:\x1b[0m     bablu@example.com
-  📍 \x1b[38;5;208mLocation:\x1b[0m  Noida, India
-  🌐 \x1b[38;5;208mAvailable:\x1b[0m Remote / Hybrid / Relocation
-`,
-  },
-  {
-    cmd: 'social',
-    output: `
-\x1b[38;5;208m  Social Profiles\x1b[0m
-  ────────────────────────────────────────────
-
-  \x1b[38;5;208mGitHub:\x1b[0m     github.com/bablu-verma
-  \x1b[38;5;208mLinkedIn:\x1b[0m   linkedin.com/in/babluverma
-  \x1b[38;5;208mPortfolio:\x1b[0m  bablu-verma.vercel.app
-`,
-  },
-];
 
 const projectUrls: Record<string, string> = {
   '1': 'https://woost.io/',
@@ -198,10 +33,129 @@ const ansiToHtml = (text: string): string => {
     .replace(/\n/g, '<br/>');
 };
 
+const HELP_TEXT = `
+\x1b[38;5;208mAvailable commands:\x1b[0m
+
+  \x1b[38;5;208mabout\x1b[0m        About Bablu Verma
+  \x1b[38;5;208mskills\x1b[0m       Technical skills & technologies
+  \x1b[38;5;208mexperience\x1b[0m   Work experience
+  \x1b[38;5;208meducation\x1b[0m    Education & certifications
+  \x1b[38;5;208mservices\x1b[0m     Services I provide
+  \x1b[38;5;208mprojects\x1b[0m     List featured projects
+  \x1b[38;5;208mcontact\x1b[0m      Contact information
+  \x1b[38;5;208msocial\x1b[0m       Social profiles & links
+
+  \x1b[38;5;208mwhoami\x1b[0m       Current user info
+  \x1b[38;5;208mdate\x1b[0m         Current date & time
+  \x1b[38;5;208mgithub\x1b[0m       Open GitHub profile
+  \x1b[38;5;208mlinkedin\x1b[0m     Open LinkedIn profile
+  \x1b[38;5;208mecho\x1b[0m         Repeat a message
+  \x1b[38;5;208msudo\x1b[0m         Try it 😉
+  \x1b[38;5;208mclear\x1b[0m        Clear terminal
+`;
+
+function formatAbout(data: HomePageData): string {
+  const { about } = data;
+  return `
+\x1b[38;5;208m  ${about.bio[0] || 'Bablu Verma'}\x1b[0m
+  ────────────────────────────────────────────
+  ${about.bio.slice(1).join('\n  ')}
+
+  \x1b[38;5;208mSpecialized in:\x1b[0m
+${data.skills.slice(0, 3).map((g) => `  • ${g.title}: ${g.items.slice(0, 3).map((s) => s.name).join(', ')}`).join('\n')}
+`;
+}
+
+function formatSkills(data: HomePageData): string {
+  const sections = data.skills.map((group) =>
+    `  \x1b[38;5;208m${group.title}:\x1b[0m\n    ${group.items.map((s) => s.name).join('  ')}`
+  ).join('\n\n');
+  return `
+\x1b[38;5;208m  Technical Skills\x1b[0m
+  ────────────────────────────────────────────
+
+${sections}
+`;
+}
+
+function formatExperience(data: HomePageData): string {
+  const items = data.experiences.map((exp) =>
+    `  \x1b[38;5;208m${exp.company}\x1b[0m
+  → ${exp.role}
+  → ${exp.startDate} - ${exp.endDate || 'Present'}`
+  ).join('\n\n');
+  return `
+\x1b[38;5;208m  Work Experience\x1b[0m
+  ────────────────────────────────────────────
+
+${items}
+`;
+}
+
+function formatEducation(data: HomePageData): string {
+  const items = data.education.items.map((edu) =>
+    `  \x1b[38;5;208m${edu.institution}\x1b[0m
+  → ${edu.degree}${edu.field ? ` - ${edu.field}` : ''}
+  → ${edu.startDate} - ${edu.endDate}`
+  ).join('\n\n');
+  return `
+\x1b[38;5;208m  Education\x1b[0m
+  ────────────────────────────────────────────
+
+${items}
+`;
+}
+
+function formatServices(data: HomePageData): string {
+  const items = data.services.map((s) =>
+    `  \x1b[38;5;208m• ${s.title}\x1b[0m
+    ${s.description}`
+  ).join('\n\n');
+  return `
+\x1b[38;5;208m  Services\x1b[0m
+  ────────────────────────────────────────────
+
+${items}
+`;
+}
+
+function formatProjects(data: HomePageData): string {
+  const items = data.projects.map((p, i) =>
+    `  \x1b[38;5;208m[${i + 1}]\x1b[0m  ${p.title}  — ${p.shortDescription}`
+  ).join('\n');
+  return `
+\x1b[38;5;208m  Featured Projects\x1b[0m
+  ────────────────────────────────────────────
+
+  Run \x1b[38;5;208mrepo <number>\x1b[0m to open a project:
+
+${items}
+`;
+}
+
+const CONTACT_OUTPUT = `
+\x1b[38;5;208m  Contact Information\x1b[0m
+  ────────────────────────────────────────────
+
+  📧 \x1b[38;5;208mEmail:\x1b[0m     bablu@example.com
+  📍 \x1b[38;5;208mLocation:\x1b[0m  Noida, India
+  🌐 \x1b[38;5;208mAvailable:\x1b[0m Remote / Hybrid / Relocation
+`;
+
+const SOCIAL_OUTPUT = `
+\x1b[38;5;208m  Social Profiles\x1b[0m
+  ────────────────────────────────────────────
+
+  \x1b[38;5;208mGitHub:\x1b[0m     github.com/bablu-verma
+  \x1b[38;5;208mLinkedIn:\x1b[0m   linkedin.com/in/babluverma
+  \x1b[38;5;208mPortfolio:\x1b[0m  bablu-verma.vercel.app
+`;
+
+const cmdNames = ['help', 'about', 'skills', 'experience', 'education', 'services', 'projects', 'contact', 'social'];
+
 export function Terminal() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const [history, setHistory] = useState<{ cmd: string; output: string }[]>([
     { cmd: '', output: BANNER },
   ]);
@@ -210,6 +164,7 @@ export function Terminal() {
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const terminalRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const { homeData, isLoading, fetchHomeData } = useTerminalDataStore();
 
   useEffect(() => {
     terminalRef.current?.scrollTo({
@@ -220,14 +175,14 @@ export function Terminal() {
 
   useEffect(() => {
     if (isOpen) {
+      fetchHomeData();
       setTimeout(() => inputRef.current?.focus(), 150);
     }
   }, [isOpen]);
 
   useEffect(() => {
     if (input.trim()) {
-      const matches = commands
-        .map((c) => c.cmd)
+      const matches = cmdNames
         .filter((c) => c.startsWith(input.toLowerCase().trim()) && c !== input.toLowerCase().trim());
       setSuggestions(matches.slice(0, 5));
     } else {
@@ -262,11 +217,6 @@ export function Terminal() {
 
     if (trimmedCmd === 'clear') {
       setHistory([{ cmd: '', output: BANNER }]);
-      return;
-    }
-
-    if (trimmedCmd === 'banner') {
-      setHistory((prev) => [...prev, { cmd: trimmedCmd, output: BANNER }]);
       return;
     }
 
@@ -320,25 +270,6 @@ export function Terminal() {
       return;
     }
 
-    if (trimmedCmd === 'neofetch') {
-      setHistory((prev) => [
-        ...prev,
-        {
-          cmd: 'neofetch',
-          output: `
-\x1b[38;5;208m        .---.            \x1b[0m  \x1b[38;5;208mbablu-verma\x1b[0m
-\x1b[38;5;208m       /     \\           \x1b[0m  ─────────────────────
-\x1b[38;5;208m      |  o  o |          \x1b[0m  \x1b[38;5;208mOS:\x1b[0m      Portfolio v1.0
-\x1b[38;5;208m       \\  V  /           \x1b[0m  \x1b[38;5;208mShell:\x1b[0m   Zsh (interactive)
-\x1b[38;5;208m        '---'            \x1b[0m  \x1b[38;5;208mStack:\x1b[0m    Next.js 16 + React 19
-\x1b[38;5;208m                          \x1b[0m  \x1b[38;5;208mUptime:\x1b[0m   4+ years dev experience
-\x1b[38;5;208m                          \x1b[0m  \x1b[38;5;208mLocation:\x1b[0m  Noida, India
-          `,
-        },
-      ]);
-      return;
-    }
-
     if (trimmedCmd.startsWith('echo ')) {
       const message = trimmedCmd.slice(5);
       setHistory((prev) => [...prev, { cmd: trimmedCmd, output: message }]);
@@ -347,12 +278,14 @@ export function Terminal() {
 
     if (trimmedCmd.startsWith('repo ')) {
       const num = trimmedCmd.slice(5).trim();
-      const url = projectUrls[num];
+      const idx = parseInt(num, 10) - 1;
+      const project = homeData?.projects[idx];
+      const url = project?.liveUrl || projectUrls[num];
       if (url) {
         window.open(url, '_blank');
         setHistory((prev) => [
           ...prev,
-          { cmd: trimmedCmd, output: `Opening project ${num}...` },
+          { cmd: trimmedCmd, output: `Opening ${project?.title || `project ${num}`}...` },
         ]);
       } else {
         setHistory((prev) => [
@@ -363,23 +296,59 @@ export function Terminal() {
       return;
     }
 
-    const matched = commands.find((c) => c.cmd === trimmedCmd);
-
-    if (matched) {
-      setHistory((prev) => [...prev, matched]);
-    } else if (trimmedCmd) {
-      const suggestion = commands
-        .map((c) => c.cmd)
-        .find((c) => c.startsWith(trimmedCmd));
-      const msg = suggestion
-        ? `Command not found: ${trimmedCmd}. Did you mean '${suggestion}'?`
-        : `Command not found: ${trimmedCmd}. Type 'help' for available commands.`;
-      setHistory((prev) => [
-        ...prev,
-        { cmd: trimmedCmd, output: msg },
-      ]);
+    if (trimmedCmd === 'help') {
+      setHistory((prev) => [...prev, { cmd: trimmedCmd, output: HELP_TEXT }]);
+      return;
     }
-  }, []);
+
+    if (trimmedCmd === 'about' && homeData) {
+      setHistory((prev) => [...prev, { cmd: trimmedCmd, output: formatAbout(homeData) }]);
+      return;
+    }
+
+    if (trimmedCmd === 'skills' && homeData) {
+      setHistory((prev) => [...prev, { cmd: trimmedCmd, output: formatSkills(homeData) }]);
+      return;
+    }
+
+    if (trimmedCmd === 'experience' && homeData) {
+      setHistory((prev) => [...prev, { cmd: trimmedCmd, output: formatExperience(homeData) }]);
+      return;
+    }
+
+    if (trimmedCmd === 'education' && homeData) {
+      setHistory((prev) => [...prev, { cmd: trimmedCmd, output: formatEducation(homeData) }]);
+      return;
+    }
+
+    if (trimmedCmd === 'services' && homeData) {
+      setHistory((prev) => [...prev, { cmd: trimmedCmd, output: formatServices(homeData) }]);
+      return;
+    }
+
+    if (trimmedCmd === 'projects' && homeData) {
+      setHistory((prev) => [...prev, { cmd: trimmedCmd, output: formatProjects(homeData) }]);
+      return;
+    }
+
+    if (trimmedCmd === 'contact') {
+      setHistory((prev) => [...prev, { cmd: trimmedCmd, output: CONTACT_OUTPUT }]);
+      return;
+    }
+
+    if (trimmedCmd === 'social') {
+      setHistory((prev) => [...prev, { cmd: trimmedCmd, output: SOCIAL_OUTPUT }]);
+      return;
+    }
+
+    const msg = trimmedCmd
+      ? `Command not found: ${trimmedCmd}. Type 'help' for available commands.`
+      : '';
+    setHistory((prev) => [
+      ...prev,
+      { cmd: trimmedCmd, output: msg },
+    ]);
+  }, [homeData]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
