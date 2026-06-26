@@ -54,20 +54,20 @@ ${data.message}
     {
       icon: Mail,
       label: 'Email',
-      value: '[EMAIL_ADDRESS]',
-      href: 'mailto:[EMAIL_ADDRESS]',
+      value: 'jbabluverma[at]gmail.com',
+      href: 'mailto:jbabluverma[at]gmail.com',
     },
     {
       icon: MapPin,
       label: 'Location',
       value: 'India',
-      href: '#',
+      href: 'https://maps.app.goo.gl/wbypv1oj978Hxu1y7',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 0000000000',
-      href: 'tel:+910000000000',
+      value: '+91 9217-205--979',
+      href: 'tel:+919217205979',
     },
   ];
 
@@ -115,7 +115,7 @@ ${data.message}
 
               <div className="flex gap-4">
                 <motion.a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/bablu-verma"
                   target="_blank"
                   whileHover={{ scale: 1.1 }}
                   className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary"
@@ -124,7 +124,7 @@ ${data.message}
                 </motion.a>
 
                 <motion.a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://linkedin.com/in/babluverma"
                   target="_blank"
                   whileHover={{ scale: 1.1 }}
                   className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary"
@@ -148,7 +148,7 @@ ${data.message}
                   <div>
                     <label className="block text-sm font-medium mb-2">Name</label>
                     <Input
-                      placeholder="John Doe"
+                      placeholder="Your Name"
                       {...register('name')}
                       error={errors.name?.message}
                     />
@@ -158,7 +158,7 @@ ${data.message}
                     <label className="block text-sm font-medium mb-2">Email</label>
                     <Input
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder="abc@example.com"
                       {...register('email')}
                       error={errors.email?.message}
                     />
@@ -168,7 +168,7 @@ ${data.message}
                 <div>
                   <label className="block text-sm font-medium mb-2">Subject</label>
                   <Input
-                    placeholder="Project Inquiry"
+                    placeholder="Subject"
                     {...register('subject')}
                     error={errors.subject?.message}
                   />
